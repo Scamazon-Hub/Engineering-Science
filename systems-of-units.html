@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Systems of Units - HNC Engineering Science</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .units-table {
+            font-size: 0.9em;
+        }
+        .units-table th {
+            white-space: nowrap;
+            background: var(--primary);
+            color: white;
+        }
+        .system-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+            color: white !important;
+            font-size: 1.1em !important;
+        }
+        .prefix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .prefix-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>HNC Engineering Science</h1>
+            <p>Systems of Units and SI System</p>
+        </div>
+    </header>
+
+    <div class="container grid-layout">
+        <aside id="navigation-placeholder"></aside>
+
+        <main>
+            <h1>Systems of Units and SI System</h1>
+            
+            <div class="info-box">
+                <p>Standardized Measurement in Engineering</p>
+                Understanding different systems of units and the International System of Units (SI) is fundamental for engineering communication, design, and analysis across global contexts.
+            </div>
+
+            <h2 id="introduction">Introduction to Measurement Systems</h2>
+            
+            <div class="info-box">
+                <p>The Importance of Standardization</p>
+                Standardized units enable precise communication, accurate calculations, and reliable reproduction of engineering designs and experiments across different countries and disciplines.
+            </div>
+
+            <h3>Historical Context</h3>
+            <p>Throughout history, various measurement systems have been developed, each with their own advantages and limitations. The evolution toward the SI system represents a global effort to create a coherent, universal measurement framework.</p>
+
+            <h2 id="british-system">The British (Imperial) System</h2>
+
+            <div class="info-box">
+                <p>The FPS System</p>
+                The British Imperial System, often called the fps system (foot-pound-second), was widely used in engineering and commerce throughout the British Empire and remains in limited use today.
+            </div>
+
+            <h3>Fundamental Units</h3>
+            
+            <div class="math-block">
+                <p><strong>Length:</strong> Foot (ft)</p>
+                <p><strong>Mass:</strong> Pound (lb)</p>
+                <p><strong>Time:</strong> Second (s)</p>
+            </div>
+
+            <h3>Common Imperial Units in Engineering</h3>
+            <table class="units-table">
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Unit</th>
+                        <th>Symbol</th>
+                        <th>SI Equivalent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Length</td>
+                        <td>Inch</td>
+                        <td>in</td>
+                        <td>0.0254 m</td>
+                    </tr>
+                    <tr>
+                        <td>Length</td>
+                        <td>Foot</td>
+                        <td>ft</td>
+                        <td>0.3048 m</td>
+                    </tr>
+                    <tr>
+                        <td>Length</td>
+                        <td>Yard</td>
+                        <td>yd</td>
+                        <td>0.9144 m</td>
+                    </tr>
+                    <tr>
+                        <td>Length</td>
+                        <td>Mile</td>
+                        <td>mi</td>
+                        <td>1609.344 m</td>
+                    </tr>
+                    <tr>
+                        <td>Mass</td>
+                        <td>Ounce</td>
+                        <td>oz</td>
+                        <td>0.02835 kg</td>
+                    </tr>
+                    <tr>
+                        <td>Mass</td>
+                        <td>Pound</td>
+                        <td>lb</td>
+                        <td>0.4536 kg</td>
+                    </tr>
+                    <tr>
+                        <td>Force</td>
+                        <td>Pound-force</td>
+                        <td>lbf</td>
+                        <td>4.448 N</td>
+                    </tr>
+                    <tr>
+                        <td>Pressure</td>
+                        <td>Pounds per square inch</td>
+                        <td>psi</td>
+                        <td>6894.76 Pa</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <p><strong>Engineering Application: Imperial to SI Conversion</strong></p>
+                <p>A structural beam has specifications: Length = 20 ft, Weight = 150 lb</p>
+                
+                <p><strong>Conversion to SI units:</strong></p>
+                <p>Length: \( 20 \, \text{ft} \times 0.3048 \, \text{m/ft} = 6.096 \, \text{m} \)</p>
+                <p>Mass: \( 150 \, \text{lb} \times 0.4536 \, \text{kg/lb} = 68.04 \, \text{kg} \)</p>
+                
+                <p><strong>Note:</strong> In engineering contexts, it's crucial to distinguish between pound-mass (lb) and pound-force (lbf).</p>
+            </div>
+
+            <h2 id="cgs-system">The CGS System</h2>
+
+            <div class="info-box">
+                <p>Centimeter-Gram-Second System</p>
+                The CGS system was widely used in scientific work, particularly in physics and chemistry, before the adoption of the SI system.
+            </div>
+
+            <h3>Fundamental Units</h3>
+            
+            <div class="math-block">
+                <p><strong>Length:</strong> Centimeter (cm)</p>
+                <p><strong>Mass:</strong> Gram (g)</p>
+                <p><strong>Time:</strong> Second (s)</p>
+            </div>
+
+            <h3>CGS Derived Units</h3>
+            <table class="units-table">
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Unit</th>
+                        <th>Symbol</th>
+                        <th>SI Equivalent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Force</td>
+                        <td>Dyne</td>
+                        <td>dyn</td>
+                        <td>10⁻⁵ N</td>
+                    </tr>
+                    <tr>
+                        <td>Energy</td>
+                        <td>Erg</td>
+                        <td>erg</td>
+                        <td>10⁻⁷ J</td>
+                    </tr>
+                    <tr>
+                        <td>Pressure</td>
+                        <td>Barye</td>
+                        <td>Ba</td>
+                        <td>0.1 Pa</td>
+                    </tr>
+                    <tr>
+                        <td>Dynamic Viscosity</td>
+                        <td>Poise</td>
+                        <td>P</td>
+                        <td>0.1 Pa·s</td>
+                    </tr>
+                    <tr>
+                        <td>Kinematic Viscosity</td>
+                        <td>Stokes</td>
+                        <td>St</td>
+                        <td>10⁻⁴ m²/s</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <p><strong>Scientific Application</strong></p>
+                <p>In fluid dynamics, the CGS unit for viscosity (poise) is still occasionally used:</p>
+                <p>Water at 20°C: \( \eta = 0.01 \, \text{P} = 0.001 \, \text{Pa·s} \)</p>
+                <p>Conversion: \( 1 \, \text{P} = 0.1 \, \text{Pa·s} \)</p>
+            </div>
+
+            <h2 id="mks-system">The MKS System</h2>
+
+            <div class="info-box">
+                <p>Metre-Kilogram-Second System</p>
+                The MKS system formed the foundation for the modern International System of Units (SI), providing a more practical scale for engineering applications than the CGS system.
+            </div>
+
+            <h3>Fundamental Units</h3>
+            
+            <div class="math-block">
+                <p><strong>Length:</strong> Metre (m)</p>
+                <p><strong>Mass:</strong> Kilogram (kg)</p>
+                <p><strong>Time:</strong> Second (s)</p>
+            </div>
+
+            <h3>MKS Derived Units</h3>
+            <table class="units-table">
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Unit</th>
+                        <th>Symbol</th>
+                        <th>Definition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Force</td>
+                        <td>Newton</td>
+                        <td>N</td>
+                        <td>kg·m/s²</td>
+                    </tr>
+                    <tr>
+                        <td>Energy</td>
+                        <td>Joule</td>
+                        <td>J</td>
+                        <td>N·m</td>
+                    </tr>
+                    <tr>
+                        <td>Power</td>
+                        <td>Watt</td>
+                        <td>W</td>
+                        <td>J/s</td>
+                    </tr>
+                    <tr>
+                        <td>Pressure</td>
+                        <td>Pascal</td>
+                        <td>Pa</td>
+                        <td>N/m²</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="si-system">The SI System of Units</h2>
+
+            <div class="info-box">
+                <p>International System of Units</p>
+                The SI system is the modern form of the metric system and the world's most widely used system of measurement, providing a coherent framework for science, engineering, and commerce.
+            </div>
+
+            <h3>The Seven Base SI Units</h3>
+            
+            <table class="units-table">
+                <thead>
+                    <tr>
+                        <th>Physical Quantity</th>
+                        <th>Unit Name</th>
+                        <th>Unit Symbol</th>
+                        <th>Definition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Length</td>
+                        <td>metre</td>
+                        <td>m</td>
+                        <td>Distance light travels in 1/299,792,458 seconds</td>
+                    </tr>
+                    <tr>
+                        <td>Mass</td>
+                        <td>kilogram</td>
+                        <td>kg</td>
+                        <td>Defined by Planck constant (h = 6.62607015×10⁻³⁴ J·s)</td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td>second</td>
+                        <td>s</td>
+                        <td>Duration of 9,192,631,770 periods of radiation from cesium-133</td>
+                    </tr>
+                    <tr>
+                        <td>Electric Current</td>
+                        <td>ampere</td>
+                        <td>A</td>
+                        <td>Flow of 1/(1.602176634×10⁻¹⁹) elementary charges per second</td>
+                    </tr>
+                    <tr>
+                        <td>Temperature</td>
+                        <td>kelvin</td>
+                        <td>K</td>
+                        <td>1/273.16 of thermodynamic temperature of triple point of water</td>
+                    </tr>
+                    <tr>
+                        <td>Luminous Intensity</td>
+                        <td>candela</td>
+                        <td>cd</td>
+                        <td>Luminous intensity in given direction of source emitting monochromatic radiation</td>
+                    </tr>
+                    <tr>
+                        <td>Amount of Substance</td>
+                        <td>mole</td>
+                        <td>mol</td>
+                        <td>Amount containing exactly 6.02214076×10²³ elementary entities</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Important SI Derived Units</h3>
+            
+            <table class="units-table">
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Unit Name</th>
+                        <th>Symbol</th>
+                        <th>Base Unit Equivalent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Frequency</td>
+                        <td>hertz</td>
+                        <td>Hz</td>
+                        <td>s⁻¹</td>
+                    </tr>
+                    <tr>
+                        <td>Force</td>
+                        <td>newton</td>
+                        <td>N</td>
+                        <td>kg·m·s⁻²</td>
+                    </tr>
+                    <tr>
+                        <td>Pressure, Stress</td>
+                        <td>pascal</td>
+                        <td>Pa</td>
+                        <td>N/m² = kg·m⁻¹·s⁻²</td>
+                    </tr>
+                    <tr>
+                        <td>Energy, Work, Heat</td>
+                        <td>joule</td>
+                        <td>J</td>
+                        <td>N·m = kg·m²·s⁻²</td>
+                    </tr>
+                    <tr>
+                        <td>Power, Radiant Flux</td>
+                        <td>watt</td>
+                        <td>W</td>
+                        <td>J/s = kg·m²·s⁻³</td>
+                    </tr>
+                    <tr>
+                        <td>Electric Charge</td>
+                        <td>coulomb</td>
+                        <td>C</td>
+                        <td>A·s</td>
+                    </tr>
+                    <tr>
+                        <td>Electric Potential</td>
+                        <td>volt</td>
+                        <td>V</td>
+                        <td>W/A = kg·m²·s⁻³·A⁻¹</td>
+                    </tr>
+                    <tr>
+                        <td>Capacitance</td>
+                        <td>farad</td>
+                        <td>F</td>
+                        <td>C/V = kg⁻¹·m⁻²·s⁴·A²</td>
+                    </tr>
+                    <tr>
+                        <td>Electrical Resistance</td>
+                        <td>ohm</td>
+                        <td>Ω</td>
+                        <td>V/A = kg·m²·s⁻³·A⁻²</td>
+                    </tr>
+                    <tr>
+                        <td>Magnetic Flux</td>
+                        <td>weber</td>
+                        <td>Wb</td>
+                        <td>V·s = kg·m²·s⁻²·A⁻¹</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <p><strong>Engineering Calculation Example</strong></p>
+                <p>Calculate the force required to accelerate a 500 kg mass at 2 m/s²:</p>
+                
+                <p><strong>Using SI units:</strong></p>
+                <p>\( F = m \times a = 500 \, \text{kg} \times 2 \, \text{m/s}^2 = 1000 \, \text{N} \)</p>
+                
+                <p><strong>Dimensional analysis:</strong></p>
+                <p>\( [F] = [M][L][T]^{-2} = \text{kg} \cdot \text{m} \cdot \text{s}^{-2} = \text{N} \)</p>
+                
+                <p>The result is dimensionally consistent and expressed in proper SI units.</p>
+            </div>
+
+            <h2 id="si-prefixes">SI Prefixes and Multiples</h2>
+
+            <div class="info-box">
+                <p>Scaling Units for Practical Use</p>
+                SI prefixes provide a systematic way to express very large or very small quantities without using scientific notation, making engineering calculations more convenient.
+            </div>
+
+            <h3>Complete SI Prefix Table</h3>
+            
+            <table class="units-table">
+                <thead>
+                    <tr>
+                        <th>Prefix</th>
+                        <th>Symbol</th>
+                        <th>Multiplication Factor</th>
+                        <th>Power of 10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>quetta</td>
+                        <td>Q</td>
+                        <td>1 000 000 000 000 000 000 000 000 000 000</td>
+                        <td>10³⁰</td>
+                    </tr>
+                    <tr>
+                        <td>ronna</td>
+                        <td>R</td>
+                        <td>1 000 000 000 000 000 000 000 000 000</td>
+                        <td>10²⁷</td>
+                    </tr>
+                    <tr>
+                        <td>yotta</td>
+                        <td>Y</td>
+                        <td>1 000 000 000 000 000 000 000 000</td>
+                        <td>10²⁴</td>
+                    </tr>
+                    <tr>
+                        <td>zetta</td>
+                        <td>Z</td>
+                        <td>1 000 000 000 000 000 000 000</td>
+                        <td>10²¹</td>
+                    </tr>
+                    <tr>
+                        <td>exa</td>
+                        <td>E</td>
+                        <td>1 000 000 000 000 000 000</td>
+                        <td>10¹⁸</td>
+                    </tr>
+                    <tr>
+                        <td>peta</td>
+                        <td>P</td>
+                        <td>1 000 000 000 000 000</td>
+                        <td>10¹⁵</td>
+                    </tr>
+                    <tr>
+                        <td>tera</td>
+                        <td>T</td>
+                        <td>1 000 000 000 000</td>
+                        <td>10¹²</td>
+                    </tr>
+                    <tr>
+                        <td>giga</td>
+                        <td>G</td>
+                        <td>1 000 000 000</td>
+                        <td>10⁹</td>
+                    </tr>
+                    <tr>
+                        <td>mega</td>
+                        <td>M</td>
+                        <td>1 000 000</td>
+                        <td>10⁶</td>
+                    </tr>
+                    <tr>
+                        <td>kilo</td>
+                        <td>k</td>
+                        <td>1 000</td>
+                        <td>10³</td>
+                    </tr>
+                    <tr>
+                        <td>hecto</td>
+                        <td>h</td>
+                        <td>100</td>
+                        <td>10²</td>
+                    </tr>
+                    <tr>
+                        <td>deca</td>
+                        <td>da</td>
+                        <td>10</td>
+                        <td>10¹</td>
+                    </tr>
+                    <tr>
+                        <td>deci</td>
+                        <td>d</td>
+                        <td>0.1</td>
+                        <td>10⁻¹</td>
+                    </tr>
+                    <tr>
+                        <td>centi</td>
+                        <td>c</td>
+                        <td>0.01</td>
+                        <td>10⁻²</td>
+                    </tr>
+                    <tr>
+                        <td>milli</td>
+                        <td>m</td>
+                        <td>0.001</td>
+                        <td>10⁻³</td>
+                    </tr>
+                    <tr>
+                        <td>micro</td>
+                        <td>μ</td>
+                        <td>0.000 001</td>
+                        <td>10⁻⁶</td>
+                    </tr>
+                    <tr>
+                        <td>nano</td>
+                        <td>n</td>
+                        <td>0.000 000 001</td>
+                        <td>10⁻⁹</td>
+                    </tr>
+                    <tr>
+                        <td>pico</td>
+                        <td>p</td>
+                        <td>0.000 000 000 001</td>
+                        <td>10⁻¹²</td>
+                    </tr>
+                    <tr>
+                        <td>femto</td>
+                        <td>f</td>
+                        <td>0.000 000 000 000 001</td>
+                        <td>10⁻¹⁵</td>
+                    </tr>
+                    <tr>
+                        <td>atto</td>
+                        <td>a</td>
+                        <td>0.000 000 000 000 000 001</td>
+                        <td>10⁻¹⁸</td>
+                    </tr>
+                    <tr>
+                        <td>zepto</td>
+                        <td>z</td>
+                        <td>0.000 000 000 000 000 000 001</td>
+                        <td>10⁻²¹</td>
+                    </tr>
+                    <tr>
+                        <td>yocto</td>
+                        <td>y</td>
+                        <td>0.000 000 000 000 000 000 000 001</td>
+                        <td>10⁻²⁴</td>
+                    </tr>
+                    <tr>
+                        <td>ronto</td>
+                        <td>r</td>
+                        <td>0.000 000 000 000 000 000 000 000 001</td>
+                        <td>10⁻²⁷</td>
+                    </tr>
+                    <tr>
+                        <td>quecto</td>
+                        <td>q</td>
+                        <td>0.000 000 000 000 000 000 000 000 000 001</td>
+                        <td>10⁻³⁰</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Common Engineering Prefix Applications</h3>
+            
+            <div class="prefix-grid">
+                <div class="prefix-card">
+                    <h4>Large Quantities</h4>
+                    <ul>
+                        <li><strong>Giga (G):</strong> Computer memory (GB), processor speed (GHz)</li>
+                        <li><strong>Mega (M):</strong> Electrical power (MW), data transfer (MB/s)</li>
+                        <li><strong>Kilo (k):</strong> Distance (km), mass (kg), resistance (kΩ)</li>
+                    </ul>
+                </div>
+                <div class="prefix-card">
+                    <h4>Small Quantities</h4>
+                    <ul>
+                        <li><strong>Milli (m):</strong> Length (mm), time (ms), current (mA)</li>
+                        <li><strong>Micro (μ):</strong> Electronics (μF, μA), precision engineering</li>
+                        <li><strong>Nano (n):</strong> Nanotechnology, semiconductors (nm)</li>
+                        <li><strong>Pico (p):</strong> Electronics (pF), quantum physics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <p><strong>Prefix Conversion Example</strong></p>
+                <p>Convert 0.000 025 meters to appropriate engineering units:</p>
+                
+                <p><strong>Step 1: Identify appropriate prefix</strong><br>
+                0.000 025 m = 25 × 10⁻⁶ m</p>
+                
+                <p><strong>Step 2: Apply micro prefix (10⁻⁶)</strong><br>
+                25 × 10⁻⁶ m = 25 μm</p>
+                
+                <p><strong>Engineering context:</strong> This measurement might represent the thickness of a thin film or the tolerance in precision machining.</p>
+            </div>
+
+            <h2 id="unit-conversions">Unit Conversions and Dimensional Analysis</h2>
+
+            <div class="info-box">
+                <p>Ensuring Calculation Accuracy</p>
+                Proper unit conversion and dimensional analysis are essential skills for verifying engineering calculations and ensuring results are physically meaningful.
+            </div>
+
+            <h3>Conversion Factor Method</h3>
+            
+            <div class="math-block">
+                <p>The conversion factor method uses multiplication by unity in different forms:</p>
+                <p>\[ \text{Target value} = \text{Original value} \times \frac{\text{Target units}}{\text{Original units}} \]</p>
+            </div>
+
+            <div class="example-box">
+                <p><strong>Complex Unit Conversion</strong></p>
+                <p>Convert a pressure measurement from pounds per square inch (psi) to pascals (Pa):</p>
+                
+                <p><strong>Given:</strong> 15 psi</p>
+                <p><strong>Conversion factors:</strong><br>
+                1 psi = 6894.76 Pa<br>
+                1 lb = 0.453592 kg<br>
+                1 in = 0.0254 m</p>
+                
+                <p><strong>Dimensional analysis:</strong><br>
+                \( 15 \, \text{psi} \times \frac{6894.76 \, \text{Pa}}{1 \, \text{psi}} = 103,421.4 \, \text{Pa} \)</p>
+                
+                <p><strong>Verification using base units:</strong><br>
+                \( 15 \, \frac{\text{lb}}{\text{in}^2} \times \frac{0.453592 \, \text{kg}}{1 \, \text{lb}} \times \frac{1 \, \text{in}^2}{(0.0254 \, \text{m})^2} = 103,421.4 \, \frac{\text{kg}}{\text{m} \cdot \text{s}^2} = 103,421.4 \, \text{Pa} \)</p>
+            </div>
+
+            <h2 id="best-practices">Engineering Best Practices</h2>
+
+            <div class="info-box">
+                <p>Professional Unit Usage</p>
+                Following established conventions for unit usage ensures clarity, prevents errors, and facilitates collaboration in engineering projects.
+            </div>
+
+            <h3>SI Unit Conventions</h3>
+            <div class="warning">
+                <p><strong>Important Guidelines:</strong></p>
+                <ul>
+                    <li>Use spaces between numbers and units (25 mm, not 25mm)</li>
+                    <li>Use correct case for unit symbols (m for metre, M for mega)</li>
+                    <li>Avoid mixing units in calculations</li>
+                    <li>Use prefixes that give numbers between 0.1 and 1000 where possible</li>
+                    <li>Always include units in final answers</li>
+                    <li>Use dimensional analysis to verify calculations</li>
+                </ul>
+            </div>
+
+            <div class="key-point">
+                <p><strong>Global Standardization:</strong> The SI system represents one of the most successful examples of international cooperation in science and engineering. Its consistent application enables seamless collaboration across borders and disciplines, making it an essential tool for modern engineering practice.</p>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 HNC Engineering Science. All rights reserved.</p>
+            <p>Systems of Units and SI System Reference</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+</body>
+</html>
