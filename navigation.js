@@ -2,49 +2,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const NAV_ITEMS = [
         // General
         { href: 'index.html', label: '🏠 Home', category: 'general' },
-        { href: 'systems-of-units.html', label: '📐 Units & Notation', category: 'general' },
 
-        // Core Mathematics
-        { href: 'core-algebra.html', label: '➗ Core Algebra', category: 'core-math' },
-        { href: 'linear-methods.html', label: '📊 Linear Methods', category: 'core-math' },
-        { href: 'sine-wave-fundamentals.html', label: '🌊 Sine Wave Fundamentals', category: 'core-math' },
-        { href: 'trigonometry.html', label: '📐 Trigonometry', category: 'core-math' },
-        { href: 'vectors.html', label: '➡️ Vectors', category: 'core-math' },
-        { href: 'sine-cosine-calculus.html', label: '📈 Sine/Cosine Calculus', category: 'core-math' },
+        // Core Mechanical Principles
+        { href: '#', label: '⚙️ Statics & Dynamics', category: 'core' },
+        { href: '#', label: '🔬 Materials Science', category: 'core' },
+        { href: '#', label: '🔥 Thermodynamics', category: 'core' },
+        { href: '#', label: '💧 Fluid Mechanics', category: 'core' },
 
-        // Calculus
-        { href: 'calculus-fundamentals.html', label: '📚 Calculus Fundamentals', category: 'calculus' },
-        { href: 'advanced-calculus.html', label: '⚡ Advanced Calculus', category: 'calculus' },
-        { href: 'rate-of-change.html', label: '📈 Rate of Change', category: 'calculus' },
-        { href: 'chainrule.html', label: '⛓️ Chain Rule', category: 'calculus' },
-        { href: 'differential-equations.html', label: '⛓️ Differential Equations', category: 'calculus' },
-        { href: 'inverse-trig-derivatives.html', label: '🔄 Inverse Trig Derivatives', category: 'calculus' },
-        { href: 'higher-order-differentiation.html', label: '🔄 Higher-Order Differentiation', category: 'calculus' },
-        { href: 'turning_points.html', label: '📊 Max/Min Turning Points', category: 'calculus' },
-        { href: 'quotient-rule.html', label: '➗ Quotient Rule', category: 'calculus' },
-        { href: 'exponential-calculus.html', label: '📈 Exponential Calculus', category: 'calculus' },
-        { href: 'max-min.html', label: '📈 Maximum and Minimum', category: 'calculus' },
-
-        // Applied & Specialized Topics
-        { href: 'ac-circuits-analysis.html', label: '⚡ AC Circuit Analysis', category: 'applied' },
-        { href: 'applied-mechanics.html', label: '⚙️ Applied Mechanics', category: 'applied' },
-        { href: 'economics.html', label: '💰 Financial Economics', category: 'applied' },
-        { href: 'numerical-methods.html', label: '🔢 Numerical Methods', category: 'applied' },
-        { href: 'statistics.html', label: '📊 Statistics', category: 'applied' },
-
-        // Statistics
-        { href: 'statistical-methods-1.html', label: 'Stats1', category: 'applied' },
-        { href: 'statistical-methods-2.html', label: 'Stats2', category: 'applied' },
-        { href: 'statistical-methods-3.html', label: 'Stats3', category: 'applied' },
-        { href: 'statistical-methods-4.html', label: 'Stats4', category: 'applied' },
-        { href: 'statistical-methods-5.html', label: 'Stats5', category: 'applied' }
+        // Applied Engineering Topics
+        { href: '#', label: '🔩 Solid Mechanics', category: 'applied' },
+        { href: '#', label: '🕹️ Control Systems', category: 'applied' },
+        { href: '#', label: '⚡ Electrical Principles', category: 'applied' },
+        
+        // Advanced Topics
+        { href: '#', label: '📈 Engineering Mathematics', category: 'advanced' },
     ];
 
     const CATEGORIES = {
         'general': { label: 'General', icon: '📁' },
-        'core-math': { label: 'Core Mathematics', icon: '🧮' },
-        'calculus': { label: 'Calculus', icon: '📚' },
-        'applied': { label: 'Applied Topics', icon: '⚡' }
+        'core': { label: 'Core Principles', icon: '📚' },
+        'applied': { label: 'Applied Engineering', icon: '⚙️' },
+        'advanced': { label: 'Advanced Topics', icon: '⚡' }
     };
 
     const placeholder = document.getElementById('navigation-placeholder');
@@ -60,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     header.className = 'nav-header';
 
     const h2 = document.createElement('h2');
-    h2.textContent = '📚 HNC Mathematics';
+    h2.textContent = '🔧 HNC Mechanical Engineering';
     header.appendChild(h2);
 
     const subtitle = document.createElement('p');
@@ -127,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const text = link.textContent.toLowerCase();
             if (text.includes(searchTerm)) {
                 link.parentElement.style.display = 'block';
-                // Highlight matching section
                 link.closest('.nav-section').style.display = 'block';
             } else {
                 link.parentElement.style.display = 'none';
@@ -136,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Hide empty sections
         document.querySelectorAll('.nav-section').forEach(section => {
-            const visibleLinks = section.querySelectorAll('li[style=""]', 'li:not([style*="display: none"])');
+            const visibleLinks = section.querySelectorAll('li:not([style*="display: none"])');
             if (visibleLinks.length === 0) {
                 section.style.display = 'none';
             } else {
