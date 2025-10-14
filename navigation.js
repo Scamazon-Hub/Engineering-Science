@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const NAV_ITEMS = [
         // General
         { href: 'index.html', label: '🏠 Home', category: 'general' },
-        { href: 'units.html', label: '📐 Units & Notation', category: 'general' },
+        { href: 'systems-of-units.html', label: '📐 Units & Notation', category: 'general' },
 
         // Core Mathematics
         { href: 'core-algebra.html', label: '➗ Core Algebra', category: 'core-math' },
