@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const NAV_ITEMS = [
         // General
-        { href: 'index.html', label: '🏠 Home', category: 'general' },
+        { href: 'systems-of-units.html', label: '🏠 Home', category: 'general' },
 
         // Core Mechanical Principles
         { href: '#', label: '⚙️ Statics & Dynamics', category: 'core' },
