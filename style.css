@@ -29,7 +29,48 @@
     --info: #3b82f6;
     --info-light: #dbeafe;
 }
-
+/* Add these new styles to your existing <style> block */
+.viz-container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+.viz-item {
+    text-align: center;
+    font-family: 'Fira Code', monospace;
+}
+.viz-item p {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.9em;
+}
+.viz-arrow {
+    font-size: 2rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+.viz-block {
+    background-color: #e9ecef;
+    border: 2px solid var(--primary-dark);
+    padding: 1.5rem;
+    border-radius: 8px;
+    position: relative;
+    min-width: 100px;
+}
+.viz-block-label {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-dark);
+    color: white;
+    padding: 0.2rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8em;
+    white-space: nowrap;
+}
 /* Base Reset and Typography */
 * {
     margin: 0;
@@ -446,8 +487,36 @@ nav a:hover {
     transform: translateX(2px);
 }
 
+/* ==== EDITED SECTION ==== */
 /* Focus styles for accessibility */
-a:focus, button:focus {
+a:focus-visible, button:focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 2px;
 }
+/* ==== END EDITED SECTION ==== */
+
+
+/* ==== NEW SECTION ==== */
+/* Automatic Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b1120;
+    --surface: #1e293b;
+    --surface-dark: #334155;
+    --text: #e2e8f0;
+    --text-light: #94a3b8;
+    --text-lighter: #64748b;
+    --border: #334155;
+    --border-dark: #475569;
+  }
+
+  header {
+      /* Darken the header slightly for dark mode */
+      background: linear-gradient(135deg, #1e40af, #1e3a8a);
+  }
+
+  .math-block, code {
+      background: #0f172a; /* A darker background for code blocks */
+  }
+}
+/* ==== END NEW SECTION ==== */
