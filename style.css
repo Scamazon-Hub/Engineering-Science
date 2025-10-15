@@ -1,4 +1,4 @@
-/* HNC Engineering Mathematics - Main Stylesheet */
+/* HNC Engineering Science - Consolidated Stylesheet */
 :root {
     /* Primary Color Palette */
     --primary: #2563eb;
@@ -28,49 +28,6 @@
     --error-light: #fee2e2;
     --info: #3b82f6;
     --info-light: #dbeafe;
-}
-
-/* Diagram Styles */
-.viz-container {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 1rem;
-}
-.viz-item {
-    text-align: center;
-    font-family: 'Fira Code', monospace;
-}
-.viz-item p {
-    margin: 0.5rem 0 0 0;
-    font-size: 0.9em;
-}
-.viz-arrow {
-    font-size: 2rem;
-    color: var(--primary);
-    font-weight: bold;
-}
-.viz-block {
-    background-color: #e9ecef;
-    border: 2px solid var(--primary-dark);
-    padding: 1.5rem;
-    border-radius: 8px;
-    position: relative;
-    min-width: 100px;
-}
-.viz-block-label {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--primary-dark);
-    color: white;
-    padding: 0.2rem 0.8rem;
-    border-radius: 12px;
-    font-size: 0.8em;
-    white-space: nowrap;
 }
 
 /* Base Reset and Typography */
@@ -290,7 +247,7 @@ h4 {
 }
 
 /* Tables */
-table {
+.units-table {
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
@@ -298,199 +255,14 @@ table {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
 }
 
-th, td {
-    padding: 1rem;
+.units-table th, .units-table td {
+    padding: 0.75rem;
     text-align: left;
     border-bottom: 1px solid var(--border);
 }
 
-th {
+.units-table th {
     background: var(--primary);
-    color: white;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-tr:nth-child(even) {
-    background: var(--surface-dark);
-}
-
-tr:hover {
-    background: var(--info-light);
-}
-
-/* Lists */
-ul, ol {
-    margin: 1rem 0;
-    padding-left: 2rem;
-}
-
-li {
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
-}
-
-/* Special Components */
-.key-point {
-    background: var(--success-light);
-    border-left: 4px solid var(--success);
-    padding: 1rem 1.25rem;
-    margin: 1rem 0;
-    border-radius: 0 6px 6px 0;
-}
-
-.warning {
-    background: var(--warning-light);
-    border-left: 4px solid var(--warning);
-    padding: 1rem 1.25rem;
-    margin: 1rem 0;
-    border-radius: 0 6px 6px 0;
-}
-
-.note {
-    background: var(--info-light);
-    border-left: 4px solid var(--info);
-    padding: 1rem 1.25rem;
-    margin: 1rem 0;
-    border-radius: 0 6px 6px 0;
-}
-
-/* Footer */
-footer {
-    background: var(--primary-dark);
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 3rem;
-}
-
-footer p {
-    margin-bottom: 0.5rem;
-    opacity: 0.9;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .grid-layout {
-        grid-template-columns: 250px 1fr;
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .grid-layout {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    #navigation-placeholder {
-        position: static;
-        order: 2;
-    }
-    
-    main {
-        order: 1;
-        padding: 1.5rem;
-    }
-    
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.75rem; }
-    h3 { font-size: 1.5rem; }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 0.5rem;
-    }
-    
-    main {
-        padding: 1rem;
-    }
-    
-    header {
-        padding: 1.5rem 0;
-    }
-    
-    header h1 {
-        font-size: 1.75rem;
-    }
-}
-
-/* Print Styles */
-@media print {
-    .grid-layout {
-        grid-template-columns: 1fr;
-    }
-    
-    #navigation-placeholder {
-        display: none;
-    }
-    
-    header {
-        background: white !important;
-        color: black !important;
-        box-shadow: none !important;
-    }
-    
-    .example-box, .info-box {
-        break-inside: avoid;
-        box-shadow: none !important;
-        border: 1px solid #ccc !important;
-    }
-}
-
-/* MathJax Enhancements */
-.mjx-chtml {
-    font-size: 1.1em !important;
-}
-
-/* Code and Preformatted Text */
-code {
-    background: var(--surface-dark);
-    padding: 0.2em 0.4em;
-    border-radius: 3px;
-    font-family: 'Fira Code', monospace;
-    font-size: 0.9em;
-}
-
-pre {
-    background: var(--surface-dark);
-    padding: 1rem;
-    border-radius: 6px;
-    overflow-x: auto;
-    margin: 1rem 0;
-    border-left: 3px solid var(--primary);
-}
-
-/* Utility Classes */
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-3 { margin-top: 1.5rem; }
-.mb-1 { margin-bottom: 0.5rem; }
-.mb-2 { margin-bottom: 1rem; }
-.mb-3 { margin-bottom: 1.5rem; }
-.p-2 { padding: 1rem; }
-.p-3 { padding: 1.5rem; }
-
-/* Animation for interactive elements */
-nav a, .example-box, .info-box {
-    transition: all 0.3s ease;
-}
-
-nav a:hover {
-    transform: translateX(2px);
-}
-
-/* Focus styles for accessibility */
-a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--primary);
-    outline-offset: 2px;
-}
