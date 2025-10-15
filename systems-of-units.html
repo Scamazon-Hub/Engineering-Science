@@ -8,116 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .units-table {
-            font-size: 0.9em;
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-        }
-        .units-table th, .units-table td {
-            padding: 0.75rem;
-            text-align: left;
-            border: 1px solid var(--border);
-        }
-        .units-table th {
-            white-space: nowrap;
-            background: var(--primary);
-            color: white;
-        }
-        .system-header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
-            color: white !important;
-            font-size: 1.1em !important;
-        }
-        .prefix-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        .prefix-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .diagram-container {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border: 1px solid var(--border);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .diagram {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            display: block;
-        }
-        .conversion-steps {
-            background: var(--surface);
-            border-left: 4px solid var(--primary);
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-        }
-        .unit-notation {
-            font-family: 'Fira Code', monospace;
-            background: #f5f5f5;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-        }
-        .comparison-table {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        .comparison-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-        }
-        .comparison-card h3 {
-            margin-top: 0;
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 0.5rem;
-        }
-        .flow-diagram {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            background: var(--surface);
-            border-radius: 8px;
-        }
-        .flow-step {
-            text-align: center;
-            flex: 1;
-            padding: 1rem;
-        }
-        .flow-arrow {
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-        @media (max-width: 768px) {
-            .comparison-table {
-                grid-template-columns: 1fr;
-            }
-            .flow-diagram {
-                flex-direction: column;
-            }
-            .flow-arrow {
-                transform: rotate(90deg);
-                margin: 1rem 0;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -175,65 +65,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Length</td>
-                        <td>Inch</td>
-                        <td>in</td>
-                        <td>0.0254 m</td>
-                    </tr>
-                    <tr>
-                        <td>Length</td>
-                        <td>Foot</td>
-                        <td>ft</td>
-                        <td>0.3048 m</td>
-                    </tr>
-                    <tr>
-                        <td>Length</td>
-                        <td>Yard</td>
-                        <td>yd</td>
-                        <td>0.9144 m</td>
-                    </tr>
-                    <tr>
-                        <td>Length</td>
-                        <td>Mile</td>
-                        <td>mi</td>
-                        <td>1609.344 m</td>
-                    </tr>
-                    <tr>
-                        <td>Mass</td>
-                        <td>Ounce</td>
-                        <td>oz</td>
-                        <td>0.02835 kg</td>
-                    </tr>
-                    <tr>
-                        <td>Mass</td>
-                        <td>Pound</td>
-                        <td>lb</td>
-                        <td>0.4536 kg</td>
-                    </tr>
-                    <tr>
-                        <td>Force</td>
-                        <td>Pound-force</td>
-                        <td>lbf</td>
-                        <td>4.448 N</td>
-                    </tr>
-                    <tr>
-                        <td>Pressure</td>
-                        <td>Pounds per square inch</td>
-                        <td>psi</td>
-                        <td>6894.76 Pa</td>
-                    </tr>
+                    <tr> <td>Length</td> <td>Inch</td> <td>in</td> <td>0.0254 m</td> </tr>
+                    <tr> <td>Length</td> <td>Foot</td> <td>ft</td> <td>0.3048 m</td> </tr>
+                    <tr> <td>Length</td> <td>Yard</td> <td>yd</td> <td>0.9144 m</td> </tr>
+                    <tr> <td>Length</td> <td>Mile</td> <td>mi</td> <td>1609.344 m</td> </tr>
+                    <tr> <td>Mass</td> <td>Ounce</td> <td>oz</td> <td>0.02835 kg</td> </tr>
+                    <tr> <td>Mass</td> <td>Pound</td> <td>lb</td> <td>0.4536 kg</td> </tr>
+                    <tr> <td>Force</td> <td>Pound-force</td> <td>lbf</td> <td>4.448 N</td> </tr>
+                    <tr> <td>Pressure</td> <td>Pounds per square inch</td> <td>psi</td> <td>6894.76 Pa</td> </tr>
                 </tbody>
             </table>
 
             <div class="example-box">
                 <p><strong>Engineering Application: Imperial to SI Conversion</strong></p>
                 <p>A structural beam has specifications: Length = 20 ft, Weight = 150 lb</p>
-                
                 <p><strong>Conversion to SI units:</strong></p>
                 <p>Length: \( 20 \, \text{ft} \times 0.3048 \, \text{m/ft} = 6.096 \, \text{m} \)</p>
                 <p>Mass: \( 150 \, \text{lb} \times 0.4536 \, \text{kg/lb} = 68.04 \, \text{kg} \)</p>
-                
                 <p><strong>Note:</strong> In engineering contexts, it's crucial to distinguish between pound-mass (lb) and pound-force (lbf).</p>
             </div>
 
@@ -245,62 +93,10 @@
             </div>
 
             <h3>Fundamental Units</h3>
-            
             <div class="math-block">
                 <p><strong>Length:</strong> Centimeter (cm)</p>
                 <p><strong>Mass:</strong> Gram (g)</p>
                 <p><strong>Time:</strong> Second (s)</p>
-            </div>
-
-            <h3>CGS Derived Units</h3>
-            <table class="units-table">
-                <thead>
-                    <tr>
-                        <th>Quantity</th>
-                        <th>Unit</th>
-                        <th>Symbol</th>
-                        <th>SI Equivalent</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Force</td>
-                        <td>Dyne</td>
-                        <td>dyn</td>
-                        <td>10⁻⁵ N</td>
-                    </tr>
-                    <tr>
-                        <td>Energy</td>
-                        <td>Erg</td>
-                        <td>erg</td>
-                        <td>10⁻⁷ J</td>
-                    </tr>
-                    <tr>
-                        <td>Pressure</td>
-                        <td>Barye</td>
-                        <td>Ba</td>
-                        <td>0.1 Pa</td>
-                    </tr>
-                    <tr>
-                        <td>Dynamic Viscosity</td>
-                        <td>Poise</td>
-                        <td>P</td>
-                        <td>0.1 Pa·s</td>
-                    </tr>
-                    <tr>
-                        <td>Kinematic Viscosity</td>
-                        <td>Stokes</td>
-                        <td>St</td>
-                        <td>10⁻⁴ m²/s</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="example-box">
-                <p><strong>Scientific Application</strong></p>
-                <p>In fluid dynamics, the CGS unit for viscosity (poise) is still occasionally used:</p>
-                <p>Water at 20°C: \( \eta = 0.01 \, \text{P} = 0.001 \, \text{Pa·s} \)</p>
-                <p>Conversion: \( 1 \, \text{P} = 0.1 \, \text{Pa·s} \)</p>
             </div>
 
             <h2 id="mks-system">The MKS System</h2>
@@ -311,50 +107,11 @@
             </div>
 
             <h3>Fundamental Units</h3>
-            
             <div class="math-block">
                 <p><strong>Length:</strong> Metre (m)</p>
                 <p><strong>Mass:</strong> Kilogram (kg)</p>
                 <p><strong>Time:</strong> Second (s)</p>
             </div>
-
-            <h3>MKS Derived Units</h3>
-            <table class="units-table">
-                <thead>
-                    <tr>
-                        <th>Quantity</th>
-                        <th>Unit</th>
-                        <th>Symbol</th>
-                        <th>Definition</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Force</td>
-                        <td>Newton</td>
-                        <td>N</td>
-                        <td>kg·m/s²</td>
-                    </tr>
-                    <tr>
-                        <td>Energy</td>
-                        <td>Joule</td>
-                        <td>J</td>
-                        <td>N·m</td>
-                    </tr>
-                    <tr>
-                        <td>Power</td>
-                        <td>Watt</td>
-                        <td>W</td>
-                        <td>J/s</td>
-                    </tr>
-                    <tr>
-                        <td>Pressure</td>
-                        <td>Pascal</td>
-                        <td>Pa</td>
-                        <td>N/m²</td>
-                    </tr>
-                </tbody>
-            </table>
 
             <h2 id="si-system">The SI System of Units</h2>
 
@@ -364,84 +121,47 @@
             </div>
 
             <h3>The Seven Base SI Units</h3>
-            
             <table class="units-table">
                 <thead>
                     <tr>
                         <th>Physical Quantity</th>
                         <th>Unit Name</th>
                         <th>Unit Symbol</th>
-                        <th>Definition</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Length</td>
-                        <td>metre</td>
-                        <td>m</td>
-                        <td>Distance light travels in 1/299,792,458 seconds</td>
-                    </tr>
-                    <tr>
-                        <td>Mass</td>
-                        <td>kilogram</td>
-                        <td>kg</td>
-                        <td>Defined by Planck constant (h = 6.62607015×10⁻³⁴ J·s)</td>
-                    </tr>
-                    <tr>
-                        <td>Time</td>
-                        <td>second</td>
-                        <td>s</td>
-                        <td>Duration of 9,192,631,770 periods of radiation from cesium-133</td>
-                    </tr>
-                    <tr>
-                        <td>Electric Current</td>
-                        <td>ampere</td>
-                        <td>A</td>
-                        <td>Flow of 1/(1.602176634×10⁻¹⁹) elementary charges per second</td>
-                    </tr>
-                    <tr>
-                        <td>Temperature</td>
-                        <td>kelvin</td>
-                        <td>K</td>
-                        <td>1/273.16 of thermodynamic temperature of triple point of water</td>
-                    </tr>
-                    <tr>
-                        <td>Luminous Intensity</td>
-                        <td>candela</td>
-                        <td>cd</td>
-                        <td>Luminous intensity in given direction of source emitting monochromatic radiation</td>
-                    </tr>
-                    <tr>
-                        <td>Amount of Substance</td>
-                        <td>mole</td>
-                        <td>mol</td>
-                        <td>Amount containing exactly 6.02214076×10²³ elementary entities</td>
-                    </tr>
+                    <tr> <td>Length</td> <td>metre</td> <td>m</td> </tr>
+                    <tr> <td>Mass</td> <td>kilogram</td> <td>kg</td> </tr>
+                    <tr> <td>Time</td> <td>second</td> <td>s</td> </tr>
+                    <tr> <td>Electric Current</td> <td>ampere</td> <td>A</td> </tr>
+                    <tr> <td>Temperature</td> <td>kelvin</td> <td>K</td> </tr>
+                    <tr> <td>Luminous Intensity</td> <td>candela</td> <td>cd</td> </tr>
+                    <tr> <td>Amount of Substance</td> <td>mole</td> <td>mol</td> </tr>
                 </tbody>
             </table>
 
             <h2 id="derived-units">Important Derived Units</h2>
 
             <div class="diagram-container">
-    <h4>How Base Units Form a Derived Unit (The Newton)</h4>
-    <div class="viz-container">
-        <div class="viz-item">
-            <div class="viz-block">kg</div>
-            <p>Mass</p>
-        </div>
-        <div class="viz-arrow">+</div>
-        <div class="viz-item">
-            <div class="viz-block">m·s<sup>-2</sup></div>
-            <p>Acceleration</p>
-        </div>
-        <div class="viz-arrow">=</div>
-        <div class="viz-item">
-            <div class="viz-block" style="border-color: #c92a2a; background-color: #fff5f5;">N</div>
-            <p>Force (newton)</p>
-        </div>
-    </div>
-    [cite_start]<p style="text-align:center; margin-top: 1rem;">The unit of force, the <strong>newton (N)</strong>, is a derived unit composed of the base units for mass, length, and time[cite: 27, 29].</p>
-</div>
+                <h4>How Base Units Form a Derived Unit (The Newton)</h4>
+                <div class="viz-container">
+                    <div class="viz-item">
+                        <div class="viz-block">kg</div>
+                        <p>Mass</p>
+                    </div>
+                    <div class="viz-arrow">+</div>
+                    <div class="viz-item">
+                        <div class="viz-block">m·s<sup>-2</sup></div>
+                        <p>Acceleration</p>
+                    </div>
+                    <div class="viz-arrow">=</div>
+                    <div class="viz-item">
+                        <div class="viz-block" style="border-color: #c92a2a; background-color: #fff5f5;">N</div>
+                        <p>Force (newton)</p>
+                    </div>
+                </div>
+                [cite_start]<p style="text-align:center; margin-top: 1rem;">The unit of force, the <strong>newton (N)</strong>, is a derived unit composed of the base units for mass, length, and time[cite: 68, 70, 137, 142].</p>
+            </div>
             
             <div class="info-box">
                 <p>Combining Base Units</p>
@@ -449,7 +169,6 @@
             </div>
 
             <h3>Common Derived Units in Engineering</h3>
-            
             <table class="units-table">
                 <thead>
                     <tr>
@@ -462,306 +181,136 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Speed, velocity</td>
-                        <td>metre per second</td>
-                        <td>m s<sup>-1</sup></td>
-                        <td>kilometre per hour</td>
-                        <td>km h<sup>-1</sup></td>
-                        <td>m·s<sup>-1</sup></td>
-                    </tr>
-                    <tr>
-                        <td>Volumetric flowrate</td>
-                        <td>cubic metre per second</td>
-                        <td>m<sup>3</sup> s<sup>-1</sup></td>
-                        <td>litre per second</td>
-                        <td>l s<sup>-1</sup></td>
-                        <td>m<sup>3</sup>·s<sup>-1</sup></td>
-                    </tr>
-                    <tr>
-                        <td>Acceleration</td>
-                        <td>metre per second squared</td>
-                        <td>m s<sup>-2</sup></td>
-                        <td></td>
-                        <td></td>
-                        <td>m·s<sup>-2</sup></td>
-                    </tr>
-                    <tr>
-                        <td>Force</td>
-                        <td>newton</td>
-                        <td>N</td>
-                        <td></td>
-                        <td></td>
-                        <td>kg·m·s<sup>-2</sup></td>
-                    </tr>
-                    <tr>
-                        <td>Density</td>
-                        <td>kilogram per cubic metre</td>
-                        <td>kg m<sup>-3</sup></td>
-                        <td></td>
-                        <td></td>
-                        <td>kg·m<sup>-3</sup></td>
-                    </tr>
-                    <tr>
-                        <td>Pressure</td>
-                        <td>pascal</td>
-                        <td>Pa</td>
-                        <td>bar</td>
-                        <td>bar</td>
-                        <td>kg·m<sup>-1</sup>·s<sup>-2</sup></td>
-                    </tr>
-                    <tr>
-                        <td>Work, Energy</td>
-                        <td>joule</td>
-                        <td>J</td>
-                        <td></td>
-                        <td></td>
-                        <td>kg·m<sup>2</sup>·s<sup>-2</sup></td>
-                    </tr>
-                    <tr>
-                        <td>Power</td>
-                        <td>watt</td>
-                        <td>W</td>
-                        <td></td>
-                        <td></td>
-                        <td>kg·m<sup>2</sup>·s<sup>-3</sup></td>
-                    </tr>
+                    <tr> <td>Speed, velocity</td> <td>metre per second</td> <td>m s<sup>-1</sup></td> <td>kilometre per hour</td> <td>km h<sup>-1</sup></td> <td>m·s<sup>-1</sup> </tr>
+                    <tr> <td>Volumetric flowrate</td> <td>cubic metre per second</td> <td>m<sup>3</sup> s<sup>-1</sup></td> <td>litre per second</td> <td>l s<sup>-1</sup></td> <td>m<sup>3</sup>·s<sup>-1</sup> </tr>
+                    <tr> <td>Acceleration</td> <td>metre per second squared</td> <td>m s<sup>-2</sup></td> <td>&mdash;</td> <td>&mdash;</td> <td>m·s<sup>-2</sup> </tr>
+                    <tr> <td>Force</td> <td>newton</td> <td>N</td> <td>&mdash;</td> <td>&mdash;</td> <td>kg·m·s<sup>-2</sup> </tr>
+                    <tr> <td>Pressure</td> <td>pascal</td> <td>Pa</td> <td>bar</td> <td>bar</td> <td>kg·m<sup>-1</sup>·s<sup>-2</sup> </tr>
+                    <tr> <td>Work, Energy</td> <td>joule</td> <td>J</td> <td>&mdash;</td> <td>&mdash;</td> <td>kg·m<sup>2</sup>·s<sup>-2</sup> </tr>
+                    <tr> <td>Power</td> <td>watt</td> <td>W</td> <td>&mdash;</td> <td>&mdash;</td> <td>kg·m<sup>2</sup>·s<sup>-3</sup> </tr>
                 </tbody>
             </table>
 
             <h3>Velocity and Speed</h3>
-            
             <div class="diagram-container">
                 <h4>Velocity Conversion Diagram</h4>
                 <div class="flow-diagram">
                     <div class="flow-step">
                         <p><strong>m/s to km/h</strong></p>
-                        <p>Multiply by 3.6</p>
-                        <p class="unit-notation">1 m/s = 3.6 km/h</p>
+                        [cite_start]<p>Multiply by 3.6 [cite: 132]</p>
+                        [cite_start]<p class="unit-notation">1 m/s = 3.6 km/h [cite: 131]</p>
                     </div>
-                    <div class="flow-arrow">→</div>
+                    <div class="flow-arrow">↔</div>
                     <div class="flow-step">
                         <p><strong>km/h to m/s</strong></p>
-                        <p>Divide by 3.6</p>
-                        <p class="unit-notation">1 km/h = 0.2778 m/s</p>
+                        [cite_start]<p>Divide by 3.6 [cite: 133]</p>
+                        [cite_start]<p class="unit-notation">54 km/h = 15 m/s [cite: 125]</p>
                     </div>
-                </div>
-            </div>
-
-            <div class="example-box">
-                <p><strong>Velocity Conversion Example</strong></p>
-                <p>Convert 4.2 m/s to km/h:</p>
-                
-                <div class="conversion-steps">
-                    <p><strong>Step 1:</strong> Write the quantity with units</p>
-                    <p>\( 4.2 \, \text{m/s} = \frac{4.2 \, \text{m}}{1 \, \text{s}} \)</p>
-                    
-                    <p><strong>Step 2:</strong> Convert meters to kilometers</p>
-                    <p>\( 4.2 \, \text{m} = \frac{4.2}{1000} \, \text{km} = 0.0042 \, \text{km} \)</p>
-                    
-                    <p><strong>Step 3:</strong> Convert seconds to hours</p>
-                    <p>\( 1 \, \text{s} = \frac{1}{3600} \, \text{h} = 0.0002778 \, \text{h} \)</p>
-                    
-                    <p><strong>Step 4:</strong> Combine the conversions</p>
-                    <p>\( \frac{0.0042 \, \text{km}}{0.0002778 \, \text{h}} = 15.12 \, \text{km/h} \)</p>
-                    
-                    <p><strong>Using conversion factor:</strong> \( 4.2 \times 3.6 = 15.12 \, \text{km/h} \)</p>
                 </div>
             </div>
 
             <h3>Acceleration</h3>
-            
             <div class="info-box">
                 <p>Rate of Change of Velocity</p>
-                Acceleration is defined as the change of velocity per unit time, measuring how quickly velocity changes.
+                [cite_start]Acceleration is defined as the change of velocity per unit time, measuring how quickly velocity changes[cite: 136].
             </div>
-
             <div class="math-block">
-                <p>\[ \text{Acceleration} = \frac{\text{change in velocity}}{\text{time taken for velocity to change}} \]</p>
-                <p>\[ \text{SI Unit: metre per second squared} \quad (\text{m/s}^2 \text{ or } \text{m} \cdot \text{s}^{-2}) \]</p>
+                [cite_start]<p>\[ \text{Acceleration} = \frac{\text{change in velocity}}{\text{time taken for velocity to change}} \text{ [cite: 137, 138]} \]</p>
+                [cite_start]<p>\[ \text{SI Unit: metre per second squared} \quad (\text{m/s}^2 \text{ or } \text{m} \cdot \text{s}^{-2}) \text{ [cite: 141, 142]} \]</p>
             </div>
-
             <div class="diagram-container">
-    <h4>Acceleration as a Change in Velocity</h4>
-    <p style="text-align:center;">If an object's velocity increases from 10 m/s to 30 m/s over 5 seconds:</p>
-    <div class="viz-container">
-        <div class="viz-item">
-            <div class="viz-block">
-                <div class="viz-block-label">Initial Velocity</div>
-                10 m/s
-            </div>
-        </div>
-        <div class="viz-arrow">→ 5s →</div>
-        <div class="viz-item">
-            <div class="viz-block">
-                <div class="viz-block-label">Final Velocity</div>
-                30 m/s
-            </div>
-        </div>
-    </div>
-    <div class="math-block" style="margin-top: 1rem;">
-        <p>Change in Velocity = \(30 \, \text{m/s} - 10 \, \text{m/s} = 20 \, \text{m/s}\)</p>
-        <p>Acceleration = \( \frac{20 \, \text{m/s}}{5 \, \text{s}} = 4 \, \text{m/s}^2 \)</p>
-    </div>
-</div>
-                <h4>Acceleration Visualization</h4>
-                <p>If an object's velocity increases from 10 m/s to 30 m/s over 5 seconds:</p>
-                <div class="flow-diagram">
-                    <div class="flow-step">
-                        <p><strong>Initial Velocity</strong></p>
-                        <p>10 m/s</p>
+                <h4>Acceleration as a Change in Velocity</h4>
+                <p style="text-align:center;">If an object's velocity increases from 10 m/s to 30 m/s over 5 seconds:</p>
+                <div class="viz-container">
+                    <div class="viz-item">
+                        <div class="viz-block"> <div class="viz-block-label">Initial Velocity</div> 10 m/s </div>
                     </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <p><strong>Final Velocity</strong></p>
-                        <p>30 m/s</p>
+                    <div class="viz-arrow">→ 5s →</div>
+                    <div class="viz-item">
+                        <div class="viz-block"> <div class="viz-block-label">Final Velocity</div> 30 m/s </div>
                     </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <p><strong>Acceleration</strong></p>
-                        <p>\( a = \frac{30 - 10}{5} = 4 \, \text{m/s}^2 \)</p>
-                    </div>
+                </div>
+                <div class="math-block" style="margin-top: 1rem;">
+                    <p>Change in Velocity = \(30 \, \text{m/s} - 10 \, \text{m/s} = 20 \, \text{m/s}\)</p>
+                    <p>Acceleration = \( \frac{20 \, \text{m/s}}{5 \, \text{s}} = 4 \, \text{m/s}^2 \)</p>
                 </div>
             </div>
 
             <h3>Force</h3>
-            
             <div class="info-box">
                 <p>Newton's Second Law</p>
-                Force is defined as the product of mass and acceleration, according to Newton's Second Law of Motion.
+                [cite_start]Force is defined as the product of mass and acceleration, according to Newton's Second Law of Motion[cite: 65, 68].
             </div>
-
             <div class="math-block">
-                <p>\[ \text{Force} = \text{Mass} \times \text{Acceleration} \]</p>
-                <p>\[ \text{SI Unit: newton (N)} = \text{kg} \cdot \text{m} \cdot \text{s}^{-2} \]</p>
-                <p>\[ 1 \, \text{N} = 1 \, \text{kg} \cdot \text{m} \cdot \text{s}^{-2} \]</p>
+                [cite_start]<p>\[ \text{Force} = \text{Mass} \times \text{Acceleration} \text{ [cite: 68]} \]</p>
+                [cite_start]<p>\[ \text{SI Unit: newton (N)} = \text{kg} \cdot \text{m} \cdot \text{s}^{-2} \text{ [cite: 71, 73]} \]</p>
             </div>
-    
-<div class="diagram-container">
-    <h4>Visualizing Force, Mass, and Acceleration</h4>
-    <div class="viz-container">
-        <div class="viz-item">
-            <div class="viz-block" style="padding: 2rem;">
-                <div class="viz-block-label">Mass (m)</div>
-                500 kg
-            </div>
-        </div>
-        <div class="viz-item">
-            <p style="margin-bottom: 0.5rem;">A <strong>Force (F)</strong> of 1000 N...</p>
-            <div class="viz-arrow" style="font-size: 3rem;">→</div>
-        </div>
-        <div class="viz-item">
-            <p style="margin-bottom: 0.5rem;">...causes an <strong>Acceleration (a)</strong> of 2 m/s²</p>
-            <div class="viz-arrow" style="color: #666;">→</div>
-        </div>
-    </div>
-</div>
-            <div class="example-box">
-                <p><strong>Force Calculation Example</strong></p>
-                <p>Calculate the force required to accelerate a 500 kg mass at 2 m/s²:</p>
-                
-                <p><strong>Using SI units:</strong></p>
-                <p>\( F = m \times a = 500 \, \text{kg} \times 2 \, \text{m/s}^2 = 1000 \, \text{N} \)</p>
-                
-                <p><strong>Dimensional analysis:</strong></p>
-                <p>\( [F] = [M][L][T]^{-2} = \text{kg} \cdot \text{m} \cdot \text{s}^{-2} = \text{N} \)</p>
-                
-                <p>The result is dimensionally consistent and expressed in proper SI units.</p>
-            </div>
-
-            <h3>Area and Volume</h3>
-            
             <div class="diagram-container">
-    <h4>Visualizing Area and Volume Conversions</h4>
-    <div class="viz-container">
-        <div class="viz-item">
-            <img src="https://i.imgur.com/gK9pDco.png" alt="A 10mm by 10mm square divided into 100 smaller 1mm squares" style="width:150px; border: 1px solid #ccc;">
-            <p><strong>Area: Factors are Squared</strong></p>
-            [cite_start]<p>\(1 \, \text{cm} = 10 \, \text{mm}\) [cite: 119]</p>
-            [cite_start]<p>\(1 \, \text{cm}^2 = 10^2 \, \text{mm}^2 = 100 \, \text{mm}^2\) [cite: 119]</p>
-        </div>
-        <div class="viz-item">
-            <img src="https://i.imgur.com/u5uP8s5.png" alt="A 10mm by 10mm by 10mm cube divided into 1000 smaller 1mm cubes" style="width:150px; border: 1px solid #ccc;">
-            <p><strong>Volume: Factors are Cubed</strong></p>
-            [cite_start]<p>\(1 \, \text{cm} = 10 \, \text{mm}\) [cite: 130]</p>
-            [cite_start]<p>\(1 \, \text{cm}^3 = 10^3 \, \text{mm}^3 = 1000 \, \text{mm}^3\) [cite: 131]</p>
-        </div>
-    </div>
-</div>
-    
-                <div class="comparison-card">
-                    <h4>Area</h4>
-                    <p><strong>Definition:</strong> Amount of surface</p>
-                    <p><strong>SI Unit:</strong> square metre (m²)</p>
-                    <p><strong>Key Point:</strong> When converting between area units, the conversion factors are the squares of the corresponding length units.</p>
-                    <div class="math-block">
-                        <p>\( 1 \, \text{m}^2 = 10,000 \, \text{cm}^2 \)</p>
-                        <p>\( 1 \, \text{cm}^2 = 100 \, \text{mm}^2 \)</p>
+                <h4>Visualizing Force, Mass, and Acceleration</h4>
+                <div class="viz-container">
+                    <div class="viz-item">
+                        <div class="viz-block" style="padding: 2rem;"> <div class="viz-block-label">Mass (m)</div> 500 kg </div>
                     </div>
-                </div>
-                <div class="comparison-card">
-                    <h4>Volume</h4>
-                    <p><strong>Definition:</strong> Amount of space</p>
-                    <p><strong>SI Unit:</strong> cubic metre (m³)</p>
-                    <p><strong>Key Point:</strong> When converting between volume units, the conversion factors are the cubes of the corresponding length units.</p>
-                    <div class="math-block">
-                        <p>\( 1 \, \text{m}^3 = 1,000,000 \, \text{cm}^3 \)</p>
-                        <p>\( 1 \, \text{cm}^3 = 1000 \, \text{mm}^3 \)</p>
+                    <div class="viz-item">
+                        <p style="margin-bottom: 0.5rem;">A <strong>Force (F)</strong> of 1000 N...</p>
+                        <div class="viz-arrow" style="font-size: 3rem;">→</div>
+                    </div>
+                    <div class="viz-item">
+                        <p style="margin-bottom: 0.5rem;">...causes an <strong>Acceleration (a)</strong> of 2 m/s²</p>
+                        <div class="viz-arrow" style="color: #666;">→</div>
                     </div>
                 </div>
             </div>
-
+            
+            <h3>Area and Volume</h3>
+            <div class="diagram-container">
+                <h4>Visualizing Area and Volume Conversions</h4>
+                <div class="viz-container">
+                    <div class="viz-item">
+                        <img src="https://i.imgur.com/gK9pDco.png" alt="A 10mm by 10mm square divided into 100 smaller 1mm squares" style="width:150px; border: 1px solid #ccc;">
+                        [cite_start]<p><strong>Area: Factors are Squared</strong> [cite: 5]</p>
+                        [cite_start]<p>\(1 \, \text{cm} = 10 \, \text{mm}\) [cite: 9]</p>
+                        [cite_start]<p>\(1 \, \text{cm}^2 = 10^2 \, \text{mm}^2 = 100 \, \text{mm}^2\) [cite: 9]</p>
+                    </div>
+                    <div class="viz-item">
+                        <img src="https://i.imgur.com/u5uP8s5.png" alt="A 10mm by 10mm by 10mm cube divided into 1000 smaller 1mm cubes" style="width:150px; border: 1px solid #ccc;">
+                        [cite_start]<p><strong>Volume: Factors are Cubed</strong> [cite: 13]</p>
+                        [cite_start]<p>\(1 \, \text{cm} = 10 \, \text{mm}\) [cite: 20]</p>
+                        [cite_start]<p>\(1 \, \text{cm}^3 = 10^3 \, \text{mm}^3 = 1000 \, \text{mm}^3\) [cite: 21]</p>
+                    </div>
+                </div>
+            </div>
             <div class="example-box">
                 <p><strong>Area and Volume Conversion Examples</strong></p>
-                
-                <p><strong>Example 1:</strong> Change 2370 cm² to m²</p>
+                [cite_start]<p><strong>Example 1:</strong> Change 2370 cm² to m² [cite: 34]</p>
                 <div class="conversion-steps">
-                    <p>Since \( 100 \, \text{cm} = 1 \, \text{m} \), then \( 10000 \, \text{cm}^2 = 1 \, \text{m}^2 \)</p>
-                    <p>\( 2370 \, \text{cm}^2 = \frac{2370}{10000} \, \text{m}^2 = 0.2370 \, \text{m}^2 \)</p>
+                    [cite_start]<p>Since \( 100 \, \text{cm} = 1 \, \text{m} \), then \( 10000 \, \text{cm}^2 = 1 \, \text{m}^2 \) [cite: 36]</p>
+                    [cite_start]<p>\( 2370 \, \text{cm}^2 = \frac{2370}{10000} \, \text{m}^2 = 0.2370 \, \text{m}^2 \) [cite: 38, 39]</p>
                 </div>
-                
-                <p><strong>Example 2:</strong> Change 0.375 m³ to litres</p>
+                [cite_start]<p><strong>Example 2:</strong> Change 0.375 m³ to litres [cite: 41]</p>
                 <div class="conversion-steps">
-                    <p>Since \( 1 \, \text{m}^3 = 1000 \, \text{l} \)</p>
-                    <p>\( 0.375 \, \text{m}^3 = 0.375 \times 1000 \, \text{l} = 375 \, \text{l} \)</p>
+                    [cite_start]<p>Since \( 1 \, \text{m}^3 = 1000 \, \text{l} \) [cite: 42]</p>
+                    [cite_start]<p>\( 0.375 \, \text{m}^3 = 0.375 \times 1000 \, \text{l} = 375 \, \text{l} \) [cite: 44, 45]</p>
                 </div>
             </div>
 
             <h3>Volumetric Flowrate</h3>
-            
             <div class="info-box">
                 <p>Rate of Fluid Transfer</p>
-                Volumetric flowrate measures the volume of fluid transferred per unit time, commonly used in fluid dynamics and process engineering.
+                [cite_start]Volumetric flowrate measures the volume of fluid transferred per unit time[cite: 145].
             </div>
-
             <div class="math-block">
-                <p>\[ \text{SI Unit: cubic metre per second} \quad (\text{m}^3/\text{s} \text{ or } \text{m}^3 \cdot \text{s}^{-1}) \]</p>
-                <p>\[ \text{Alternative Unit: litre per second} \quad (\text{l/s} \text{ or } \text{l} \cdot \text{s}^{-1}) \]</p>
-                <p>\[ 1 \, \text{m}^3/\text{s} = 1000 \, \text{l/s} \]</p>
-            </div>
-
-            <div class="example-box">
-                <p><strong>Flowrate Conversion Example</strong></p>
-                <p>Convert 0.00073 m³/s to l/s:</p>
-                
-                <div class="conversion-steps">
-                    <p><strong>Step 1:</strong> Identify the conversion factor</p>
-                    <p>\( 1 \, \text{m}^3 = 1000 \, \text{l} \)</p>
-                    
-                    <p><strong>Step 2:</strong> Apply the conversion</p>
-                    <p>\( 0.00073 \, \text{m}^3/\text{s} = 0.00073 \times 1000 \, \text{l/s} = 0.73 \, \text{l/s} \)</p>
-                </div>
+                [cite_start]<p>\[ \text{SI Unit: cubic metre per second} \quad (\text{m}^3/\text{s} \text{ or } \text{m}^3 \cdot \text{s}^{-1}) \text{ [cite: 147]} \]</p>
+                [cite_start]<p>\[ \text{Alternative Unit: litre per second} \quad (\text{l/s} \text{ or } \text{l} \cdot \text{s}^{-1}) \text{ [cite: 148]} \]</p>
+                [cite_start]<p>\[ 1 \, \text{m}^3/\text{s} = 1000 \, \text{l/s} \text{ [cite: 153]} \]</p>
             </div>
 
             <h2 id="non-si-units">Non-SI Units</h2>
-
             <div class="info-box">
                 <p>Accepted Metric Units Outside SI</p>
-                Some metric units outside the SI system are still extensively used in specific contexts, particularly in everyday life and certain technical fields.
+                [cite_start]Some metric units outside the SI system are still extensively used in specific contexts[cite: 49].
             </div>
-
             <h3>Common Non-SI Units</h3>
-            
             <table class="units-table">
                 <thead>
                     <tr>
@@ -772,479 +321,65 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td rowspan="3">Time</td>
-                        <td>Minute</td>
-                        <td>min</td>
-                        <td>1 min = 60 s</td>
-                    </tr>
-                    <tr>
-                        <td>Hour</td>
-                        <td>h</td>
-                        <td>1 h = 60 min</td>
-                    </tr>
-                    <tr>
-                        <td>Day</td>
-                        <td>d</td>
-                        <td>1 d = 24 h</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="3">Plane Angle</td>
-                        <td>Degree</td>
-                        <td>°</td>
-                        <td>1° = π/180 rad</td>
-                    </tr>
-                    <tr>
-                        <td>Minute</td>
-                        <td>'</td>
-                        <td>1' = 1/60°</td>
-                    </tr>
-                    <tr>
-                        <td>Second</td>
-                        <td>"</td>
-                        <td>1" = 1/60'</td>
-                    </tr>
-                    <tr>
-                        <td>Volume</td>
-                        <td>Litre</td>
-                        <td>l</td>
-                        <td>1 l = 1 dm³ = 0.001 m³</td>
-                    </tr>
-                    <tr>
-                        <td>Mass</td>
-                        <td>Tonne</td>
-                        <td>t</td>
-                        <td>1 t = 1000 kg</td>
-                    </tr>
+                    <tr> <td rowspan="3">Time</td> <td>Minute</td> <td>min</td> <td>1 min = 60 s</td> </tr>
+                    <tr> <td>Hour</td> <td>h</td> <td>1 h = 60 min</td> </tr>
+                    <tr> <td>Day</td> <td>d</td> <td>1 d = 24 h</td> </tr>
+                    <tr> <td rowspan="3">Plane Angle</td> <td>Degree</td> <td>°</td> <td>1° = π/180 rad</td> </tr>
+                    <tr> <td>Minute</td> <td>'</td> <td>1' = 1/60°</td> </tr>
+                    <tr> <td>Second</td> <td>"</td> <td>1" = 1/60'</td> </tr>
+                    <tr> <td>Volume</td> <td>Litre</td> <td>l</td> <td>1 l = 1 dm³ = 0.001 m³</td> </tr>
+                    <tr> <td>Mass</td> <td>Tonne</td> <td>t</td> <td>1 t = 1000 kg</td> </tr>
                 </tbody>
             </table>
 
-            <div class="info-box">
-                <p>Angle Measurement</p>
-                In the SI system, plane angles are measured in radians. However, degrees are commonly used in everyday life and many engineering applications.
-            </div>
-
-            <div class="math-block">
-                <p>\[ 1^\circ = \frac{\pi}{180} \, \text{rad} \approx 0.01745 \, \text{rad} \]</p>
-                <p>\[ 1 \, \text{rad} = \frac{180}{\pi} \, \text{degrees} \approx 57.296^\circ \]</p>
-            </div>
-
             <h2 id="si-prefixes">SI Prefixes and Multiples</h2>
-
             <div class="info-box">
                 <p>Scaling Units for Practical Use</p>
                 SI prefixes provide a systematic way to express very large or very small quantities without using scientific notation, making engineering calculations more convenient.
             </div>
-
-            <h3>Complete SI Prefix Table</h3>
-            
-            <table class="units-table">
-                <thead>
-                    <tr>
-                        <th>Prefix</th>
-                        <th>Symbol</th>
-                        <th>Multiplication Factor</th>
-                        <th>Power of 10</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>quetta</td>
-                        <td>Q</td>
-                        <td>1 000 000 000 000 000 000 000 000 000 000</td>
-                        <td>10³⁰</td>
-                    </tr>
-                    <tr>
-                        <td>ronna</td>
-                        <td>R</td>
-                        <td>1 000 000 000 000 000 000 000 000 000</td>
-                        <td>10²⁷</td>
-                    </tr>
-                    <tr>
-                        <td>yotta</td>
-                        <td>Y</td>
-                        <td>1 000 000 000 000 000 000 000 000</td>
-                        <td>10²⁴</td>
-                    </tr>
-                    <tr>
-                        <td>zetta</td>
-                        <td>Z</td>
-                        <td>1 000 000 000 000 000 000 000</td>
-                        <td>10²¹</td>
-                    </tr>
-                    <tr>
-                        <td>exa</td>
-                        <td>E</td>
-                        <td>1 000 000 000 000 000 000</td>
-                        <td>10¹⁸</td>
-                    </tr>
-                    <tr>
-                        <td>peta</td>
-                        <td>P</td>
-                        <td>1 000 000 000 000 000</td>
-                        <td>10¹⁵</td>
-                    </tr>
-                    <tr>
-                        <td>tera</td>
-                        <td>T</td>
-                        <td>1 000 000 000 000</td>
-                        <td>10¹²</td>
-                    </tr>
-                    <tr>
-                        <td>giga</td>
-                        <td>G</td>
-                        <td>1 000 000 000</td>
-                        <td>10⁹</td>
-                    </tr>
-                    <tr>
-                        <td>mega</td>
-                        <td>M</td>
-                        <td>1 000 000</td>
-                        <td>10⁶</td>
-                    </tr>
-                    <tr>
-                        <td>kilo</td>
-                        <td>k</td>
-                        <td>1 000</td>
-                        <td>10³</td>
-                    </tr>
-                    <tr>
-                        <td>hecto</td>
-                        <td>h</td>
-                        <td>100</td>
-                        <td>10²</td>
-                    </tr>
-                    <tr>
-                        <td>deca</td>
-                        <td>da</td>
-                        <td>10</td>
-                        <td>10¹</td>
-                    </tr>
-                    <tr>
-                        <td>deci</td>
-                        <td>d</td>
-                        <td>0.1</td>
-                        <td>10⁻¹</td>
-                    </tr>
-                    <tr>
-                        <td>centi</td>
-                        <td>c</td>
-                        <td>0.01</td>
-                        <td>10⁻²</td>
-                    </tr>
-                    <tr>
-                        <td>milli</td>
-                        <td>m</td>
-                        <td>0.001</td>
-                        <td>10⁻³</td>
-                    </tr>
-                    <tr>
-                        <td>micro</td>
-                        <td>μ</td>
-                        <td>0.000 001</td>
-                        <td>10⁻⁶</td>
-                    </tr>
-                    <tr>
-                        <td>nano</td>
-                        <td>n</td>
-                        <td>0.000 000 001</td>
-                        <td>10⁻⁹</td>
-                    </tr>
-                    <tr>
-                        <td>pico</td>
-                        <td>p</td>
-                        <td>0.000 000 000 001</td>
-                        <td>10⁻¹²</td>
-                    </tr>
-                    <tr>
-                        <td>femto</td>
-                        <td>f</td>
-                        <td>0.000 000 000 000 001</td>
-                        <td>10⁻¹⁵</td>
-                    </tr>
-                    <tr>
-                        <td>atto</td>
-                        <td>a</td>
-                        <td>0.000 000 000 000 000 001</td>
-                        <td>10⁻¹⁸</td>
-                    </tr>
-                    <tr>
-                        <td>zepto</td>
-                        <td>z</td>
-                        <td>0.000 000 000 000 000 000 001</td>
-                        <td>10⁻²¹</td>
-                    </tr>
-                    <tr>
-                        <td>yocto</td>
-                        <td>y</td>
-                        <td>0.000 000 000 000 000 000 000 001</td>
-                        <td>10⁻²⁴</td>
-                    </tr>
-                    <tr>
-                        <td>ronto</td>
-                        <td>r</td>
-                        <td>0.000 000 000 000 000 000 000 000 001</td>
-                        <td>10⁻²⁷</td>
-                    </tr>
-                    <tr>
-                        <td>quecto</td>
-                        <td>q</td>
-                        <td>0.000 000 000 000 000 000 000 000 000 001</td>
-                        <td>10⁻³⁰</td>
-                    </tr>
-                </tbody>
-            </table>
-
             <h3>Common Engineering Prefix Applications</h3>
-            
             <div class="prefix-grid">
                 <div class="prefix-card">
-                    <h4>Electrical Engineering</h4>
+                    <h4>Large Quantities</h4>
                     <ul>
-                        <li>Voltage: kV (kilovolts), mV (millivolts)</li>
-                        <li>Current: mA (milliamps), μA (microamps)</li>
-                        <li>Resistance: kΩ (kiloohms), MΩ (megaohms)</li>
-                        <li>Capacitance: μF (microfarads), nF (nanofarads)</li>
+                        <li><strong>Giga (G):</strong> Computer memory (GB), processor speed (GHz)</li>
+                        <li><strong>Mega (M):</strong> Electrical power (MW), data transfer (MB/s)</li>
+                        <li><strong>Kilo (k):</strong> Distance (km), mass (kg), resistance (kΩ)</li>
                     </ul>
                 </div>
                 <div class="prefix-card">
-                    <h4>Mechanical Engineering</h4>
+                    <h4>Small Quantities</h4>
                     <ul>
-                        <li>Length: km (kilometres), mm (millimetres)</li>
-                        <li>Force: kN (kilonewtons), MN (meganewtons)</li>
-                        <li>Pressure: kPa (kilopascals), MPa (megapascals)</li>
-                        <li>Mass: Mg (megagrams/tonnes), g (grams)</li>
-                    </ul>
-                </div>
-                <div class="prefix-card">
-                    <h4>Computer Science</h4>
-                    <ul>
-                        <li>Memory: kB (kilobytes), MB (megabytes)</li>
-                        <li>Storage: GB (gigabytes), TB (terabytes)</li>
-                        <li>Frequency: MHz (megahertz), GHz (gigahertz)</li>
-                    </ul>
-                </div>
-                <div class="prefix-card">
-                    <h4>Physics and Chemistry</h4>
-                    <ul>
-                        <li>Length: nm (nanometres), pm (picometres)</li>
-                        <li>Energy: kJ (kilojoules), MJ (megajoules)</li>
-                        <li>Mass: μg (micrograms), ng (nanograms)</li>
+                        <li><strong>Milli (m):</strong> Length (mm), time (ms), current (mA)</li>
+                        <li><strong>Micro (μ):</strong> Electronics (μF, μA), precision engineering</li>
+                        <li><strong>Nano (n):</strong> Nanotechnology, semiconductors (nm)</li>
                     </ul>
                 </div>
             </div>
 
-            <h2 id="conversion">Unit Conversion Methodology</h2>
-
+            <h2 id="best-practices">Engineering Best Practices</h2>
             <div class="info-box">
-                <p>Systematic Approach to Unit Conversion</p>
-                A consistent methodology for unit conversion ensures accuracy and minimizes errors in engineering calculations.
+                <p>Professional Unit Usage</p>
+                Following established conventions for unit usage ensures clarity, prevents errors, and facilitates collaboration in engineering projects.
             </div>
-
-            <h3>Step-by-Step Conversion Process</h3>
-            
-            <div class="conversion-steps">
-                <p><strong>Step 1:</strong> Identify the starting quantity and units</p>
-                <p><strong>Step 2:</strong> Identify the desired units</p>
-                <p><strong>Step 3:</strong> Find the appropriate conversion factor(s)</p>
-                <p><strong>Step 4:</strong> Set up the conversion as a multiplication by 1</p>
-                <p><strong>Step 5:</strong> Cancel units and perform the calculation</p>
-                <p><strong>Step 6:</strong> Check the result for reasonableness</p>
-            </div>
-
-            <div class="example-box">
-                <p><strong>Complex Conversion Example</strong></p>
-                <p>Convert 55 miles per hour to metres per second:</p>
-                
-                <div class="conversion-steps">
-                    <p><strong>Step 1:</strong> Write the quantity with units</p>
-                    <p>\( 55 \, \text{mi/h} = \frac{55 \, \text{mi}}{1 \, \text{h}} \)</p>
-                    
-                    <p><strong>Step 2:</strong> Convert miles to meters</p>
-                    <p>\( 1 \, \text{mi} = 1609.344 \, \text{m} \)</p>
-                    <p>\( 55 \, \text{mi} = 55 \times 1609.344 \, \text{m} = 88513.92 \, \text{m} \)</p>
-                    
-                    <p><strong>Step 3:</strong> Convert hours to seconds</p>
-                    <p>\( 1 \, \text{h} = 3600 \, \text{s} \)</p>
-                    
-                    <p><strong>Step 4:</strong> Combine the conversions</p>
-                    <p>\( \frac{88513.92 \, \text{m}}{3600 \, \text{s}} = 24.5872 \, \text{m/s} \)</p>
-                    
-                    <p><strong>Using dimensional analysis:</strong></p>
-                    <p>\( 55 \, \frac{\text{mi}}{\text{h}} \times \frac{1609.344 \, \text{m}}{1 \, \text{mi}} \times \frac{1 \, \text{h}}{3600 \, \text{s}} = 24.5872 \, \text{m/s} \)</p>
-                </div>
-            </div>
-
-            <h2 id="dimensional-analysis">Dimensional Analysis</h2>
-
-            <div class="info-box">
-                <p>Checking Equation Consistency</p>
-                Dimensional analysis is a powerful technique for verifying the correctness of equations and deriving relationships between physical quantities.
-            </div>
-
-            <h3>Fundamental Dimensions</h3>
-            
-            <div class="math-block">
-                <p>Most physical quantities can be expressed in terms of these fundamental dimensions:</p>
-                <p>\[ [M] = \text{Mass} \quad [L] = \text{Length} \quad [T] = \text{Time} \]</p>
-                <p>\[ [\Theta] = \text{Temperature} \quad [I] = \text{Electric Current} \quad [N] = \text{Amount of Substance} \]</p>
-            </div>
-
-            <h3>Dimensional Analysis Procedure</h3>
-            
-            <div class="conversion-steps">
-                <p><strong>Step 1:</strong> Identify the dimensions of each variable in the equation</p>
-                <p><strong>Step 2:</strong> Check that all terms have the same dimensions</p>
-                <p><strong>Step 3:</strong> Use dimensional analysis to derive relationships between variables</p>
-            </div>
-
-            <div class="example-box">
-                <p><strong>Dimensional Analysis Example</strong></p>
-                <p>Verify the dimensional consistency of the equation for kinetic energy:</p>
-                <p>\( E_k = \frac{1}{2}mv^2 \)</p>
-                
-                <div class="conversion-steps">
-                    <p><strong>Step 1:</strong> Identify dimensions of each variable</p>
-                    <p>\( [E_k] = [M][L]^2[T]^{-2} \) (energy)</p>
-                    <p>\( [m] = [M] \) (mass)</p>
-                    <p>\( [v] = [L][T]^{-1} \) (velocity)</p>
-                    
-                    <p><strong>Step 2:</strong> Check the right-hand side</p>
-                    <p>\( [m][v]^2 = [M] \times ([L][T]^{-1})^2 = [M][L]^2[T]^{-2} \)</p>
-                    
-                    <p><strong>Step 3:</strong> Compare both sides</p>
-                    <p>\( [E_k] = [M][L]^2[T]^{-2} \) and \( [m][v]^2 = [M][L]^2[T]^{-2} \)</p>
-                    <p>The dimensions match, confirming the equation is dimensionally consistent.</p>
-                </div>
-            </div>
-
-            <h2 id="engineering-applications">Engineering Applications</h2>
-
-            <div class="info-box">
-                <p>Practical Implementation in Engineering</p>
-                Understanding and correctly applying systems of units is essential for engineering design, analysis, and communication across disciplines and international boundaries.
-            </div>
-
-            <h3>Industry-Specific Unit Preferences</h3>
-            
-            <div class="comparison-table">
-                <div class="comparison-card">
-                    <h4>Civil Engineering</h4>
-                    <ul>
-                        <li>Length: mm, m, km</li>
-                        <li>Force: kN, MN</li>
-                        <li>Pressure: kPa, MPa</li>
-                        <li>Volume: m³, l</li>
-                        <li>Common practice: Mix of SI and imperial in some regions</li>
-                    </ul>
-                </div>
-                <div class="comparison-card">
-                    <h4>Mechanical Engineering</h4>
-                    <ul>
-                        <li>Length: mm, m</li>
-                        <li>Force: N, kN</li>
-                        <li>Pressure: Pa, kPa, MPa</li>
-                        <li>Power: W, kW, MW</li>
-                        <li>Common practice: Strict SI usage</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="comparison-table">
-                <div class="comparison-card">
-                    <h4>Electrical Engineering</h4>
-                    <ul>
-                        <li>Voltage: V, kV, mV</li>
-                        <li>Current: A, mA, μA</li>
-                        <li>Resistance: Ω, kΩ, MΩ</li>
-                        <li>Power: W, kW, MW</li>
-                        <li>Common practice: Strict SI usage with appropriate prefixes</li>
-                    </ul>
-                </div>
-                <div class="comparison-card">
-                    <h4>Chemical Engineering</h4>
-                    <ul>
-                        <li>Pressure: Pa, kPa, bar</li>
-                        <li>Temperature: K, °C</li>
-                        <li>Flow rate: m³/s, l/s</li>
-                        <li>Concentration: mol/m³, g/l</li>
-                        <li>Common practice: Mix of SI and specialized units</li>
-                    </ul>
-                </div>
-            </div>
-
-            <h3>International Standards and Codes</h3>
-            
-            <div class="info-box">
-                <p>Global Engineering Communication</p>
-                International standards organizations (ISO, IEC, etc.) mandate SI unit usage to ensure consistency in technical documentation, specifications, and international projects.
-            </div>
-
-            <h2 id="summary">Summary</h2>
-
-            <div class="info-box">
-                <p>Key Takeaways</p>
-                Understanding different systems of units, particularly the SI system, is fundamental to engineering practice. Proper unit usage ensures accurate calculations, clear communication, and international compatibility.
-            </div>
-
-            <h3>Essential Principles</h3>
-            
-            <div class="conversion-steps">
-                <p><strong>1. Coherence:</strong> SI units form a coherent system where derived units are products of base units without conversion factors.</p>
-                <p><strong>2. Prefix System:</strong> SI prefixes provide a systematic way to scale units for practical applications.</p>
-                <p><strong>3. Dimensional Consistency:</strong> All terms in an equation must have the same dimensions.</p>
-                <p><strong>4. Conversion Methodology:</strong> A systematic approach to unit conversion minimizes errors.</p>
-                <p><strong>5. Industry Standards:</strong> Different engineering disciplines have established unit preferences based on practical considerations.</p>
-            </div>
-
-            <div class="info-box">
-                <p>Future Directions</p>
-                The SI system continues to evolve, with recent redefinitions of base units based on fundamental constants rather than physical artifacts, enhancing precision and universality.
-            </div>
-
-            <div class="navigation">
-                <a href="#introduction" class="nav-button">Back to Top</a>
+            <div class="warning">
+                <p><strong>Important Guidelines:</strong></p>
+                <ul>
+                    [cite_start]<li>Use spaces between numbers and unit symbols (e.g., 50 kg)[cite: 88].</li>
+                    [cite_start]<li>Attach prefix symbols directly to unit symbols without spaces (e.g., mA, kg)[cite: 87].</li>
+                    [cite_start]<li>Always state the units of your results with clarity[cite: 85].</li>
+                    [cite_start]<li>Be aware that 'm' before a symbol usually means 'milli', not 'metre' (e.g., mA is milliampere)[cite: 90].</li>
+                </ul>
             </div>
         </main>
     </div>
 
     <footer>
         <div class="container">
-            <p>HNC Engineering Science - Systems of Units</p>
-            <p>This resource covers fundamental concepts in measurement systems for engineering applications.</p>
+            <p>&copy; 2024 HNC Engineering Science. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
-        // Initialize MathJax
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']]
-            },
-            svg: {
-                fontCache: 'global'
-            }
-        };
-
-        // Navigation generation
-        document.addEventListener('DOMContentLoaded', function() {
-            const navigationPlaceholder = document.getElementById('navigation-placeholder');
-            const main = document.querySelector('main');
-            const headings = main.querySelectorAll('h2, h3');
-            
-            let navHTML = '<nav><h3>Contents</h3><ul>';
-            
-            headings.forEach(heading => {
-                if (heading.id) {
-                    const level = heading.tagName === 'H2' ? '' : '--';
-                    navHTML += `<li class="nav-${heading.tagName.toLowerCase()}"><a href="#${heading.id}">${level} ${heading.textContent}</a></li>`;
-                }
-            });
-            
-            navHTML += '</ul></nav>';
-            navigationPlaceholder.innerHTML = navHTML;
-        });
-    </script>
+    <script src="navigation.js"></script>
 </body>
 </html>
