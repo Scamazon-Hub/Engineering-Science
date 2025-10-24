@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Science Complete Study Material - HNC Engineering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        /* All previous CSS styles remain the same */
+        :root {
+            --primary: #2c3e50;
+            --primary-dark: #1a252f;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --surface: #ffffff;
+            --background: #f8f9fa;
+            --border: #dee2e6;
+            --text: #2c3e50;
+            --text-light: #6c757d;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --info: #17a2b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            padding: 2rem 0;
+            min-height: calc(100vh - 200px);
+        }
+
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        aside {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 2rem;
+        }
+
+        aside nav h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        aside nav ul {
+            list-style: none;
+        }
+
+        aside nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        aside nav a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        aside nav a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        main {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: var(--primary-dark);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.4rem;
+        }
+
+        h4 {
+            color: var(--primary-dark);
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box p:first-child {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+
+        .example-box {
+            background: #f8f9fa;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .example-box strong {
+            color: var(--primary-dark);
+        }
+
+        .key-point {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .key-point strong {
+            color: #0c5460;
+        }
+
+        .math-block {
+            background: #f8f9fa;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .math-block p {
+            margin: 0.5rem 0;
+        }
+
+        .unit-notation {
+            font-family: 'Fira Code', monospace;
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 0.9em;
+        }
+
+        .units-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9em;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .units-table th,
+        .units-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+
+        .units-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .units-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .units-table tr:hover {
+            background: #e9ecef;
+        }
+
+        .diagram-container {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .conversion-steps {
+            background: var(--surface);
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .conversion-steps p {
+            margin: 0.5rem 0;
+        }
+
+        .viz-container {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .viz-item {
+            text-align: center;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .viz-block {
+            background-color: #e9ecef;
+            border: 2px solid var(--primary-dark);
+            padding: 1.5rem;
+            border-radius: 8px;
+            position: relative;
+            min-width: 100px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .viz-block-label {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-dark);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.8em;
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .nav-button {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background: var(--primary-dark);
+        }
+
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            opacity: 0.8;
+        }
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .topic-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .topic-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .topic-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .topic-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .topic-card li:last-child {
+            border-bottom: none;
+        }
+
+        .topic-card a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .topic-card a:hover {
+            text-decoration: underline;
+        }
+
+        .section-spacing {
+            margin: 3rem 0;
+        }
+
+        .problem-container {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .problem-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .problem-number {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .problem-topic {
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+
+        .given-data {
+            background: #f8f9fa;
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .data-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0;
+            padding: 0.25rem 0;
+        }
+
+        .data-label {
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+
+        .data-value {
+            font-family: 'Fira Code', monospace;
+            background: #e9ecef;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+        }
+
+        .solution-step {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--info);
+        }
+
+        .formula-box {
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .answer-box {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .answer-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #155724;
+            margin: 0.5rem 0;
+        }
+
+        .circuit-diagram {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .component {
+            position: absolute;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+        }
+
+        .wire {
+            position: absolute;
+            background: #2c3e50;
+        }
+
+        /* Additional styles for detailed content */
+        .concept-explanation {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--accent);
+        }
+
+        .derivation {
+            background: #fff3cd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #ffeaa7;
+        }
+
+        .application-example {
+            background: #d1ecf1;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #bee5eb;
+        }
+
+        .comparison-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-table {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .comparison-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .comparison-card h3 {
+            margin-top: 0;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        /* Force vector visualization */
+        .force-vector {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            margin: 2rem 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .force-arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        
+        .force-line {
+            position: absolute;
+            height: 3px;
+            background: #e74c3c;
+            transform-origin: 0 0;
+        }
+        
+        .force-label {
+            position: absolute;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 5px 8px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .force-origin {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #2c3e50;
+            border-radius: 50%;
+            top: 50%;
+            left: 80px;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Pressure and flow visualization */
+        .pressure-demo {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .pressure-container {
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .pressure-area {
+            width: 150px;
+            height: 20px;
+            background: var(--primary);
+            margin: 0 auto 1rem;
+            border-radius: 4px;
+        }
+        
+        .pressure-force {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            margin: 0 auto;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .pressure-arrow {
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 0 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+            
+            header {
+                padding: 1.5rem 0;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.2rem;
+            }
+            
+            .topic-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pressure-demo {
+                flex-direction: column;
+            }
+            
+            .pressure-arrow {
+                transform: rotate(90deg);
+                margin: 1rem 0;
+            }
+        }
+
+        @media print {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            aside {
+                display: none;
+            }
+            
+            .nav-button {
+                display: none;
+            }
+            
+            .topic-card {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>HNC Engineering Science</h1>
+            <p>Complete Study Material</p>
+        </div>
+    </header>
+
+    <div class="container grid-layout">
+        <aside>
+            <nav>
+                <h3>Study Topics</h3>
+                <ul>
+                    <li><a href="#mechanics">Mechanics & Materials</a></li>
+                    <li><a href="#electrical">Electrical Principles</a></li>
+                    <li><a href="#thermo">Thermodynamics</a></li>
+                    <li><a href="#fluids">Fluid Mechanics</a></li>
+                    <li><a href="#math">Engineering Mathematics</a></li>
+                    <li><a href="#problems">Practice Problems</a></li>
+                    <li><a href="#resources">Additional Resources</a></li>
+                </ul>
+                
+                <h3>Quick Reference</h3>
+                <ul>
+                    <li><a href="#formulas">Key Formulas</a></li>
+                    <li><a href="#units">Unit Conversions</a></li>
+                    <li><a href="#constants">Physical Constants</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <h1>Complete Engineering Science Study Material</h1>
+            
+            <div class="info-box">
+                <p>Comprehensive Resource for HNC Engineering Science</p>
+                This complete study guide provides detailed explanations, formulas, examples, and practice problems across all major engineering disciplines. Each section includes theoretical foundations and practical applications.
+            </div>
+
+            <!-- Mechanics & Materials Section -->
+            <div class="section-spacing" id="mechanics">
+                <h2>Mechanics & Materials</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <h3>Statics</h3>
+                        <ul>
+                            <li><a href="#forces">Forces and Equilibrium</a></li>
+                            <li><a href="#moments">Moments and Couples</a></li>
+                            <li><a href="#trusses">Truss Analysis</a></li>
+                            <li><a href="#friction">Friction</a></li>
+                            <li><a href="#centroids">Centroids and Center of Gravity</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Dynamics</h3>
+                        <ul>
+                            <li><a href="#kinematics">Kinematics</a></li>
+                            <li><a href="#newton">Newton's Laws</a></li>
+                            <li><a href="#energy">Work and Energy</a></li>
+                            <li><a href="#momentum">Momentum</a></li>
+                            <li><a href="#rotation">Rotational Motion</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Materials Science</h3>
+                        <ul>
+                            <li><a href="#stress-strain">Stress and Strain</a></li>
+                            <li><a href="#elasticity">Elasticity</a></li>
+                            <li><a href="#plasticity">Plastic Deformation</a></li>
+                            <li><a href="#composites">Composite Materials</a></li>
+                            <li><a href="#failure">Material Failure</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Forces and Equilibrium -->
+                <div class="concept-explanation" id="forces">
+                    <h3>Forces and Equilibrium</h3>
+                    <p>A <strong>force</strong> is any interaction that, when unopposed, will change the motion of an object. Forces are vector quantities with magnitude, direction, and point of application.</p>
+                    
+                    <div class="math-block">
+                        <p>\[ \vec{F} = m\vec{a} \] (Newton's Second Law)</p>
+                    </div>
+                    
+                    <div class="diagram-container">
+                        <h4>Vector Representation of Forces</h4>
+                        <div class="force-vector">
+                            <div class="force-origin"></div>
+                            <div class="force-line" style="width: 180px; transform: rotate(20deg); top: 125px; left: 80px;"></div>
+                            <div class="force-arrow" style="border-width: 10px 0 10px 15px; border-color: transparent transparent transparent #e74c3c; top: 115px; left: 250px; transform: rotate(20deg);"></div>
+                            <div class="force-label" style="top: 90px; left: 150px; transform: rotate(20deg);">50 N</div>
+                            <div class="force-label" style="top: 200px; left: 160px;">20°</div>
+                        </div>
+                        <p style="text-align:center; font-size: 0.9em; margin-top: 1rem;">Figure 1: Vector representation of a 50 N force at 20° to horizontal</p>
+                    </div>
+                    
+                    <h4>Equilibrium Conditions</h4>
+                    <p>For a body to be in static equilibrium, two conditions must be satisfied:</p>
+                    
+                    <div class="math-block">
+                        <p>\[ \sum \vec{F} = 0 \] (Sum of all forces equals zero)</p>
+                        <p>\[ \sum \vec{M} = 0 \] (Sum of all moments equals zero)</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <p><strong>Example: Equilibrium of Concurrent Forces</strong></p>
+                        <p>Three forces act on a point: F₁ = 100 N at 0°, F₂ = 150 N at 120°, and F₃ = ? at 240°. Find F₃ for equilibrium.</p>
+                        
+                        <div class="solution-step">
+                            <p><strong>Step 1: Resolve forces into components</strong></p>
+                            <p>F₁: F₁ₓ = 100 N, F₁ᵧ = 0 N</p>
+                            <p>F₂: F₂ₓ = 150 cos 120° = -75 N, F₂ᵧ = 150 sin 120° = 129.9 N</p>
+                        </div>
+                        
+                        <div class="solution-step">
+                            <p><strong>Step 2: Apply equilibrium conditions</strong></p>
+                            <p>ΣFₓ = 0: 100 - 75 + F₃ₓ = 0 → F₃ₓ = -25 N</p>
+                            <p>ΣFᵧ = 0: 0 + 129.9 + F₃ᵧ = 0 → F₃ᵧ = -129.9 N</p>
+                        </div>
+                        
+                        <div class="solution-step">
+                            <p><strong>Step 3: Calculate magnitude and direction</strong></p>
+                            <p>F₃ = √((-25)² + (-129.9)²) = √(625 + 16874) = √17599 = 132.7 N</p>
+                            <p>θ = tan⁻¹(-129.9/-25) = 79.1° + 180° = 259.1° (in third quadrant)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stress and Strain -->
+                <div class="concept-explanation" id="stress-strain">
+                    <h3>Stress and Strain</h3>
+                    <p><strong>Stress</strong> is defined as force per unit area, while <strong>strain</strong> is the deformation per unit length.</p>
+                    
+                    <div class="math-block">
+                        <p>\[ \sigma = \frac{F}{A} \] (Normal stress)</p>
+                        <p>\[ \tau = \frac{F}{A} \] (Shear stress)</p>
+                        <p>\[ \epsilon = \frac{\Delta L}{L} \] (Normal strain)</p>
+                        <p>\[ \gamma = \frac{\Delta x}{L} \] (Shear strain)</p>
+                    </div>
+                    
+                    <div class="derivation">
+                        <h4>Hooke's Law</h4>
+                        <p>For many materials, stress is proportional to strain in the elastic region:</p>
+                        <div class="math-block">
+                            <p>\[ \sigma = E\epsilon \]</p>
+                        </div>
+                        <p>Where E is the Young's modulus or modulus of elasticity.</p>
+                    </div>
+                    
+                    <div class="application-example">
+                        <h4>Material Properties Table</h4>
+                        <table class="units-table">
+                            <thead>
+                                <tr>
+                                    <th>Material</th>
+                                    <th>Young's Modulus (GPa)</th>
+                                    <th>Yield Strength (MPa)</th>
+                                    <th>Ultimate Strength (MPa)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mild Steel</td>
+                                    <td>200</td>
+                                    <td>250</td>
+                                    <td>400</td>
+                                </tr>
+                                <tr>
+                                    <td>Aluminum</td>
+                                    <td>70</td>
+                                    <td>95</td>
+                                    <td>110</td>
+                                </tr>
+                                <tr>
+                                    <td>Copper</td>
+                                    <td>110</td>
+                                    <td>70</td>
+                                    <td>210</td>
+                                </tr>
+                                <tr>
+                                    <td>Concrete</td>
+                                    <td>30</td>
+                                    <td>-</td>
+                                    <td>25-40</td>
+                                </tr>
+                                <tr>
+                                    <td>Wood (Pine)</td>
+                                    <td>10</td>
+                                    <td>-</td>
+                                    <td>40</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="key-point">
+                    <h3>Key Concepts in Mechanics</h3>
+                    <ul>
+                        <li><strong>Newton's First Law:</strong> An object at rest stays at rest, and an object in motion stays in motion unless acted upon by a net external force</li>
+                        <li><strong>Newton's Second Law:</strong> F = ma (Force equals mass times acceleration)</li>
+                        <li><strong>Newton's Third Law:</strong> For every action, there is an equal and opposite reaction</li>
+                        <li><strong>Stress (σ):</strong> Force per unit area (σ = F/A)</li>
+                        <li><strong>Strain (ε):</strong> Deformation per unit length (ε = ΔL/L)</li>
+                        <li><strong>Young's Modulus (E):</strong> Ratio of stress to strain in elastic deformation (E = σ/ε)</li>
+                    </ul>
+                </div>
+                
+                <div class="math-block">
+                    <p>Stress-Strain Relationships</p>
+                    <p>\[ \sigma = E\epsilon \] (Hooke's Law for elastic deformation)</p>
+                    <p>\[ \tau = G\gamma \] (Shear stress-strain relationship)</p>
+                    <p>\[ \nu = -\frac{\epsilon_{lateral}}{\epsilon_{axial}} \] (Poisson's Ratio)</p>
+                </div>
+            </div>
+
+            <!-- Electrical Principles Section -->
+            <div class="section-spacing" id="electrical">
+                <h2>Electrical Principles</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <h3>DC Circuits</h3>
+                        <ul>
+                            <li><a href="#ohms-law">Ohm's Law</a></li>
+                            <li><a href="#kirchhoff">Kirchhoff's Laws</a></li>
+                            <li><a href="#series-parallel">Series and Parallel Circuits</a></li>
+                            <li><a href="#power">Electrical Power</a></li>
+                            <li><a href="#theorems">Network Theorems</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>AC Circuits</h3>
+                        <ul>
+                            <li><a href="#ac-fundamentals">AC Fundamentals</a></li>
+                            <li><a href="#phasors">Phasors and Complex Numbers</a></li>
+                            <li><a href="#impedance">Impedance</a></li>
+                            <li><a href="#resonance">Resonance</a></li>
+                            <li><a href="#filters">Filters</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Electromagnetism</h3>
+                        <ul>
+                            <li><a href="#magnetism">Magnetic Fields</a></li>
+                            <li><a href="#induction">Electromagnetic Induction</a></li>
+                            <li><a href="#transformers">Transformers</a></li>
+                            <li><a href="#motors">Motors and Generators</a></li>
+                            <li><a href="#capacitance">Capacitance and Dielectrics</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Ohm's Law -->
+                <div class="concept-explanation" id="ohms-law">
+                    <h3>Ohm's Law</h3>
+                    <p><strong>Ohm's Law</strong> states that the current through a conductor between two points is directly proportional to the voltage across the two points and inversely proportional to the resistance between them.</p>
+                    
+                    <div class="math-block">
+                        <p>\[ V = IR \]</p>
+                        <p>Where:</p>
+                        <p>V = Voltage (volts, V)</p>
+                        <p>I = Current (amperes, A)</p>
+                        <p>R = Resistance (ohms, Ω)</p>
+                    </div>
+                    
+                    <div class="diagram-container">
+                        <h4>Ohm's Law Triangle</h4>
+                        <div class="viz-container">
+                            <div class="viz-item">
+                                <div class="viz-block" style="width: 120px; height: 120px; position: relative;">
+                                    <div style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%);">V</div>
+                                    <div style="position: absolute; bottom: 10px; left: 10px;">I</div>
+                                    <div style="position: absolute; bottom: 10px; right: 10px;">R</div>
+                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 0; height: 0; border-left: 60px solid transparent; border-right: 60px solid transparent; border-bottom: 104px solid #3498db;"></div>
+                                </div>
+                                <p>V = I × R</p>
+                            </div>
+                            <div class="viz-item">
+                                <div class="viz-block" style="width: 120px; height: 120px; position: relative;">
+                                    <div style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%);">I</div>
+                                    <div style="position: absolute; bottom: 10px; left: 10px;">V</div>
+                                    <div style="position: absolute; bottom: 10px; right: 10px;">R</div>
+                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 0; height: 0; border-left: 60px solid transparent; border-right: 60px solid transparent; border-bottom: 104px solid #e74c3c;"></div>
+                                </div>
+                                <p>I = V / R</p>
+                            </div>
+                            <div class="viz-item">
+                                <div class="viz-block" style="width: 120px; height: 120px; position: relative;">
+                                    <div style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%);">R</div>
+                                    <div style="position: absolute; bottom: 10px; left: 10px;">V</div>
+                                    <div style="position: absolute; bottom: 10px; right: 10px;">I</div>
+                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 0; height: 0; border-left: 60px solid transparent; border-right: 60px solid transparent; border-bottom: 104px solid #2ecc71;"></div>
+                                </div>
+                                <p>R = V / I</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <p><strong>Example: Calculating Current</strong></p>
+                        <p>A circuit has a resistance of 100 Ω and a voltage of 12 V. Calculate the current flowing through the circuit.</p>
+                        
+                        <div class="solution-step">
+                            <p><strong>Step 1: Apply Ohm's Law</strong></p>
+                            <p>\[ I = \frac{V}{R} = \frac{12}{100} = 0.12 \, \text{A} \]</p>
+                        </div>
+                        
+                        <div class="solution-step">
+                            <p><strong>Step 2: Convert to milliamps if needed</strong></p>
+                            <p>\[ I = 0.12 \, \text{A} = 120 \, \text{mA} \]</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kirchhoff's Laws -->
+                <div class="concept-explanation" id="kirchhoff">
+                    <h3>Kirchhoff's Laws</h3>
+                    <p><strong>Kirchhoff's Current Law (KCL)</strong> states that the algebraic sum of currents entering a node (or junction) is zero.</p>
+                    
+                    <div class="math-block">
+                        <p>\[ \sum I_{in} = \sum I_{out} \]</p>
+                    </div>
+                    
+                    <p><strong>Kirchhoff's Voltage Law (KVL)</strong> states that the algebraic sum of all voltages around any closed loop in a circuit is zero.</p>
+                    
+                    <div class="math-block">
+                        <p>\[ \sum V = 0 \]</p>
+                    </div>
+                    
+                    <div class="diagram-container">
+                        <h4>Kirchhoff's Laws Application</h4>
+                        <div class="circuit-diagram">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                                <p>Circuit with multiple loops and nodes</p>
+                                <p>KCL: I₁ = I₂ + I₃ at node A</p>
+                                <p>KVL: V₁ - V₂ - V₃ = 0 in loop 1</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="application-example">
+                        <h4>Circuit Analysis Steps</h4>
+                        <ol>
+                            <li>Identify all nodes and loops in the circuit</li>
+                            <li>Assign current directions (arbitrary - if wrong, the answer will be negative)</li>
+                            <li>Apply KCL at each node (except one)</li>
+                            <li>Apply KVL for each independent loop</li>
+                            <li>Solve the resulting system of equations</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="key-point">
+                    <h3>Key Electrical Formulas</h3>
+                    <ul>
+                        <li><strong>Ohm's Law:</strong> V = IR</li>
+                        <li><strong>Power:</strong> P = VI = I²R = V²/R</li>
+                        <li><strong>Resistors in Series:</strong> R<sub>total</sub> = R₁ + R₂ + ... + Rₙ</li>
+                        <li><strong>Resistors in Parallel:</strong> 1/R<sub>total</sub> = 1/R₁ + 1/R₂ + ... + 1/Rₙ</li>
+                        <li><strong>Capacitance:</strong> C = Q/V</li>
+                        <li><strong>Inductive Reactance:</strong> X<sub>L</sub> = 2πfL</li>
+                        <li><strong>Capacitive Reactance:</strong> X<sub>C</sub> = 1/(2πfC)</li>
+                        <li><strong>Impedance:</strong> Z = √(R² + (X<sub>L</sub> - X<sub>C</sub>)²)</li>
+                    </ul>
+                </div>
+                
+                <div class="math-block">
+                    <p>AC Circuit Formulas</p>
+                    <p>\[ V_{RMS} = \frac{V_{peak}}{\sqrt{2}} \]</p>
+                    <p>\[ I_{RMS} = \frac{I_{peak}}{\sqrt{2}} \]</p>
+                    <p>\[ P_{avg} = V_{RMS} I_{RMS} \cos \phi \] (Real power)</p>
+                    <p>\[ S = V_{RMS} I_{RMS} \] (Apparent power)</p>
+                    <p>\[ Q = V_{RMS} I_{RMS} \sin \phi \] (Reactive power)</p>
+                </div>
+            </div>
+
+            <!-- Thermodynamics Section -->
+            <div class="section-spacing" id="thermo">
+                <h2>Thermodynamics</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <h3>Fundamental Concepts</h3>
+                        <ul>
+                            <li><a href="#systems">Systems and Properties</a></li>
+                            <li><a href="#states">State and Equilibrium</a></li>
+                            <li><a href="#processes">Processes and Cycles</a></li>
+                            <li><a href="#temperature">Temperature Scales</a></li>
+                            <li><a href="#pressure">Pressure Measurement</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>First Law of Thermodynamics</h3>
+                        <ul>
+                            <li><a href="#energy-balance">Energy Balance</a></li>
+                            <li><a href="#work">Work and Heat Transfer</a></li>
+                            <li><a href="#enthalpy">Enthalpy</a></li>
+                            <li><a href="#specific-heat">Specific Heats</a></li>
+                            <li><a href="#applications">First Law Applications</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Second Law of Thermodynamics</h3>
+                        <ul>
+                            <li><a href="#entropy">Entropy</a></li>
+                            <li><a href="#heat-engines">Heat Engines</a></li>
+                            <li><a href="#refrigeration">Refrigeration Cycles</a></li>
+                            <li><a href="#efficiency">Thermal Efficiency</a></li>
+                            <li><a href="#carnot">Carnot Cycle</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- First Law of Thermodynamics -->
+                <div class="concept-explanation" id="energy-balance">
+                    <h3>First Law of Thermodynamics</h3>
+                    <p>The <strong>First Law of Thermodynamics</strong> is a statement of conservation of energy for thermodynamic systems.</p>
+                    
+                    <div class="math-block">
+                        <p>\[ \Delta U = Q - W \]</p>
+                        <p>Where:</p>
+                        <p>ΔU = Change in internal energy of the system</p>
+                        <p>Q = Heat transferred to the system</p>
+                        <p>W = Work done by the system</p>
+                    </div>
+                    
+                    <div class="derivation">
+                        <h4>Sign Convention</h4>
+                        <ul>
+                            <li>Heat added to the system: Q > 0</li>
+                            <li>Heat removed from the system: Q < 0</li>
+                            <li>Work done by the system: W > 0</li>
+                            <li>Work done on the system: W < 0</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-box">
+                        <p><strong>Example: First Law Application</strong></p>
+                        <p>A system receives 500 J of heat and does 200 J of work on its surroundings. What is the change in internal energy?</p>
+                        
+                        <div class="solution-step">
+                            <p><strong>Step 1: Identify known values</strong></p>
+                            <p>Q = +500 J (heat added to system)</p>
+                            <p>W = +200 J (work done by system)</p>
+                        </div>
+                        
+                        <div class="solution-step">
+                            <p><strong>Step 2: Apply First Law</strong></p>
+                            <p>\[ \Delta U = Q - W = 500 - 200 = 300 \, \text{J} \]</p>
+                        </div>
+                        
+                        <div class="solution-step">
+                            <p><strong>Step 3: Interpret result</strong></p>
+                            <p>The internal energy of the system increases by 300 J</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ideal Gas Law -->
+                <div class="concept-explanation" id="states">
+                    <h3>Ideal Gas Law</h3>
+                    <p>The <strong>Ideal Gas Law</strong> describes the relationship between pressure, volume, and temperature for an ideal gas.</p>
+                    
+                    <div class="math-block">
+                        <p>\[ PV = nRT \]</p>
+                        <p>Where:</p>
+                        <p>P = Pressure (Pa)</p>
+                        <p>V = Volume (m³)</p>
+                        <p>n = Number of moles</p>
+                        <p>R = Universal gas constant = 8.314 J/(mol·K)</p>
+                        <p>T = Temperature (K)</p>
+                    </div>
+                    
+                    <div class="application-example">
+                        <h4>Common Forms of Ideal Gas Law</h4>
+                        <div class="math-block">
+                            <p>\[ PV = mRT \] (Using specific gas constant R)</p>
+                            <p>\[ \frac{P_1 V_1}{T_1} = \frac{P_2 V_2}{T_2} \] (For constant mass)</p>
+                            <p>\[ P = \rho RT \] (Using density ρ)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <p><strong>Example: Gas Compression</strong></p>
+                        <p>A gas occupies 2 m³ at 300 K and 100 kPa. If it is compressed to 1 m³ and heated to 400 K, what is the new pressure?</p>
+                        
+                        <div class="solution-step">
+                            <p><strong>Step 1: Apply combined gas law</strong></p>
+                            <p>\[ \frac{P_1 V_1}{T_1} = \frac{P_2 V_2}{T_2} \]</p>
+                        </div>
+                        
+                        <div class="solution-step">
+                            <p><strong>Step 2: Rearrange for P₂</strong></p>
+                            <p>\[ P_2 = P_1 \times \frac{V_1}{V_2} \times \frac{T_2}{T_1} \]</p>
+                        </div>
+                        
+                        <div class="solution-step">
+                            <p><strong>Step 3: Substitute values</strong></p>
+                            <p>\[ P_2 = 100 \times \frac{2}{1} \times \frac{400}{300} = 100 \times 2 \times 1.333 = 266.7 \, \text{kPa} \]</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="key-point">
+                    <h3>Thermodynamic Laws</h3>
+                    <ul>
+                        <li><strong>Zeroth Law:</strong> If two systems are each in thermal equilibrium with a third, they are in thermal equilibrium with each other</li>
+                        <li><strong>First Law:</strong> Energy cannot be created or destroyed, only converted from one form to another (ΔU = Q - W)</li>
+                        <li><strong>Second Law:</strong> The entropy of an isolated system never decreases</li>
+                        <li><strong>Third Law:</strong> The entropy of a perfect crystal approaches zero as temperature approaches absolute zero</li>
+                    </ul>
+                </div>
+                
+                <div class="math-block">
+                    <p>Key Thermodynamic Equations</p>
+                    <p>\[ \Delta U = Q - W \] (First Law)</p>
+                    <p>\[ \eta = 1 - \frac{Q_C}{Q_H} \] (Thermal Efficiency)</p>
+                    <p>\[ \eta_{Carnot} = 1 - \frac{T_C}{T_H} \] (Carnot Efficiency)</p>
+                    <p>\[ PV = nRT \] (Ideal Gas Law)</p>
+                    <p>\[ \Delta S \geq \int \frac{\delta Q}{T} \] (Entropy change)</p>
+                </div>
+            </div>
+
+            <!-- Fluid Mechanics Section -->
+            <div class="section-spacing" id="fluids">
+                <h2>Fluid Mechanics</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <h3>Fluid Properties</h3>
+                        <ul>
+                            <li><a href="#density">Density and Specific Gravity</a></li>
+                            <li><a href="#viscosity">Viscosity</a></li>
+                            <li><a href="#pressure">Fluid Pressure</a></li>
+                            <li><a href="#surface-tension">Surface Tension</a></li>
+                            <li><a href="#compressibility">Compressibility</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Fluid Statics</h3>
+                        <ul>
+                            <li><a href="#hydrostatics">Hydrostatic Pressure</a></li>
+                            <li><a href="#manometers">Manometers</a></li>
+                            <li><a href="#buoyancy">Buoyancy and Flotation</a></li>
+                            <li><a href="#stability">Stability of Floating Bodies</a></li>
+                            <li><a href="#forces">Forces on Submerged Surfaces</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Fluid Dynamics</h3>
+                        <ul>
+                            <li><a href="#continuity">Continuity Equation</a></li>
+                            <li><a href="#bernoulli">Bernoulli's Equation</a></li>
+                            <li><a href="#energy-equation">Energy Equation</a></li>
+                            <li><a href="#momentum-equation">Momentum Equation</a></li>
+                            <li><a href="#flow-measurement">Flow Measurement</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Pressure and Hydrostatics -->
+                <div class="concept-explanation" id="hydrostatics">
+                    <h3>Hydrostatic Pressure</h3>
+                    <p><strong>Hydrostatic pressure</strong> is the pressure exerted by a fluid at equilibrium due to the force of gravity.</p>
+                    
+                    <div class="math-block">
+                        <p>\[ P = P_0 + \rho g h \]</p>
+                        <p>Where:</p>
+                        <p>P = Pressure at depth h (Pa)</p>
+                        <p>P₀ = Pressure at surface (Pa)</p>
+                        <p>ρ = Density of fluid (kg/m³)</p>
+                        <p>g = Acceleration due to gravity (9.81 m/s²)</p>
+                        <p>h = Depth below surface (m)</p>
+                    </div>
+                    
+                    <div class="diagram-container">
+                        <h4>Pressure Variation with Depth</h4>
+                        <div class="pressure-demo">
+                            <div class="pressure-container">
+                                <div class="pressure-area" style="width: 200px;"></div>
+                                <div class="pressure-force">F = P × A</div>
+                                <p>Surface: P = P₀</p>
+                            </div>
+                            
+                            <div class="pressure-arrow">↓</div>
+                            
+                            <div class="pressure-container">
+                                <div class="pressure-area" style="width: 200px;"></div>
+                                <div class="pressure-force">F = (P₀ + ρgh) × A</div>
+                                <p>Depth h: P = P₀ + ρgh</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <p><strong>Example: Pressure at Depth</strong></p>
+                        <p>Calculate the pressure at a depth of 10 m in water. Atmospheric pressure is 101.3 kPa. Density of water is 1000 kg/m³.</p>
+                        
+                        <div class="solution-step">
+                            <p><strong>Step 1: Identify known values</strong></p>
+                            <p>P₀ = 101.3 kPa = 101300 Pa</p>
+                            <p>ρ = 1000 kg/m³</p>
+                            <p>g = 9.81 m/s²</p>
+                            <p>h = 10 m</p>
+                        </div>
+                        
+                        <div class="solution-step">
+                            <p><strong>Step 2: Apply hydrostatic pressure formula</strong></p>
+                            <p>\[ P = P_0 + \rho g h \]</p>
+                            <p>\[ P = 101300 + (1000 \times 9.81 \times 10) \]</p>
+                        </div>
+                        
+                        <div class="solution-step">
+                            <p><strong>Step 3: Calculate</strong></p>
+                            <p>\[ P = 101300 + 98100 = 199400 \, \text{Pa} = 199.4 \, \text{kPa} \]</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bernoulli's Equation -->
+                <div class="concept-explanation" id="bernoulli">
+                    <h3>Bernoulli's Equation</h3>
+                    <p><strong>Bernoulli's equation</strong> describes the relationship between pressure, velocity, and elevation in a flowing fluid.</p>
+                    
+                    <div class="math-block">
+                        <p>\[ P_1 + \frac{1}{2} \rho v_1^2 + \rho g h_1 = P_2 + \frac{1}{2} \rho v_2^2 + \rho g h_2 \]</p>
+                    </div>
+                    
+                    <div class="derivation">
+                        <h4>Assumptions for Bernoulli's Equation</h4>
+                        <ul>
+                            <li>Steady flow</li>
+                            <li>Incompressible fluid</li>
+                            <li>Inviscid flow (no friction)</li>
+                            <li>Flow along a streamline</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="application-example">
+                        <h4>Applications of Bernoulli's Principle</h4>
+                        <ul>
+                            <li><strong>Venturi effect:</strong> Pressure decreases when velocity increases in a constriction</li>
+                            <li><strong>Airplane wings:</strong> Lift generated by pressure difference above and below wing</li>
+                            <li><strong>Carburetors:</strong> Fuel drawn in by low pressure in venturi</li>
+                            <li><strong>Pitot tubes:</strong> Measure flow velocity using pressure difference</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="key-point">
+                    <h3>Fundamental Fluid Principles</h3>
+                    <ul>
+                        <li><strong>Continuity Equation:</strong> A₁V₁ = A₂V₂ (for incompressible flow)</li>
+                        <li><strong>Bernoulli's Equation:</strong> P₁ + ½ρV₁² + ρgz₁ = P₂ + ½ρV₂² + ρgz₂</li>
+                        <li><strong>Hydrostatic Pressure:</strong> P = P₀ + ρgh</li>
+                        <li><strong>Reynolds Number:</strong> Re = ρVD/μ (indicates flow regime)</li>
+                        <li><strong>Darcy-Weisbach Equation:</strong> h<sub>f</sub> = f(L/D)(V²/2g) (head loss in pipes)</li>
+                    </ul>
+                </div>
+                
+                <div class="math-block">
+                    <p>Fluid Flow Equations</p>
+                    <p>\[ \dot{m} = \rho A V \] (Mass flow rate)</p>
+                    <p>\[ Q = A V \] (Volumetric flow rate)</p>
+                    <p>\[ \frac{P_1}{\rho g} + \frac{V_1^2}{2g} + z_1 = \frac{P_2}{\rho g} + \frac{V_2^2}{2g} + z_2 + h_L \] (Energy equation with losses)</p>
+                    <p>\[ Re = \frac{\rho V D}{\mu} \] (Reynolds number)</p>
+                </div>
+            </div>
+
+            <!-- Additional sections would continue with similar detailed content -->
+            
+            <!-- Practice Problems Section -->
+            <div class="section-spacing" id="problems">
+                <h2>Practice Problems</h2>
+                
+                <div class="problem-container">
+                    <div class="problem-header">
+                        <div class="problem-number">Problem 1</div>
+                        <div class="problem-topic">Stress Analysis</div>
+                    </div>
+                    
+                    <p>A steel rod with a diameter of 20 mm is subjected to a tensile force of 50 kN. Calculate the stress in the rod.</p>
+                    
+                    <div class="given-data">
+                        <h4>Given Data:</h4>
+                        <div class="data-item">
+                            <span class="data-label">Diameter (d)</span>
+                            <span class="data-value">20 mm</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Force (F)</span>
+                            <span class="data-value">50 kN</span>
+                        </div>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <h4>Step 1: Calculate Cross-sectional Area</h4>
+                        <div class="formula-box">
+                            <p>\[ A = \frac{\pi d^2}{4} = \frac{\pi (0.02)^2}{4} \]</p>
+                            <p>\[ A = \frac{\pi \times 0.0004}{4} = 3.1416 \times 10^{-4} \, \text{m}^2 \]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <h4>Step 2: Calculate Stress</h4>
+                        <div class="formula-box">
+                            <p>\[ \sigma = \frac{F}{A} = \frac{50 \times 10^3}{3.1416 \times 10^{-4}} \]</p>
+                            <p>\[ \sigma = 159.15 \times 10^6 \, \text{Pa} = 159.15 \, \text{MPa} \]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="answer-box">
+                        <h3>Solution</h3>
+                        <div class="answer-value">σ = 159.15 MPa</div>
+                    </div>
+                </div>
+                
+                <div class="problem-container">
+                    <div class="problem-header">
+                        <div class="problem-number">Problem 2</div>
+                        <div class="problem-topic">Circuit Analysis</div>
+                    </div>
+                    
+                    <p>For the circuit shown below, calculate the total resistance and current through each resistor when a 12V supply is connected.</p>
+                    
+                    <div class="given-data">
+                        <h4>Given Data:</h4>
+                        <div class="data-item">
+                            <span class="data-label">R₁</span>
+                            <span class="data-value">10 Ω</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">R₂</span>
+                            <span class="data-value">20 Ω</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">R₃</span>
+                            <span class="data-value">30 Ω</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Supply Voltage</span>
+                            <span class="data-value">12 V</span>
+                        </div>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <h4>Step 1: Calculate Total Resistance</h4>
+                        <div class="formula-box">
+                            <p>For resistors in series: R<sub>T</sub> = R₁ + R₂ + R₃</p>
+                            <p>\[ R_T = 10 + 20 + 30 = 60 \, \Omega \]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <h4>Step 2: Calculate Total Current</h4>
+                        <div class="formula-box">
+                            <p>Using Ohm's Law: I = V/R</p>
+                            <p>\[ I = \frac{12}{60} = 0.2 \, \text{A} \]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <h4>Step 3: Calculate Current Through Each Resistor</h4>
+                        <div class="formula-box">
+                            <p>In a series circuit, current is the same through all components</p>
+                            <p>\[ I_{R1} = I_{R2} = I_{R3} = 0.2 \, \text{A} \]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="answer-box">
+                        <h3>Solution</h3>
+                        <div class="answer-value">R<sub>T</sub> = 60 Ω</div>
+                        <div class="answer-value">I = 0.2 A</div>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <p>Practice Problem Strategy</p>
+                    <p>Work through these problems systematically. For additional practice, try varying the values and check your solutions. Remember to always:</p>
+                    <ul>
+                        <li>Identify what is given and what is required</li>
+                        <li>Select the appropriate formula or method</li>
+                        <li>Show all steps clearly</li>
+                        <li>Include units in all calculations</li>
+                        <li>Verify your answer makes physical sense</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Additional Resources Section -->
+            <div class="section-spacing" id="resources">
+                <h2>Additional Resources</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <h3>Online Tools</h3>
+                        <ul>
+                            <li><a href="https://www.wolframalpha.com/" target="_blank">Wolfram Alpha</a> - Computational knowledge engine</li>
+                            <li><a href="https://www.desmos.com/" target="_blank">Desmos</a> - Graphing calculator</li>
+                            <li><a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a> - Free educational videos</li>
+                            <li><a href="https://www.engineeringtoolbox.com/" target="_blank">Engineering Toolbox</a> - Engineering reference</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Recommended Textbooks</h3>
+                        <ul>
+                            <li>Engineering Mechanics: Statics & Dynamics by Hibbeler</li>
+                            <li>Fundamentals of Electric Circuits by Alexander & Sadiku</li>
+                            <li>Thermodynamics: An Engineering Approach by Cengel & Boles</li>
+                            <li>Fluid Mechanics by White</li>
+                            <li>Advanced Engineering Mathematics by Kreyszig</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Study Techniques</h3>
+                        <ul>
+                            <li>Spaced repetition for memorization</li>
+                            <li>Active recall practice</li>
+                            <li>Problem-solving in timed conditions</li>
+                            <li>Study groups for discussion</li>
+                            <li>Regular review of key concepts</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="key-point">
+                    <h3>Effective Study Strategies</h3>
+                    <ul>
+                        <li><strong>Create a Study Schedule:</strong> Allocate specific times for each subject</li>
+                        <li><strong>Practice Problems:</strong> Work through examples and past papers</li>
+                        <li><strong>Use Multiple Resources:</strong> Combine textbooks, online resources, and lectures</li>
+                        <li><strong>Teach Others:</strong> Explaining concepts to others reinforces your understanding</li>
+                        <li><strong>Take Regular Breaks:</strong> Use techniques like the Pomodoro method</li>
+                        <li><strong>Review Regularly:</strong> Don't cram - spaced repetition is more effective</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Reference Section -->
+            <div class="section-spacing" id="formulas">
+                <h2>Key Engineering Formulas</h2>
+                
+                <div class="math-block">
+                    <p>Mechanics Formulas</p>
+                    <p>\[ F = ma \] (Newton's Second Law)</p>
+                    <p>\[ \tau = r \times F \] (Torque)</p>
+                    <p>\[ W = F \cdot d \] (Work)</p>
+                    <p>\[ KE = \frac{1}{2}mv^2 \] (Kinetic Energy)</p>
+                    <p>\[ PE = mgh \] (Gravitational Potential Energy)</p>
+                </div>
+                
+                <div class="math-block">
+                    <p>Electrical Formulas</p>
+                    <p>\[ V = IR \] (Ohm's Law)</p>
+                    <p>\[ P = VI \] (Electrical Power)</p>
+                    <p>\[ C = \frac{Q}{V} \] (Capacitance)</p>
+                    <p>\[ X_L = 2\pi fL \] (Inductive Reactance)</p>
+                    <p>\[ X_C = \frac{1}{2\pi fC} \] (Capacitive Reactance)</p>
+                </div>
+                
+                <div class="math-block">
+                    <p>Thermodynamics Formulas</p>
+                    <p>\[ \Delta U = Q - W \] (First Law)</p>
+                    <p>\[ PV = nRT \] (Ideal Gas Law)</p>
+                    <p>\[ \eta = 1 - \frac{Q_C}{Q_H} \] (Thermal Efficiency)</p>
+                    <p>\[ \eta_{Carnot} = 1 - \frac{T_C}{T_H} \] (Carnot Efficiency)</p>
+                </div>
+                
+                <div class="math-block">
+                    <p>Fluid Mechanics Formulas</p>
+                    <p>\[ P = P_0 + \rho gh \] (Hydrostatic Pressure)</p>
+                    <p>\[ Q = Av \] (Continuity Equation)</p>
+                    <p>\[ P_1 + \frac{1}{2}\rho v_1^2 + \rho g h_1 = P_2 + \frac{1}{2}\rho v_2^2 + \rho g h_2 \] (Bernoulli's Equation)</p>
+                    <p>\[ Re = \frac{\rho v D}{\mu} \] (Reynolds Number)</p>
+                </div>
+            </div>
+
+            <div class="section-spacing" id="units">
+                <h2>Unit Conversions</h2>
+                
+                <table class="units-table">
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>SI Unit</th>
+                            <th>Other Common Units</th>
+                            <th>Conversion Factors</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Length</td>
+                            <td>meter (m)</td>
+                            <td>inch, foot, mile</td>
+                            <td>1 m = 39.37 in, 1 km = 0.6214 mile</td>
+                        </tr>
+                        <tr>
+                            <td>Mass</td>
+                            <td>kilogram (kg)</td>
+                            <td>pound, ounce</td>
+                            <td>1 kg = 2.205 lb, 1 lb = 0.4536 kg</td>
+                        </tr>
+                        <tr>
+                            <td>Force</td>
+                            <td>newton (N)</td>
+                            <td>pound-force (lbf)</td>
+                            <td>1 N = 0.2248 lbf, 1 lbf = 4.448 N</td>
+                        </tr>
+                        <tr>
+                            <td>Pressure</td>
+                            <td>pascal (Pa)</td>
+                            <td>bar, psi, atm</td>
+                            <td>1 bar = 10⁵ Pa, 1 atm = 101.325 kPa, 1 psi = 6.895 kPa</td>
+                        </tr>
+                        <tr>
+                            <td>Energy</td>
+                            <td>joule (J)</td>
+                            <td>calorie, BTU, kWh</td>
+                            <td>1 cal = 4.184 J, 1 BTU = 1055 J, 1 kWh = 3.6×10⁶ J</td>
+                        </tr>
+                        <tr>
+                            <td>Power</td>
+                            <td>watt (W)</td>
+                            <td>horsepower (hp)</td>
+                            <td>1 hp = 745.7 W</td>
+                        </tr>
+                        <tr>
+                            <td>Temperature</td>
+                            <td>kelvin (K)</td>
+                            <td>°C, °F</td>
+                            <td>K = °C + 273.15, °F = 1.8°C + 32</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section-spacing" id="constants">
+                <h2>Physical Constants</h2>
+                
+                <table class="units-table">
+                    <thead>
+                        <tr>
+                            <th>Constant</th>
+                            <th>Symbol</th>
+                            <th>Value</th>
+                            <th>Units</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gravitational acceleration</td>
+                            <td>g</td>
+                            <td>9.80665</td>
+                            <td>m/s²</td>
+                        </tr>
+                        <tr>
+                            <td>Universal gas constant</td>
+                            <td>R</td>
+                            <td>8.314462618</td>
+                            <td>J/(mol·K)</td>
+                        </tr>
+                        <tr>
+                            <td>Avogadro's number</td>
+                            <td>N<sub>A</sub></td>
+                            <td>6.02214076×10²³</td>
+                            <td>mol⁻¹</td>
+                        </tr>
+                        <tr>
+                            <td>Boltzmann constant</td>
+                            <td>k</td>
+                            <td>1.380649×10⁻²³</td>
+                            <td>J/K</td>
+                        </tr>
+                        <tr>
+                            <td>Planck constant</td>
+                            <td>h</td>
+                            <td>6.62607015×10⁻³⁴</td>
+                            <td>J·s</td>
+                        </tr>
+                        <tr>
+                            <td>Speed of light in vacuum</td>
+                            <td>c</td>
+                            <td>299792458</td>
+                            <td>m/s</td>
+                        </tr>
+                        <tr>
+                            <td>Elementary charge</td>
+                            <td>e</td>
+                            <td>1.602176634×10⁻¹⁹</td>
+                            <td>C</td>
+                        </tr>
+                        <tr>
+                            <td>Electron mass</td>
+                            <td>m<sub>e</sub></td>
+                            <td>9.1093837015×10⁻³¹</td>
+                            <td>kg</td>
+                        </tr>
+                        <tr>
+                            <td>Proton mass</td>
+                            <td>m<sub>p</sub></td>
+                            <td>1.67262192369×10⁻²⁷</td>
+                            <td>kg</td>
+                        </tr>
+                        <tr>
+                            <td>Permittivity of free space</td>
+                            <td>ε<sub>0</sub></td>
+                            <td>8.8541878128×10⁻¹²</td>
+                            <td>F/m</td>
+                        </tr>
+                        <tr>
+                            <td>Permeability of free space</td>
+                            <td>μ<sub>0</sub></td>
+                            <td>1.25663706212×10⁻⁶</td>
+                            <td>N/A²</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="navigation">
+                <a href="#mechanics" class="nav-button">Back to Top</a>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 HNC Engineering Science. All rights reserved.</p>
+            <p>This study guide is intended for educational purposes only.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple navigation script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling to all links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

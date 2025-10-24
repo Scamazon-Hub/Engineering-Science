@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Problem Solving - HNC Engineering Science</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles specific to engineering problems page */
+        .problem-container {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .problem-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .problem-number {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .problem-topic {
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+        
+        .given-data {
+            background: #f8f9fa;
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .data-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0;
+            padding: 0.25rem 0;
+        }
+        
+        .data-label {
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+        
+        .data-value {
+            font-family: 'Fira Code', monospace;
+            background: #e9ecef;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .solution-step {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--info);
+        }
+        
+        .formula-box {
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        
+        .answer-box {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .answer-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #155724;
+            margin: 0.5rem 0;
+        }
+        
+        .circuit-diagram {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .component {
+            position: absolute;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+        }
+        
+        .wire {
+            position: absolute;
+            background: #2c3e50;
+        }
+        
+        .capacitor-visual {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .capacitor-plates {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .plate {
+            width: 200px;
+            height: 20px;
+            background: #3498db;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        
+        .dielectric {
+            width: 200px;
+            height: 60px;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .material-property {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .property-card {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .property-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+        
+        .composite-breakdown {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .material-component {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .material-bar {
+            width: 80%;
+            height: 120px;
+            margin: 0 auto 1rem;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .percentage-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .ac-waveform {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .waveform-path {
+            fill: none;
+            stroke-width: 2;
+        }
+        
+        @media (max-width: 768px) {
+            .problem-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .problem-topic {
+                margin-top: 1rem;
+            }
+            
+            .capacitor-visual {
+                flex-direction: column;
+            }
+            
+            .composite-breakdown {
+                flex-direction: column;
+            }
+            
+            .material-component {
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>HNC Engineering Science</h1>
+            <p>Engineering Problem Solving</p>
+        </div>
+    </header>
+
+    <div class="container grid-layout">
+        <aside id="navigation-placeholder"></aside>
+
+        <main>
+            <h1>Engineering Problem Solving</h1>
+            
+            <div class="info-box">
+                <p>Comprehensive Analysis of Engineering Challenges</p>
+                This collection of engineering problems covers fundamental principles in electrical circuits, material science, mechanics, and electromagnetic systems. Each problem demonstrates practical application of engineering theory with step-by-step solutions.
+            </div>
+
+            <!-- Problem 1: Parallel Plate Capacitor -->
+            <div class="problem-container" id="problem1">
+                <div class="problem-header">
+                    <div class="problem-number">Problem 1</div>
+                    <div class="problem-topic">Parallel Plate Capacitor Design</div>
+                </div>
+                
+                <p>A parallel plate capacitor is required to be designed using polyethylene (PE) as the filler between the plates with a dielectric constant ($\epsilon_r$) of $2.25$. The capacitor is constructed with circular plates of radius ($r$) $27 \, \text{mm}$.</p>
+                
+                <div class="given-data">
+                    <h4>Given Data:</h4>
+                    <div class="data-item">
+                        <span class="data-label">Dielectric constant ($\epsilon_r$)</span>
+                        <span class="data-value">2.25</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Plate radius ($r$)</span>
+                        <span class="data-value">27 mm</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Vacuum permittivity ($\epsilon_0$)</span>
+                        <span class="data-value">8.85 × 10⁻¹² F/m</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">π value</span>
+                        <span class="data-value">3.142</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Required capacitance ($C$)</span>
+                        <span class="data-value">30 pF</span>
+                    </div>
+                </div>
+                
+                <p><strong>Objective:</strong> Calculate the gap required between the plates ($l$) to give the component a capacitance of $30 \, \text{pF}$ to one decimal place.</p>
+                
+                <div class="capacitor-visual">
+                    <div class="capacitor-plates">
+                        <div class="plate"></div>
+                        <div class="dielectric">Polyethylene<br>εr = 2.25</div>
+                        <div class="plate"></div>
+                    </div>
+                    <div style="text-align: center;">
+                        <p><strong>Plate Separation: l = ?</strong></p>
+                        <p>Plate Area: A = πr²</p>
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h4>Step 1: Capacitance Formula for Parallel Plate Capacitor</h4>
+                    <div class="formula-box">
+                        <p>\[ C = \frac{\epsilon_0 \epsilon_r A}{l} \]</p>
+                        <p>Where $A$ is the plate area and $l$ is the plate separation</p>
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h4>Step 2: Calculate Plate Area</h4>
+                    <div class="formula-box">
+                        <p>\[ A = \pi r^2 = 3.142 \times (0.027)^2 \]</p>
+                        <p>\[ A = 3.142 \times 0.000729 = 0.00229 \, \text{m}^2 \]</p>
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h4>Step 3: Rearrange Formula for Plate Separation</h4>
+                    <div class="formula-box">
+                        <p>\[ l = \frac{\epsilon_0 \epsilon_r A}{C} \]</p>
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h4>Step 4: Substitute Values and Calculate</h4>
+                    <div class="formula-box">
+                        <p>\[ l = \frac{(8.85 \times 10^{-12}) \times 2.25 \times 0.00229}{30 \times 10^{-12}} \]</p>
+                        <p>\[ l = \frac{4.56 \times 10^{-14}}{30 \times 10^{-12}} = 0.00152 \, \text{m} \]</p>
+                        <p>\[ l = 1.52 \, \text{mm} \]</p>
+                    </div>
+                </div>
+                
+                <div class="answer-box">
+                    <h3>Solution</h3>
+                    <div class="answer-value">l = 1.5 mm</div>
+                    <p>The required plate separation is 1.5 mm to achieve 30 pF capacitance</p>
+                </div>
+            </div>
+
+            <!-- Problem 2: Elastic Moduli Calculations -->
+            <div class="problem-container" id="problem2">
+                <div class="problem-header">
+                    <div class="problem-number">Problem 2</div>
+                    <div class="problem-topic">Elastic Moduli Calculations</div>
+                </div>
+                
+                <p>Given that a sample of mild steel has a Young's modulus ($E$) of $211.9 \, \text{GPa}$ and a bulk modulus ($K$) of $169.2 \, \text{GPa}$.</p>
+                
+                <div class="given-data">
+                    <h4>Given Data:</h4>
+                    <div class="data-item">
+                        <span class="data-label">Young's modulus ($E$)</span>
+                        <span class="data-value">211.9 GPa</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Bulk modulus ($K$)</span>
+                        <span class="data-value">169.2 GPa</span>
+                    </div>
+                </div>
+                
+                <div class="material-property">
+                    <div class="property-card">
+                        <h4>Young's Modulus (E)</h4>
+                        <div class="property-value">211.9 GPa</div>
+                        <p>Measures resistance to linear deformation</p>
+                    </div>
+                    <div class="property-card">
+                        <h4>Bulk Modulus (K)</h4>
+                        <div class="property-value">169.2 GPa</div>
+                        <p>Measures resistance to volumetric deformation</p>
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h4>Part a: Calculate Poisson's Ratio ($\nu$)</h4>
+                    <div class="formula-box">
+                        <p>\[ \nu = \frac{3K - E}{6K} \]</p>
+                    </div>
+                    <div class="formula-box">
+                        <p>\[ \nu = \frac{3 \times 169.2 - 211.9}{6 \times 169.2} \]</p>
+                        <p>\[ \nu = \frac{507.6 - 211.9}{1015.2} = \frac{295.7}{1015.2} = 0.291 \]</p>
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h4>Part b: Calculate Shear Modulus ($G$)</h4>
+                    <div class="formula-box">
+                        <p>\[ G = \frac{E}{2(1 + \nu)} \]</p>
+                    </div>
+                    <div class="formula-box">
+                        <p>\[ G = \frac{211.9}{2(1 + 0.291)} = \frac{211.9}{2 \times 1.291} \]</p>
+                        <p>\[ G = \frac{211.9}{2.582} = 82.1 \, \text{GPa} \]</p>
+                    </div>
+                </div>
+                
+                <div class="answer-box">
+                    <h3>Solutions</h3>
+                    <div class="answer-value">ν = 0.291</div>
+                    <div class="answer-value">G = 82.1 GPa</div>
+                </div>
+            </div>
+
+            <!-- Problem 3: Tensile Test Analysis -->
+            <div class="problem-container" id="problem3">
+                <div class="problem-header">
+                    <div class="problem-number">Problem 3</div>
+                    <div class="problem-topic">Tensile Test Analysis (Polycarbonate)</div>
+                </div>
+                
+                <p>A tensile test is performed on a $4 \, \text{mm}$ thick sample of polycarbonate (PC) of width $25 \, \text{mm}$. The sample was tested to fracture at room temperature and which point the sample had a total length of $81 \, \text{mm}$ and the force measured was $19 \, \text{kN}$.</p>
+                
+                <div class="given-data">
+                    <h4>Given Data:</h4>
+                    <div class="data-item">
+                        <span class="data-label">Sample thickness</span>
+                        <span class="data-value">4 mm</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Sample width</span>
+                        <span class="data-value">25 mm</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Original length ($L_0$)</span>
+                        <span class="data-value">75 mm</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Fracture length ($L_f$)</span>
+                        <span class="data-value">81 mm</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Fracture force ($F$)</span>
+                        <span class="data-value">19 kN</span>
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h4>Part a: Calculate Stress at Failure ($\sigma$)</h4>
+                    <div class="formula-box">
+                        <p>\[ \sigma = \frac{F}{A} \]</p>
+                        <p>Cross-sectional area: $A = \text{thickness} \times \text{width}$</p>
+                        <p>\[ A = 4 \times 10^{-3} \times 25 \times 10^{-3} = 100 \times 10^{-6} \, \text{m}^2 \]</p>
+                        <p>\[ \sigma = \frac{19 \times 10^3}{100 \times 10^{-6}} = 190 \times 10^6 \, \text{Pa} = 190 \, \text{MPa} \]</p>
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h4>Part b: Calculate Fracture Strain ($\epsilon$)</h4>
+                    <div class="formula-box">
+                        <p>\[ \epsilon = \frac{L_f - L_0}{L_0} \]</p>
+                        <p>\[ \epsilon = \frac{81 - 75}{75} = \frac{6}{75} = 0.08 \]</p>
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h4>Part c: Calculate Modulus of Elasticity ($E$)</h4>
+                    <div class="formula-box">
+                        <p>\[ E = \frac{\sigma}{\epsilon} \]</p>
+                        <p>\[ E = \frac{190 \times 10^6}{0.08} = 2.375 \times 10^9 \, \text{Pa} = 2.38 \, \text{GPa} \]</p>
+                    </div>
+                </div>
+                
+                <div class="answer-box">
+                    <h3>Solutions</h3>
+                    <div class="answer-value">σ = 190.00 MPa</div>
+                    <div class="answer-value">ε = 0.08</div>
+                    <div class="answer-value">E = 2.38 GPa</div>
+                </div>
+            </div>
+
+            <!-- Problem 4: Composite Material -->
+            <div class="problem-container" id="problem4">
+                <div class="problem-header">
+                    <div class="problem-number">Problem 4</div>
+                    <div class="problem-topic">Composite Material (Graphite-Epoxy)</div>
+                </div>
+                
+                <p>A composite material of graphite-filled epoxy is designed with a mixture of $60\%$ of graphite by weight. Given the densities and Young's moduli of the constituent materials.</p>
+                
+                <div class="given-data">
+                    <h4>Material Properties:</h4>
+                    <div class="data-item">
+                        <span class="data-label">Graphite density ($\rho_g$)</span>
+                        <span class="data-value">1.75 g/cm³</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Graphite Young's modulus ($E_g$)</span>
+                        <span class="data-value">224 GPa</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Epoxy density ($\rho_e$)</span>
+                        <span class="data-value">1.54 g/cm³</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Epoxy Young's modulus ($E_e$)</span>
+                        <span class="data-value">3.5 GPa</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Graphite weight fraction</span>
+                        <span class="data-value">60%</span>
+                    </div>
+                </div>
+                
+                <div class="composite-breakdown">
+                    <div class="material-component">
+                        <div class="material-bar" style="background: linear-gradient(to bottom, #2c3e50, #34495e);">
+                            <div class="percentage-label">60% Graphite</div>
+                        </div>
+                        <p>Graphite</p>
+                    </div>
+                    <div class="material-component">
+                        <div class="material-bar" style="background: linear-gradient(to bottom, #3498db, #2980b9);">
+                            <div class="percentage-label">40% Epoxy</div>
+                        </div>
+                        <p>Epoxy</p>
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h4>Part a: Calculate Composite Density ($\rho_{total}$)</h4>
+                    <div class="formula-box">
+                        <p>\[ \rho_{total} = \frac{1}{\frac{w_g}{\rho_g} + \frac{w_e}{\rho_e}} \]</p>
+                        <p>Where $w_g = 0.6$, $w_e = 0.4$</p>
+                        <p>\[ \rho_{total} = \frac{1}{\frac{0.6}{1.75} + \frac{0.4}{1.54}} \]</p>
+                        <p>\[ \rho_{total} = \frac{1}{0.3429 + 0.2597} = \frac{1}{0.6026} = 1.66 \, \text{g/cm}^3 \]</p>
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h4>Part b: Calculate Volume Fraction of Epoxy</h4>
+                    <div class="formula-box">
+                        <p>Volume fraction: $V_e = \frac{w_e / \rho_e}{w_g / \rho_g + w_e / \rho_e}$</p>
+                        <p>\[ V_e = \frac{0.4 / 1.54}{0.6 / 1.75 + 0.4 / 1.54} \]</p>
+                        <p>\[ V_e = \frac{0.2597}{0.3429 + 0.2597} = \frac{0.2597}{0.6026} = 0.431 = 43.10\% \]</p>
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h4>Part c: Calculate Composite Young's Modulus ($E$)</h4>
+                    <div class="formula-box">
+                        <p>Using rule of mixtures: $E = V_g E_g + V_e E_e$</p>
+                        <p>\[ V_g = 1 - V_e = 1 - 0.431 = 0.569 \]</p>
+                        <p>\[ E = (0.569 \times 224) + (0.431 \times 3.5) \]</p>
+                        <p>\[ E = 127.46 + 1.51 = 128.97 \approx 129 \, \text{GPa} \]</p>
+                    </div>
+                </div>
+                
+                <div class="answer-box">
+                    <h3>Solutions</h3>
+                    <div class="answer-value">ρ<sub>total</sub> = 1.66 g/cm³</div>
+                    <div class="answer-value">V<sub>epoxy</sub> = 43.10%</div>
+                    <div class="answer-value">E = 129 GPa</div>
+                </div>
+            </div>
+
+            <!-- Problem 5: Resistor Network Analysis -->
+            <div class="problem-container" id="problem5">
+                <div class="problem-header">
+                    <div class="problem-number">Problem 5</div>
+                    <div class="problem-topic">Resistor Network Analysis</div>
+                </div>
+                
+                <p>Considering the resistor network with a $9 \, \text{V}$ power source and resistors: $R_1 = 39 \, \Omega$ (series), $R_2 = 560 \, \Omega$ and $R_3 = 10 \, \Omega$ (parallel branch 1), $R_4 = 22 \, \Omega$ (parallel branch 2).</p>
+                
+                <div class="circuit-diagram">
+                    <!-- This would be a detailed circuit diagram in a real implementation -->
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                        <p>Circuit Diagram: Series-Parallel Network</p>
+                        <p>R1 (39Ω) → Parallel Branch (R2=560Ω || R3=10Ω) → R4 (22Ω)</p>
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h4>Part a: Calculate Total Resistance ($R_T$)</h4>
+                    <div class="formula-box">
+                        <p>Parallel combination of R2 and R3:</p>
+                        <p>\[ R_{23} = \frac{R_2 R_3}{R_2 + R_3} = \frac{560 \times 10}{560 + 10} = \frac{5600}{570} = 9.82 \, \Omega \]</p>
+                        <p>Total resistance: $R_T = R_1 + R_{23} + R_4$</p>
+                        <p>\[ R_T = 39 + 9.82 + 22 = 70.82 \, \Omega \]</p>
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h4>Part b: Calculate Current through R4 ($i_{R4}$)</h4>
+                    <div class="formula-box">
+                        <p>Total current: $I_T = \frac{V}{R_T} = \frac{9}{70.82} = 0.127 \, \text{A}$</p>
+                        <p>Since R4 is in series with the source, $i_{R4} = I_T = 0.127 \, \text{A} = 127 \, \text{mA}$</p>
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h4>Part c: Calculate Voltage across R3 ($V_{R3}$)</h4>
+                    <div class="formula-box">
+                        <p>Voltage across parallel combination: $V_{23} = I_T \times R_{23}$</p>
+                        <p>\[ V_{23} = 0.127 \times 9.82 = 1.25 \, \text{V} \]</p>
+                        <p>Since R3 is in parallel with R2, $V_{R3} = V_{23} = 1.25 \, \text{V} = 1250 \, \text{mV}$</p>
+                    </div>
+                </div>
+                
+                <div class="answer-box">
+                    <h3>Solutions</h3>
+                    <div class="answer-value">R<sub>T</sub> = 70.82 Ω</div>
+                    <div class="answer-value">i<sub>R4</sub> = 127.00 mA</div>
+                    <div class="answer-value">V<sub>R3</sub> = 1250.00 mV</div>
+                </div>
+            </div>
+
+            <!-- Additional problems would continue in the same format -->
+            
+            <div class="section-spacing">
+                <h2 id="summary">Summary</h2>
+                <p>
+                    These engineering problems demonstrate the application of fundamental principles across multiple disciplines. Each solution requires systematic problem-solving approaches, proper unit management, and careful mathematical calculation.
+                </p>
+
+                <div class="key-point">
+                    <h3>Key Problem-Solving Strategies</h3>
+                    <ul>
+                        <li>Always begin by identifying given data and required outputs</li>
+                        <li>Select appropriate formulas and theoretical relationships</li>
+                        <li>Pay careful attention to units and unit conversions</li>
+                        <li>Use systematic step-by-step approaches for complex calculations</li>
+                        <li>Verify results through dimensional analysis or alternative methods</li>
+                        <li>Consider physical meaning and reasonableness of final answers</li>
+                        <li>Document all steps clearly for review and verification</li>
+                    </ul>
+                </div>
+
+                <div class="navigation">
+                    <a href="#problem1" class="nav-button">Back to Problems</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 HNC Engineering Science. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+</body>
+</html>

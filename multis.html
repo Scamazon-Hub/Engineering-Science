@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Science Study Guide - HNC Engineering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-dark: #1a252f;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --surface: #ffffff;
+            --background: #f8f9fa;
+            --border: #dee2e6;
+            --text: #2c3e50;
+            --text-light: #6c757d;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --info: #17a2b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Grid Layout */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            padding: 2rem 0;
+            min-height: calc(100vh - 200px);
+        }
+
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Navigation Styles */
+        aside {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 2rem;
+        }
+
+        aside nav h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        aside nav ul {
+            list-style: none;
+        }
+
+        aside nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        aside nav a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        aside nav a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        /* Main Content Styles */
+        main {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: var(--primary-dark);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.4rem;
+        }
+
+        h4 {
+            color: var(--primary-dark);
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        /* Component Styles */
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box p:first-child {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+
+        .example-box {
+            background: #f8f9fa;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .example-box strong {
+            color: var(--primary-dark);
+        }
+
+        .key-point {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .key-point strong {
+            color: #0c5460;
+        }
+
+        /* Math and Code Styles */
+        .math-block {
+            background: #f8f9fa;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .math-block p {
+            margin: 0.5rem 0;
+        }
+
+        .unit-notation {
+            font-family: 'Fira Code', monospace;
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 0.9em;
+        }
+
+        /* Table Styles */
+        .units-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9em;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .units-table th,
+        .units-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+
+        .units-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .units-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .units-table tr:hover {
+            background: #e9ecef;
+        }
+
+        /* Diagram and Visualization Styles */
+        .diagram-container {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .diagram {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .flow-diagram {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: var(--surface);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .flow-diagram {
+                flex-direction: column;
+            }
+        }
+
+        .flow-step {
+            text-align: center;
+            flex: 1;
+            padding: 1rem;
+        }
+
+        .conversion-steps {
+            background: var(--surface);
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .conversion-steps p {
+            margin: 0.5rem 0;
+        }
+
+        /* Visualization Styles */
+        .viz-container {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .viz-item {
+            text-align: center;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .viz-item p {
+            margin: 0.5rem 0 0 0;
+            font-size: 0.9em;
+            color: var(--text-light);
+        }
+
+        .viz-block {
+            background-color: #e9ecef;
+            border: 2px solid var(--primary-dark);
+            padding: 1.5rem;
+            border-radius: 8px;
+            position: relative;
+            min-width: 100px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .viz-block-label {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-dark);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.8em;
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
+        /* Navigation Buttons */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .nav-button {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            opacity: 0.8;
+        }
+
+        /* Study Guide Specific Styles */
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .topic-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .topic-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .topic-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .topic-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .topic-card li:last-child {
+            border-bottom: none;
+        }
+
+        .topic-card a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .topic-card a:hover {
+            text-decoration: underline;
+        }
+
+        .section-spacing {
+            margin: 3rem 0;
+        }
+
+        .problem-container {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .problem-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .problem-number {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .problem-topic {
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+
+        .given-data {
+            background: #f8f9fa;
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .data-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0;
+            padding: 0.25rem 0;
+        }
+
+        .data-label {
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+
+        .data-value {
+            font-family: 'Fira Code', monospace;
+            background: #e9ecef;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+        }
+
+        .solution-step {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--info);
+        }
+
+        .formula-box {
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .answer-box {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .answer-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #155724;
+            margin: 0.5rem 0;
+        }
+
+        /* Circuit Diagram Styles */
+        .circuit-diagram {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .component {
+            position: absolute;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+        }
+
+        .wire {
+            position: absolute;
+            background: #2c3e50;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+            
+            header {
+                padding: 1.5rem 0;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.2rem;
+            }
+            
+            .topic-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            aside {
+                display: none;
+            }
+            
+            .nav-button {
+                display: none;
+            }
+            
+            .topic-card {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>HNC Engineering Science</h1>
+            <p>Comprehensive Study Guide</p>
+        </div>
+    </header>
+
+    <div class="container grid-layout">
+        <aside>
+            <nav>
+                <h3>Study Topics</h3>
+                <ul>
+                    <li><a href="#mechanics">Mechanics & Materials</a></li>
+                    <li><a href="#electrical">Electrical Principles</a></li>
+                    <li><a href="#thermo">Thermodynamics</a></li>
+                    <li><a href="#fluids">Fluid Mechanics</a></li>
+                    <li><a href="#math">Engineering Mathematics</a></li>
+                    <li><a href="#problems">Practice Problems</a></li>
+                    <li><a href="#resources">Additional Resources</a></li>
+                </ul>
+                
+                <h3>Quick Reference</h3>
+                <ul>
+                    <li><a href="#formulas">Key Formulas</a></li>
+                    <li><a href="#units">Unit Conversions</a></li>
+                    <li><a href="#constants">Physical Constants</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <h1>Engineering Science Study Guide</h1>
+            
+            <div class="info-box">
+                <p>Your Comprehensive Resource for HNC Engineering Science</p>
+                This study guide covers fundamental principles, formulas, and problem-solving techniques across all major engineering disciplines. Use the navigation to explore topics, practice problems, and access reference materials.
+            </div>
+
+            <!-- Mechanics & Materials Section -->
+            <div class="section-spacing" id="mechanics">
+                <h2>Mechanics & Materials</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <h3>Statics</h3>
+                        <ul>
+                            <li><a href="#forces">Forces and Equilibrium</a></li>
+                            <li><a href="#moments">Moments and Couples</a></li>
+                            <li><a href="#trusses">Truss Analysis</a></li>
+                            <li><a href="#friction">Friction</a></li>
+                            <li><a href="#centroids">Centroids and Center of Gravity</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Dynamics</h3>
+                        <ul>
+                            <li><a href="#kinematics">Kinematics</a></li>
+                            <li><a href="#newton">Newton's Laws</a></li>
+                            <li><a href="#energy">Work and Energy</a></li>
+                            <li><a href="#momentum">Momentum</a></li>
+                            <li><a href="#rotation">Rotational Motion</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Materials Science</h3>
+                        <ul>
+                            <li><a href="#stress-strain">Stress and Strain</a></li>
+                            <li><a href="#elasticity">Elasticity</a></li>
+                            <li><a href="#plasticity">Plastic Deformation</a></li>
+                            <li><a href="#composites">Composite Materials</a></li>
+                            <li><a href="#failure">Material Failure</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="key-point">
+                    <h3>Key Concepts in Mechanics</h3>
+                    <ul>
+                        <li><strong>Newton's First Law:</strong> An object at rest stays at rest, and an object in motion stays in motion unless acted upon by a net external force</li>
+                        <li><strong>Newton's Second Law:</strong> F = ma (Force equals mass times acceleration)</li>
+                        <li><strong>Newton's Third Law:</strong> For every action, there is an equal and opposite reaction</li>
+                        <li><strong>Stress (σ):</strong> Force per unit area (σ = F/A)</li>
+                        <li><strong>Strain (ε):</strong> Deformation per unit length (ε = ΔL/L)</li>
+                        <li><strong>Young's Modulus (E):</strong> Ratio of stress to strain in elastic deformation (E = σ/ε)</li>
+                    </ul>
+                </div>
+                
+                <div class="math-block">
+                    <p>Stress-Strain Relationships</p>
+                    <p>\[ \sigma = E\epsilon \] (Hooke's Law for elastic deformation)</p>
+                    <p>\[ \tau = G\gamma \] (Shear stress-strain relationship)</p>
+                    <p>\[ \nu = -\frac{\epsilon_{lateral}}{\epsilon_{axial}} \] (Poisson's Ratio)</p>
+                </div>
+            </div>
+
+            <!-- Electrical Principles Section -->
+            <div class="section-spacing" id="electrical">
+                <h2>Electrical Principles</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <h3>DC Circuits</h3>
+                        <ul>
+                            <li><a href="#ohms-law">Ohm's Law</a></li>
+                            <li><a href="#kirchhoff">Kirchhoff's Laws</a></li>
+                            <li><a href="#series-parallel">Series and Parallel Circuits</a></li>
+                            <li><a href="#power">Electrical Power</a></li>
+                            <li><a href="#theorems">Network Theorems</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>AC Circuits</h3>
+                        <ul>
+                            <li><a href="#ac-fundamentals">AC Fundamentals</a></li>
+                            <li><a href="#phasors">Phasors and Complex Numbers</a></li>
+                            <li><a href="#impedance">Impedance</a></li>
+                            <li><a href="#resonance">Resonance</a></li>
+                            <li><a href="#filters">Filters</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Electromagnetism</h3>
+                        <ul>
+                            <li><a href="#magnetism">Magnetic Fields</a></li>
+                            <li><a href="#induction">Electromagnetic Induction</a></li>
+                            <li><a href="#transformers">Transformers</a></li>
+                            <li><a href="#motors">Motors and Generators</a></li>
+                            <li><a href="#capacitance">Capacitance and Dielectrics</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="key-point">
+                    <h3>Key Electrical Formulas</h3>
+                    <ul>
+                        <li><strong>Ohm's Law:</strong> V = IR</li>
+                        <li><strong>Power:</strong> P = VI = I²R = V²/R</li>
+                        <li><strong>Resistors in Series:</strong> R<sub>total</sub> = R₁ + R₂ + ... + Rₙ</li>
+                        <li><strong>Resistors in Parallel:</strong> 1/R<sub>total</sub> = 1/R₁ + 1/R₂ + ... + 1/Rₙ</li>
+                        <li><strong>Capacitance:</strong> C = Q/V</li>
+                        <li><strong>Inductive Reactance:</strong> X<sub>L</sub> = 2πfL</li>
+                        <li><strong>Capacitive Reactance:</strong> X<sub>C</sub> = 1/(2πfC)</li>
+                        <li><strong>Impedance:</strong> Z = √(R² + (X<sub>L</sub> - X<sub>C</sub>)²)</li>
+                    </ul>
+                </div>
+                
+                <div class="diagram-container">
+                    <h4>Basic Electrical Circuit</h4>
+                    <div class="circuit-diagram">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                            <p>Voltage Source (V) → Resistor (R) → Current (I)</p>
+                            <p>Basic representation of Ohm's Law: V = IR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thermodynamics Section -->
+            <div class="section-spacing" id="thermo">
+                <h2>Thermodynamics</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <h3>Fundamental Concepts</h3>
+                        <ul>
+                            <li><a href="#systems">Systems and Properties</a></li>
+                            <li><a href="#states">State and Equilibrium</a></li>
+                            <li><a href="#processes">Processes and Cycles</a></li>
+                            <li><a href="#temperature">Temperature Scales</a></li>
+                            <li><a href="#pressure">Pressure Measurement</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>First Law of Thermodynamics</h3>
+                        <ul>
+                            <li><a href="#energy-balance">Energy Balance</a></li>
+                            <li><a href="#work">Work and Heat Transfer</a></li>
+                            <li><a href="#enthalpy">Enthalpy</a></li>
+                            <li><a href="#specific-heat">Specific Heats</a></li>
+                            <li><a href="#applications">First Law Applications</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Second Law of Thermodynamics</h3>
+                        <ul>
+                            <li><a href="#entropy">Entropy</a></li>
+                            <li><a href="#heat-engines">Heat Engines</a></li>
+                            <li><a href="#refrigeration">Refrigeration Cycles</a></li>
+                            <li><a href="#efficiency">Thermal Efficiency</a></li>
+                            <li><a href="#carnot">Carnot Cycle</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="key-point">
+                    <h3>Thermodynamic Laws</h3>
+                    <ul>
+                        <li><strong>Zeroth Law:</strong> If two systems are each in thermal equilibrium with a third, they are in thermal equilibrium with each other</li>
+                        <li><strong>First Law:</strong> Energy cannot be created or destroyed, only converted from one form to another (ΔU = Q - W)</li>
+                        <li><strong>Second Law:</strong> The entropy of an isolated system never decreases</li>
+                        <li><strong>Third Law:</strong> The entropy of a perfect crystal approaches zero as temperature approaches absolute zero</li>
+                    </ul>
+                </div>
+                
+                <div class="math-block">
+                    <p>Key Thermodynamic Equations</p>
+                    <p>\[ \Delta U = Q - W \] (First Law)</p>
+                    <p>\[ \eta = 1 - \frac{Q_C}{Q_H} \] (Thermal Efficiency)</p>
+                    <p>\[ \eta_{Carnot} = 1 - \frac{T_C}{T_H} \] (Carnot Efficiency)</p>
+                    <p>\[ PV = nRT \] (Ideal Gas Law)</p>
+                </div>
+            </div>
+
+            <!-- Fluid Mechanics Section -->
+            <div class="section-spacing" id="fluids">
+                <h2>Fluid Mechanics</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <h3>Fluid Properties</h3>
+                        <ul>
+                            <li><a href="#density">Density and Specific Gravity</a></li>
+                            <li><a href="#viscosity">Viscosity</a></li>
+                            <li><a href="#pressure">Fluid Pressure</a></li>
+                            <li><a href="#surface-tension">Surface Tension</a></li>
+                            <li><a href="#compressibility">Compressibility</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Fluid Statics</h3>
+                        <ul>
+                            <li><a href="#hydrostatics">Hydrostatic Pressure</a></li>
+                            <li><a href="#manometers">Manometers</a></li>
+                            <li><a href="#buoyancy">Buoyancy and Flotation</a></li>
+                            <li><a href="#stability">Stability of Floating Bodies</a></li>
+                            <li><a href="#forces">Forces on Submerged Surfaces</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Fluid Dynamics</h3>
+                        <ul>
+                            <li><a href="#continuity">Continuity Equation</a></li>
+                            <li><a href="#bernoulli">Bernoulli's Equation</a></li>
+                            <li><a href="#energy-equation">Energy Equation</a></li>
+                            <li><a href="#momentum-equation">Momentum Equation</a></li>
+                            <li><a href="#flow-measurement">Flow Measurement</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="key-point">
+                    <h3>Fundamental Fluid Principles</h3>
+                    <ul>
+                        <li><strong>Continuity Equation:</strong> A₁V₁ = A₂V₂ (for incompressible flow)</li>
+                        <li><strong>Bernoulli's Equation:</strong> P₁ + ½ρV₁² + ρgz₁ = P₂ + ½ρV₂² + ρgz₂</li>
+                        <li><strong>Hydrostatic Pressure:</strong> P = P₀ + ρgh</li>
+                        <li><strong>Reynolds Number:</strong> Re = ρVD/μ (indicates flow regime)</li>
+                        <li><strong>Darcy-Weisbach Equation:</strong> h<sub>f</sub> = f(L/D)(V²/2g) (head loss in pipes)</li>
+                    </ul>
+                </div>
+                
+                <div class="math-block">
+                    <p>Fluid Flow Equations</p>
+                    <p>\[ \dot{m} = \rho A V \] (Mass flow rate)</p>
+                    <p>\[ Q = A V \] (Volumetric flow rate)</p>
+                    <p>\[ \frac{P_1}{\rho g} + \frac{V_1^2}{2g} + z_1 = \frac{P_2}{\rho g} + \frac{V_2^2}{2g} + z_2 + h_L \] (Energy equation with losses)</p>
+                </div>
+            </div>
+
+            <!-- Engineering Mathematics Section -->
+            <div class="section-spacing" id="math">
+                <h2>Engineering Mathematics</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <h3>Algebra & Calculus</h3>
+                        <ul>
+                            <li><a href="#equations">Solving Equations</a></li>
+                            <li><a href="#functions">Functions and Graphs</a></li>
+                            <li><a href="#differentiation">Differentiation</a></li>
+                            <li><a href="#integration">Integration</a></li>
+                            <li><a href="#differential-eq">Differential Equations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Statistics & Probability</h3>
+                        <ul>
+                            <li><a href="#descriptive">Descriptive Statistics</a></li>
+                            <li><a href="#probability">Probability Theory</a></li>
+                            <li><a href="#distributions">Probability Distributions</a></li>
+                            <li><a href="#hypothesis">Hypothesis Testing</a></li>
+                            <li><a href="#regression">Regression Analysis</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Numerical Methods</h3>
+                        <ul>
+                            <li><a href="#root-finding">Root Finding</a></li>
+                            <li><a href="#interpolation">Interpolation</a></li>
+                            <li><a href="#integration-num">Numerical Integration</a></li>
+                            <li><a href="#differentiation-num">Numerical Differentiation</a></li>
+                            <li><a href="#ode-solving">Solving ODEs Numerically</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="key-point">
+                    <h3>Mathematical Tools for Engineers</h3>
+                    <ul>
+                        <li><strong>Derivative:</strong> Rate of change of a function</li>
+                        <li><strong>Integral:</strong> Accumulation of a quantity</li>
+                        <li><strong>Complex Numbers:</strong> z = a + bi, where i² = -1</li>
+                        <li><strong>Matrix Operations:</strong> Used in systems of equations and transformations</li>
+                        <li><strong>Probability:</strong> P(A) = Number of favorable outcomes / Total outcomes</li>
+                        <li><strong>Standard Deviation:</strong> σ = √[Σ(xᵢ - μ)²/N]</li>
+                    </ul>
+                </div>
+                
+                <div class="math-block">
+                    <p>Essential Mathematical Formulas</p>
+                    <p>\[ \frac{d}{dx}(x^n) = nx^{n-1} \] (Power Rule)</p>
+                    <p>\[ \int x^n dx = \frac{x^{n+1}}{n+1} + C \] (Power Rule for Integration)</p>
+                    <p>\[ e^{i\theta} = \cos\theta + i\sin\theta \] (Euler's Formula)</p>
+                    <p>\[ \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \] (Quadratic Formula)</p>
+                </div>
+            </div>
+
+            <!-- Practice Problems Section -->
+            <div class="section-spacing" id="problems">
+                <h2>Practice Problems</h2>
+                
+                <div class="problem-container">
+                    <div class="problem-header">
+                        <div class="problem-number">Problem 1</div>
+                        <div class="problem-topic">Stress Analysis</div>
+                    </div>
+                    
+                    <p>A steel rod with a diameter of 20 mm is subjected to a tensile force of 50 kN. Calculate the stress in the rod.</p>
+                    
+                    <div class="given-data">
+                        <h4>Given Data:</h4>
+                        <div class="data-item">
+                            <span class="data-label">Diameter (d)</span>
+                            <span class="data-value">20 mm</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Force (F)</span>
+                            <span class="data-value">50 kN</span>
+                        </div>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <h4>Step 1: Calculate Cross-sectional Area</h4>
+                        <div class="formula-box">
+                            <p>\[ A = \frac{\pi d^2}{4} = \frac{\pi (0.02)^2}{4} \]</p>
+                            <p>\[ A = \frac{\pi \times 0.0004}{4} = 3.1416 \times 10^{-4} \, \text{m}^2 \]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <h4>Step 2: Calculate Stress</h4>
+                        <div class="formula-box">
+                            <p>\[ \sigma = \frac{F}{A} = \frac{50 \times 10^3}{3.1416 \times 10^{-4}} \]</p>
+                            <p>\[ \sigma = 159.15 \times 10^6 \, \text{Pa} = 159.15 \, \text{MPa} \]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="answer-box">
+                        <h3>Solution</h3>
+                        <div class="answer-value">σ = 159.15 MPa</div>
+                    </div>
+                </div>
+                
+                <div class="problem-container">
+                    <div class="problem-header">
+                        <div class="problem-number">Problem 2</div>
+                        <div class="problem-topic">Circuit Analysis</div>
+                    </div>
+                    
+                    <p>For the circuit shown below, calculate the total resistance and current through each resistor when a 12V supply is connected.</p>
+                    
+                    <div class="given-data">
+                        <h4>Given Data:</h4>
+                        <div class="data-item">
+                            <span class="data-label">R₁</span>
+                            <span class="data-value">10 Ω</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">R₂</span>
+                            <span class="data-value">20 Ω</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">R₃</span>
+                            <span class="data-value">30 Ω</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Supply Voltage</span>
+                            <span class="data-value">12 V</span>
+                        </div>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <h4>Step 1: Calculate Total Resistance</h4>
+                        <div class="formula-box">
+                            <p>For resistors in series: R<sub>T</sub> = R₁ + R₂ + R₃</p>
+                            <p>\[ R_T = 10 + 20 + 30 = 60 \, \Omega \]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <h4>Step 2: Calculate Total Current</h4>
+                        <div class="formula-box">
+                            <p>Using Ohm's Law: I = V/R</p>
+                            <p>\[ I = \frac{12}{60} = 0.2 \, \text{A} \]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <h4>Step 3: Calculate Current Through Each Resistor</h4>
+                        <div class="formula-box">
+                            <p>In a series circuit, current is the same through all components</p>
+                            <p>\[ I_{R1} = I_{R2} = I_{R3} = 0.2 \, \text{A} \]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="answer-box">
+                        <h3>Solution</h3>
+                        <div class="answer-value">R<sub>T</sub> = 60 Ω</div>
+                        <div class="answer-value">I = 0.2 A</div>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <p>Practice Problem Strategy</p>
+                    <p>Work through these problems systematically. For additional practice, try varying the values and check your solutions. Remember to always:</p>
+                    <ul>
+                        <li>Identify what is given and what is required</li>
+                        <li>Select the appropriate formula or method</li>
+                        <li>Show all steps clearly</li>
+                        <li>Include units in all calculations</li>
+                        <li>Verify your answer makes physical sense</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Additional Resources Section -->
+            <div class="section-spacing" id="resources">
+                <h2>Additional Resources</h2>
+                
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <h3>Online Tools</h3>
+                        <ul>
+                            <li><a href="https://www.wolframalpha.com/" target="_blank">Wolfram Alpha</a> - Computational knowledge engine</li>
+                            <li><a href="https://www.desmos.com/" target="_blank">Desmos</a> - Graphing calculator</li>
+                            <li><a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a> - Free educational videos</li>
+                            <li><a href="https://www.engineeringtoolbox.com/" target="_blank">Engineering Toolbox</a> - Engineering reference</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Recommended Textbooks</h3>
+                        <ul>
+                            <li>Engineering Mechanics: Statics & Dynamics by Hibbeler</li>
+                            <li>Fundamentals of Electric Circuits by Alexander & Sadiku</li>
+                            <li>Thermodynamics: An Engineering Approach by Cengel & Boles</li>
+                            <li>Fluid Mechanics by White</li>
+                            <li>Advanced Engineering Mathematics by Kreyszig</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="topic-card">
+                        <h3>Study Techniques</h3>
+                        <ul>
+                            <li>Spaced repetition for memorization</li>
+                            <li>Active recall practice</li>
+                            <li>Problem-solving in timed conditions</li>
+                            <li>Study groups for discussion</li>
+                            <li>Regular review of key concepts</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="key-point">
+                    <h3>Effective Study Strategies</h3>
+                    <ul>
+                        <li><strong>Create a Study Schedule:</strong> Allocate specific times for each subject</li>
+                        <li><strong>Practice Problems:</strong> Work through examples and past papers</li>
+                        <li><strong>Use Multiple Resources:</strong> Combine textbooks, online resources, and lectures</li>
+                        <li><strong>Teach Others:</strong> Explaining concepts to others reinforces your understanding</li>
+                        <li><strong>Take Regular Breaks:</strong> Use techniques like the Pomodoro method</li>
+                        <li><strong>Review Regularly:</strong> Don't cram - spaced repetition is more effective</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Reference Section -->
+            <div class="section-spacing" id="formulas">
+                <h2>Key Engineering Formulas</h2>
+                
+                <div class="math-block">
+                    <p>Mechanics Formulas</p>
+                    <p>\[ F = ma \] (Newton's Second Law)</p>
+                    <p>\[ \tau = r \times F \] (Torque)</p>
+                    <p>\[ W = F \cdot d \] (Work)</p>
+                    <p>\[ KE = \frac{1}{2}mv^2 \] (Kinetic Energy)</p>
+                    <p>\[ PE = mgh \] (Gravitational Potential Energy)</p>
+                </div>
+                
+                <div class="math-block">
+                    <p>Electrical Formulas</p>
+                    <p>\[ V = IR \] (Ohm's Law)</p>
+                    <p>\[ P = VI \] (Electrical Power)</p>
+                    <p>\[ C = \frac{Q}{V} \] (Capacitance)</p>
+                    <p>\[ X_L = 2\pi fL \] (Inductive Reactance)</p>
+                    <p>\[ X_C = \frac{1}{2\pi fC} \] (Capacitive Reactance)</p>
+                </div>
+                
+                <div class="math-block">
+                    <p>Thermodynamics Formulas</p>
+                    <p>\[ \Delta U = Q - W \] (First Law)</p>
+                    <p>\[ PV = nRT \] (Ideal Gas Law)</p>
+                    <p>\[ \eta = 1 - \frac{Q_C}{Q_H} \] (Thermal Efficiency)</p>
+                    <p>\[ \eta_{Carnot} = 1 - \frac{T_C}{T_H} \] (Carnot Efficiency)</p>
+                </div>
+                
+                <div class="math-block">
+                    <p>Fluid Mechanics Formulas</p>
+                    <p>\[ P = P_0 + \rho gh \] (Hydrostatic Pressure)</p>
+                    <p>\[ Q = Av \] (Continuity Equation)</p>
+                    <p>\[ P_1 + \frac{1}{2}\rho v_1^2 + \rho g h_1 = P_2 + \frac{1}{2}\rho v_2^2 + \rho g h_2 \] (Bernoulli's Equation)</p>
+                    <p>\[ Re = \frac{\rho v D}{\mu} \] (Reynolds Number)</p>
+                </div>
+            </div>
+
+            <div class="section-spacing" id="units">
+                <h2>Unit Conversions</h2>
+                
+                <table class="units-table">
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>SI Unit</th>
+                            <th>Other Common Units</th>
+                            <th>Conversion Factors</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Length</td>
+                            <td>meter (m)</td>
+                            <td>inch, foot, mile</td>
+                            <td>1 m = 39.37 in, 1 km = 0.6214 mile</td>
+                        </tr>
+                        <tr>
+                            <td>Mass</td>
+                            <td>kilogram (kg)</td>
+                            <td>pound, ounce</td>
+                            <td>1 kg = 2.205 lb, 1 lb = 0.4536 kg</td>
+                        </tr>
+                        <tr>
+                            <td>Force</td>
+                            <td>newton (N)</td>
+                            <td>pound-force (lbf)</td>
+                            <td>1 N = 0.2248 lbf, 1 lbf = 4.448 N</td>
+                        </tr>
+                        <tr>
+                            <td>Pressure</td>
+                            <td>pascal (Pa)</td>
+                            <td>bar, psi, atm</td>
+                            <td>1 bar = 10⁵ Pa, 1 atm = 101.325 kPa, 1 psi = 6.895 kPa</td>
+                        </tr>
+                        <tr>
+                            <td>Energy</td>
+                            <td>joule (J)</td>
+                            <td>calorie, BTU, kWh</td>
+                            <td>1 cal = 4.184 J, 1 BTU = 1055 J, 1 kWh = 3.6×10⁶ J</td>
+                        </tr>
+                        <tr>
+                            <td>Power</td>
+                            <td>watt (W)</td>
+                            <td>horsepower (hp)</td>
+                            <td>1 hp = 745.7 W</td>
+                        </tr>
+                        <tr>
+                            <td>Temperature</td>
+                            <td>kelvin (K)</td>
+                            <td>°C, °F</td>
+                            <td>K = °C + 273.15, °F = 1.8°C + 32</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section-spacing" id="constants">
+                <h2>Physical Constants</h2>
+                
+                <table class="units-table">
+                    <thead>
+                        <tr>
+                            <th>Constant</th>
+                            <th>Symbol</th>
+                            <th>Value</th>
+                            <th>Units</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gravitational acceleration</td>
+                            <td>g</td>
+                            <td>9.80665</td>
+                            <td>m/s²</td>
+                        </tr>
+                        <tr>
+                            <td>Universal gas constant</td>
+                            <td>R</td>
+                            <td>8.314462618</td>
+                            <td>J/(mol·K)</td>
+                        </tr>
+                        <tr>
+                            <td>Avogadro's number</td>
+                            <td>N<sub>A</sub></td>
+                            <td>6.02214076×10²³</td>
+                            <td>mol⁻¹</td>
+                        </tr>
+                        <tr>
+                            <td>Boltzmann constant</td>
+                            <td>k</td>
+                            <td>1.380649×10⁻²³</td>
+                            <td>J/K</td>
+                        </tr>
+                        <tr>
+                            <td>Planck constant</td>
+                            <td>h</td>
+                            <td>6.62607015×10⁻³⁴</td>
+                            <td>J·s</td>
+                        </tr>
+                        <tr>
+                            <td>Speed of light in vacuum</td>
+                            <td>c</td>
+                            <td>299792458</td>
+                            <td>m/s</td>
+                        </tr>
+                        <tr>
+                            <td>Elementary charge</td>
+                            <td>e</td>
+                            <td>1.602176634×10⁻¹⁹</td>
+                            <td>C</td>
+                        </tr>
+                        <tr>
+                            <td>Electron mass</td>
+                            <td>m<sub>e</sub></td>
+                            <td>9.1093837015×10⁻³¹</td>
+                            <td>kg</td>
+                        </tr>
+                        <tr>
+                            <td>Proton mass</td>
+                            <td>m<sub>p</sub></td>
+                            <td>1.67262192369×10⁻²⁷</td>
+                            <td>kg</td>
+                        </tr>
+                        <tr>
+                            <td>Permittivity of free space</td>
+                            <td>ε<sub>0</sub></td>
+                            <td>8.8541878128×10⁻¹²</td>
+                            <td>F/m</td>
+                        </tr>
+                        <tr>
+                            <td>Permeability of free space</td>
+                            <td>μ<sub>0</sub></td>
+                            <td>1.25663706212×10⁻⁶</td>
+                            <td>N/A²</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="navigation">
+                <a href="#mechanics" class="nav-button">Back to Top</a>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 HNC Engineering Science. All rights reserved.</p>
+            <p>This study guide is intended for educational purposes only.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple navigation script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling to all links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add active class to current section in navigation
+            const sections = document.querySelectorAll('section, .section-spacing');
+            const navLinks = document.querySelectorAll('aside nav a');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (pageYOffset >= sectionTop - 60) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

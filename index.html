@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HNC Mechanical Engineering - Home</title>
+    <title>Systems of Units - HNC Engineering Science</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -13,8 +13,8 @@
 
     <header>
         <div class="container">
-            <h1>HNC Mechanical Engineering</h1>
-            <p>Your complete reference guide for core concepts and applications.</p>
+            <h1>HNC Engineering Science</h1>
+            <p>Systems of Units and SI System</p>
         </div>
     </header>
 
@@ -22,44 +22,643 @@
         <aside id="navigation-placeholder"></aside>
 
         <main>
-            <h1>Welcome to the HNC Mechanical Engineering Guide</h1>
+            <h1>Systems of Units and SI System</h1>
             
             <div class="info-box">
-                <p>Your Central Hub for Study and Revision</p>
-                This guide is designed to provide a comprehensive overview of the key subjects you will encounter during your HNC in Mechanical Engineering. Use the navigation menu to explore different topics.
+                <p>Standardized Measurement in Engineering</p>
+                Understanding different systems of units and the International System of Units (SI) is fundamental for engineering communication, design, and analysis across global contexts.
             </div>
 
-            <h2 id="introduction">Course Overview</h2>
-            <p>
-                The Higher National Certificate (HNC) in Mechanical Engineering provides a specialist vocational programme, linked to professional body requirements and with a strong work-related emphasis. This guide covers the fundamental principles and applications that form the backbone of this qualification.
-            </p>
+            <h2 id="introduction">Introduction to Measurement Systems</h2>
+            
+            <div class="info-box">
+                <p>The Importance of Standardization</p>
+                Standardized units enable precise communication, accurate calculations, and reliable reproduction of engineering designs and experiments across different countries and disciplines.
+            </div>
 
-            <h2 id="core-subjects">Core Subject Areas</h2>
-            <p>
-                Below is an outline of the primary subject areas typically covered in the HNC programme. Each section of this guide will delve into these topics in detail.
-            </p>
+            <h3>Historical Context</h3>
+            <p>Throughout history, various measurement systems have been developed, each with their own advantages and limitations. The evolution toward the SI system represents a global effort to create a coherent, universal measurement framework.</p>
+
+            <h2 id="british-system">The British (Imperial) System</h2>
+
+            <div class="info-box">
+                <p>The FPS System</p>
+                The British Imperial System, often called the fps system (foot-pound-second), was widely used in engineering and commerce throughout the British Empire and remains in limited use today.
+            </div>
+
+            <h3>Fundamental Units</h3>
+            
+            <div class="math-block">
+                <p><strong>Length:</strong> Foot (ft)</p>
+                <p><strong>Mass:</strong> Pound (lb)</p>
+                <p><strong>Time:</strong> Second (s)</p>
+            </div>
+
+            <h3>Common Imperial Units in Engineering</h3>
+            <table class="units-table">
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Unit</th>
+                        <th>Symbol</th>
+                        <th>SI Equivalent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Length</td>
+                        <td>Inch</td>
+                        <td>in</td>
+                        <td>0.0254 m</td>
+                    </tr>
+                    <tr>
+                        <td>Length</td>
+                        <td>Foot</td>
+                        <td>ft</td>
+                        <td>0.3048 m</td>
+                    </tr>
+                    <tr>
+                        <td>Length</td>
+                        <td>Yard</td>
+                        <td>yd</td>
+                        <td>0.9144 m</td>
+                    </tr>
+                    <tr>
+                        <td>Length</td>
+                        <td>Mile</td>
+                        <td>mi</td>
+                        <td>1609.344 m</td>
+                    </tr>
+                    <tr>
+                        <td>Mass</td>
+                        <td>Ounce</td>
+                        <td>oz</td>
+                        <td>0.02835 kg</td>
+                    </tr>
+                    <tr>
+                        <td>Mass</td>
+                        <td>Pound</td>
+                        <td>lb</td>
+                        <td>0.4536 kg</td>
+                    </tr>
+                    <tr>
+                        <td>Force</td>
+                        <td>Pound-force</td>
+                        <td>lbf</td>
+                        <td>4.448 N</td>
+                    </tr>
+                    <tr>
+                        <td>Pressure</td>
+                        <td>Pounds per square inch</td>
+                        <td>psi</td>
+                        <td>6894.76 Pa</td>
+                    </tr>
+                </tbody>
+            </table>
 
             <div class="example-box">
-                <p><strong>Key Topics Include:</strong></p>
-                <ul>
-                    <li><strong>Engineering Mathematics:</strong> The essential mathematical tools and techniques required to solve engineering problems, from algebra and trigonometry to calculus and differential equations.</li>
-                    <li><strong>Statics & Dynamics:</strong> Understanding forces, moments, and their effects on stationary and moving bodies. This forms the basis of structural design and mechanical analysis.</li>
-                    <li><strong>Materials Science:</strong> Exploring the properties of engineering materials (metals, polymers, composites) and how they behave under different loads and environmental conditions.</li>
-                    <li><strong>Thermodynamics & Fluid Mechanics:</strong> The study of energy, heat transfer, and the behaviour of fluids, which is critical for designing engines, power systems, and hydraulic/pneumatic circuits.</li>
-                    <li><strong>Solid Mechanics & Machine Design:</strong> Applying principles of stress, strain, and failure to design and analyse mechanical components and systems.</li>
-                    <li><strong>Electrical Principles:</strong> A foundational understanding of electrical and electronic circuits, essential for modern mechatronic systems.</li>
-                </ul>
+                <p><strong>Engineering Application: Imperial to SI Conversion</strong></p>
+                <p>A structural beam has specifications: Length = 20 ft, Weight = 150 lb</p>
+                
+                <p><strong>Conversion to SI units:</strong></p>
+                <p>Length: \( 20 \, \text{ft} \times 0.3048 \, \text{m/ft} = 6.096 \, \text{m} \)</p>
+                <p>Mass: \( 150 \, \text{lb} \times 0.4536 \, \text{kg/lb} = 68.04 \, \text{kg} \)</p>
+                
+                <p><strong>Note:</strong> In engineering contexts, it's crucial to distinguish between pound-mass (lb) and pound-force (lbf).</p>
             </div>
 
-            <div class="key-point">
-                <p><strong>How to Use This Guide:</strong> Start with the foundational concepts in the 'Core Principles' section before moving to more specialised 'Applied Engineering' topics. Use the search function to quickly find specific subjects.</p>
+            <h2 id="cgs-system">The CGS System</h2>
+
+            <div class="info-box">
+                <p>Centimeter-Gram-Second System</p>
+                The CGS system was widely used in scientific work, particularly in physics and chemistry, before the adoption of the SI system.
+            </div>
+
+            <h3>Fundamental Units</h3>
+            
+            <div class="math-block">
+                <p><strong>Length:</strong> Centimeter (cm)</p>
+                <p><strong>Mass:</strong> Gram (g)</p>
+                <p><strong>Time:</strong> Second (s)</p>
+            </div>
+
+            <h3>CGS Derived Units</h3>
+            <table class="units-table">
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Unit</th>
+                        <th>Symbol</th>
+                        <th>SI Equivalent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Force</td>
+                        <td>Dyne</td>
+                        <td>dyn</td>
+                        <td>10⁻⁵ N</td>
+                    </tr>
+                    <tr>
+                        <td>Energy</td>
+                        <td>Erg</td>
+                        <td>erg</td>
+                        <td>10⁻⁷ J</td>
+                    </tr>
+                    <tr>
+                        <td>Pressure</td>
+                        <td>Barye</td>
+                        <td>Ba</td>
+                        <td>0.1 Pa</td>
+                    </tr>
+                    <tr>
+                        <td>Dynamic Viscosity</td>
+                        <td>Poise</td>
+                        <td>P</td>
+                        <td>0.1 Pa·s</td>
+                    </tr>
+                    <tr>
+                        <td>Kinematic Viscosity</td>
+                        <td>Stokes</td>
+                        <td>St</td>
+                        <td>10⁻⁴ m²/s</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <p><strong>Scientific Application</strong></p>
+                <p>In fluid dynamics, the CGS unit for viscosity (poise) is still occasionally used:</p>
+                <p>Water at 20°C: \( \eta = 0.01 \, \text{P} = 0.001 \, \text{Pa·s} \)</p>
+                <p>Conversion: \( 1 \, \text{P} = 0.1 \, \text{Pa·s} \)</p>
+            </div>
+
+            <h2 id="mks-system">The MKS System</h2>
+
+            <div class="info-box">
+                <p>Metre-Kilogram-Second System</p>
+                The MKS system formed the foundation for the modern International System of Units (SI), providing a more practical scale for engineering applications than the CGS system.
+            </div>
+
+            <h3>Fundamental Units</h3>
+            
+            <div class="math-block">
+                <p><strong>Length:</strong> Metre (m)</p>
+                <p><strong>Mass:</strong> Kilogram (kg)</p>
+                <p><strong>Time:</strong> Second (s)</p>
+            </div>
+
+            <h3>MKS Derived Units</h3>
+            <table class="units-table">
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Unit</th>
+                        <th>Symbol</th>
+                        <th>Definition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Force</td>
+                        <td>Newton</td>
+                        <td>N</td>
+                        <td>kg·m/s²</td>
+                    </tr>
+                    <tr>
+                        <td>Energy</td>
+                        <td>Joule</td>
+                        <td>J</td>
+                        <td>N·m</td>
+                    </tr>
+                    <tr>
+                        <td>Power</td>
+                        <td>Watt</td>
+                        <td>W</td>
+                        <td>J/s</td>
+                    </tr>
+                    <tr>
+                        <td>Pressure</td>
+                        <td>Pascal</td>
+                        <td>Pa</td>
+                        <td>N/m²</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="si-system">The SI System of Units</h2>
+
+            <div class="info-box">
+                <p>International System of Units</p>
+                The SI system is the modern form of the metric system and the world's most widely used system of measurement, providing a coherent framework for science, engineering, and commerce.
+            </div>
+
+            <h3>The Seven Base SI Units</h3>
+            
+            <table class="units-table">
+                <thead>
+                    <tr>
+                        <th>Physical Quantity</th>
+                        <th>Unit Name</th>
+                        <th>Unit Symbol</th>
+                        <th>Definition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Length</td>
+                        <td>metre</td>
+                        <td>m</td>
+                        <td>Distance light travels in 1/299,792,458 seconds</td>
+                    </tr>
+                    <tr>
+                        <td>Mass</td>
+                        <td>kilogram</td>
+                        <td>kg</td>
+                        <td>Defined by Planck constant (h = 6.62607015×10⁻³⁴ J·s)</td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td>second</td>
+                        <td>s</td>
+                        <td>Duration of 9,192,631,770 periods of radiation from cesium-133</td>
+                    </tr>
+                    <tr>
+                        <td>Electric Current</td>
+                        <td>ampere</td>
+                        <td>A</td>
+                        <td>Flow of 1/(1.602176634×10⁻¹⁹) elementary charges per second</td>
+                    </tr>
+                    <tr>
+                        <td>Temperature</td>
+                        <td>kelvin</td>
+                        <td>K</td>
+                        <td>1/273.16 of thermodynamic temperature of triple point of water</td>
+                    </tr>
+                    <tr>
+                        <td>Luminous Intensity</td>
+                        <td>candela</td>
+                        <td>cd</td>
+                        <td>Luminous intensity in given direction of source emitting monochromatic radiation</td>
+                    </tr>
+                    <tr>
+                        <td>Amount of Substance</td>
+                        <td>mole</td>
+                        <td>mol</td>
+                        <td>Amount containing exactly 6.02214076×10²³ elementary entities</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="derived-units">Important Derived Units</h2>
+
+            <div class="info-box">
+                <p>Combining Base Units</p>
+                Derived units are formed by combining base units according to the algebraic relations linking the corresponding quantities.
+            </div>
+
+            <h3>Common Derived Units in Engineering</h3>
+            
+            <table class="units-table">
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>SI Unit</th>
+                        <th>Symbol</th>
+                        <th>Base Unit Equivalent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Speed, velocity</td>
+                        <td>metre per second</td>
+                        <td>m s<sup>-1</sup></td>
+                        <td>m·s<sup>-1</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Volumetric flowrate</td>
+                        <td>cubic metre per second</td>
+                        <td>m<sup>3</sup> s<sup>-1</sup></td>
+                        <td>m<sup>3</sup>·s<sup>-1</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Acceleration</td>
+                        <td>metre per second squared</td>
+                        <td>m s<sup>-2</sup></td>
+                        <td>m·s<sup>-2</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Force</td>
+                        <td>newton</td>
+                        <td>N</td>
+                        <td>kg·m·s<sup>-2</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Density</td>
+                        <td>kilogram per cubic metre</td>
+                        <td>kg m<sup>-3</sup></td>
+                        <td>kg·m<sup>-3</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Pressure</td>
+                        <td>pascal</td>
+                        <td>Pa</td>
+                        <td>kg·m<sup>-1</sup>·s<sup>-2</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Work, Energy</td>
+                        <td>joule</td>
+                        <td>J</td>
+                        <td>kg·m<sup>2</sup>·s<sup>-2</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Power</td>
+                        <td>watt</td>
+                        <td>W</td>
+                        <td>kg·m<sup>2</sup>·s<sup>-3</sup></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Velocity and Speed</h3>
+            
+            <div class="diagram-container">
+                <h4>Velocity Conversion Diagram</h4>
+                <div class="flow-diagram">
+                    <div class="flow-step">
+                        <p><strong>m/s to km/h</strong></p>
+                        <p>Multiply by 3.6</p>
+                        <p class="unit-notation">1 m/s = 3.6 km/h</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <p><strong>km/h to m/s</strong></p>
+                        <p>Divide by 3.6</p>
+                        <p class="unit-notation">1 km/h = 0.2778 m/s</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <p><strong>Velocity Conversion Example</strong></p>
+                <p>Convert 4.2 m/s to km/h:</p>
+                
+                <div class="conversion-steps">
+                    <p><strong>Step 1:</strong> Write the quantity with units</p>
+                    <p>\( 4.2 \, \text{m/s} = \frac{4.2 \, \text{m}}{1 \, \text{s}} \)</p>
+                    
+                    <p><strong>Step 2:</strong> Convert meters to kilometers</p>
+                    <p>\( 4.2 \, \text{m} = \frac{4.2}{1000} \, \text{km} = 0.0042 \, \text{km} \)</p>
+                    
+                    <p><strong>Step 3:</strong> Convert seconds to hours</p>
+                    <p>\( 1 \, \text{s} = \frac{1}{3600} \, \text{h} = 0.0002778 \, \text{h} \)</p>
+                    
+                    <p><strong>Step 4:</strong> Combine the conversions</p>
+                    <p>\( \frac{0.0042 \, \text{km}}{0.0002778 \, \text{h}} = 15.12 \, \text{km/h} \)</p>
+                    
+                    <p><strong>Using conversion factor:</strong> \( 4.2 \times 3.6 = 15.12 \, \text{km/h} \)</p>
+                </div>
+            </div>
+
+            <h3 id="acceleration">Acceleration</h3>
+            
+            <div class="info-box">
+                <p>Rate of Change of Velocity</p>
+                Acceleration is defined as the change of velocity per unit time, measuring how quickly velocity changes.
+            </div>
+
+            <div class="math-block">
+                <p>\[ \text{Acceleration} = \frac{\text{change in velocity}}{\text{time taken for velocity to change}} \]</p>
+                <p>\[ \text{SI Unit: metre per second squared} \quad (\text{m/s}^2 \text{ or } \text{m} \cdot \text{s}^{-2}) \]</p>
+            </div>
+
+            <h3 id="force">Force</h3>
+            
+            <div class="info-box">
+                <p>Newton's Second Law</p>
+                Force is defined as the product of mass and acceleration, according to Newton's Second Law of Motion.
+            </div>
+
+            <div class="math-block">
+                <p>\[ \text{Force} = \text{Mass} \times \text{Acceleration} \]</p>
+                <p>\[ \text{SI Unit: newton (N)} = \text{kg} \cdot \text{m} \cdot \text{s}^{-2} \]</p>
+                <p>\[ 1 \, \text{N} = 1 \, \text{kg} \cdot \text{m} \cdot \text{s}^{-2} \]</p>
+            </div>
+
+            <div class="diagram-container">
+                <h4>How Base Units Form a Derived Unit (The Newton)</h4>
+                <div class="viz-container">
+                    <div class="viz-item">
+                        <div class="viz-block">kg</div>
+                        <p>Mass</p>
+                    </div>
+                    <div class="viz-arrow">+</div>
+                    <div class="viz-item">
+                        <div class="viz-block">m·s<sup>-2</sup></div>
+                        <p>Acceleration</p>
+                    </div>
+                    <div class="viz-arrow">=</div>
+                    <div class="viz-item">
+                        <div class="viz-block" style="border-color: #c92a2a; background-color: #fff5f5;">N</div>
+                        <p>Force (newton)</p>
+                    </div>
+                </div>
+                <p style="text-align:center; margin-top: 1rem;">The unit of force, the <strong>newton (N)</strong>, is a derived unit composed of the base units for mass, length, and time.</p>
+            </div>
+
+            <div class="example-box">
+                <p><strong>Force Calculation Example</strong></p>
+                <p>Calculate the force required to accelerate a 500 kg mass at 2 m/s²:</p>
+                
+                <p><strong>Using SI units:</strong></p>
+                <p>\( F = m \times a = 500 \, \text{kg} \times 2 \, \text{m/s}^2 = 1000 \, \text{N} \)</p>
+                
+                <p><strong>Dimensional analysis:</strong></p>
+                <p>\( [F] = [M][L][T]^{-2} = \text{kg} \cdot \text{m} \cdot \text{s}^{-2} = \text{N} \)</p>
+                
+                <p>The result is dimensionally consistent and expressed in proper SI units.</p>
+            </div>
+
+            <h2 id="si-prefixes">SI Prefixes and Multiples</h2>
+
+            <div class="info-box">
+                <p>Scaling Units for Practical Use</p>
+                SI prefixes provide a systematic way to express very large or very small quantities without using scientific notation, making engineering calculations more convenient.
+            </div>
+
+            <h3>Common SI Prefixes</h3>
+            
+            <table class="units-table">
+                <thead>
+                    <tr>
+                        <th>Prefix</th>
+                        <th>Symbol</th>
+                        <th>Multiplication Factor</th>
+                        <th>Power of 10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>giga</td>
+                        <td>G</td>
+                        <td>1 000 000 000</td>
+                        <td>10⁹</td>
+                    </tr>
+                    <tr>
+                        <td>mega</td>
+                        <td>M</td>
+                        <td>1 000 000</td>
+                        <td>10⁶</td>
+                    </tr>
+                    <tr>
+                        <td>kilo</td>
+                        <td>k</td>
+                        <td>1 000</td>
+                        <td>10³</td>
+                    </tr>
+                    <tr>
+                        <td>centi</td>
+                        <td>c</td>
+                        <td>0.01</td>
+                        <td>10⁻²</td>
+                    </tr>
+                    <tr>
+                        <td>milli</td>
+                        <td>m</td>
+                        <td>0.001</td>
+                        <td>10⁻³</td>
+                    </tr>
+                    <tr>
+                        <td>micro</td>
+                        <td>μ</td>
+                        <td>0.000 001</td>
+                        <td>10⁻⁶</td>
+                    </tr>
+                    <tr>
+                        <td>nano</td>
+                        <td>n</td>
+                        <td>0.000 000 001</td>
+                        <td>10⁻⁹</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="conversion">Unit Conversion Methodology</h2>
+
+            <div class="info-box">
+                <p>Systematic Approach to Unit Conversion</p>
+                A consistent methodology for unit conversion ensures accuracy and minimizes errors in engineering calculations.
+            </div>
+
+            <h3>Step-by-Step Conversion Process</h3>
+            
+            <div class="conversion-steps">
+                <p><strong>Step 1:</strong> Identify the starting quantity and units</p>
+                <p><strong>Step 2:</strong> Identify the desired units</p>
+                <p><strong>Step 3:</strong> Find the appropriate conversion factor(s)</p>
+                <p><strong>Step 4:</strong> Set up the conversion as a multiplication by 1</p>
+                <p><strong>Step 5:</strong> Cancel units and perform the calculation</p>
+                <p><strong>Step 6:</strong> Check the result for reasonableness</p>
+            </div>
+
+            <div class="example-box">
+                <p><strong>Complex Conversion Example</strong></p>
+                <p>Convert 55 miles per hour to metres per second:</p>
+                
+                <div class="conversion-steps">
+                    <p><strong>Using dimensional analysis:</strong></p>
+                    <p>\( 55 \, \frac{\text{mi}}{\text{h}} \times \frac{1609.344 \, \text{m}}{1 \, \text{mi}} \times \frac{1 \, \text{h}}{3600 \, \text{s}} = 24.5872 \, \text{m/s} \)</p>
+                </div>
+            </div>
+
+            <h2 id="dimensional-analysis">Dimensional Analysis</h2>
+
+            <div class="info-box">
+                <p>Checking Equation Consistency</p>
+                Dimensional analysis is a powerful technique for verifying the correctness of equations and deriving relationships between physical quantities.
+            </div>
+
+            <div class="example-box">
+                <p><strong>Dimensional Analysis Example</strong></p>
+                <p>Verify the dimensional consistency of the equation for kinetic energy:</p>
+                <p>\( E_k = \frac{1}{2}mv^2 \)</p>
+                
+                <div class="conversion-steps">
+                    <p><strong>Step 1:</strong> Identify dimensions of each variable</p>
+                    <p>\( [E_k] = [M][L]^2[T]^{-2} \) (energy)</p>
+                    <p>\( [m] = [M] \) (mass)</p>
+                    <p>\( [v] = [L][T]^{-1} \) (velocity)</p>
+                    
+                    <p><strong>Step 2:</strong> Check the right-hand side</p>
+                    <p>\( [m][v]^2 = [M] \times ([L][T]^{-1})^2 = [M][L]^2[T]^{-2} \)</p>
+                    
+                    <p><strong>Step 3:</strong> Compare both sides</p>
+                    <p>The dimensions match, confirming the equation is dimensionally consistent.</p>
+                </div>
+            </div>
+
+            <h2 id="engineering-applications">Engineering Applications</h2>
+
+            <div class="info-box">
+                <p>Practical Implementation in Engineering</p>
+                Understanding and correctly applying systems of units is essential for engineering design, analysis, and communication across disciplines and international boundaries.
+            </div>
+
+            <h3>Industry-Specific Unit Preferences</h3>
+            
+            <div class="prefix-grid">
+                <div class="prefix-card">
+                    <h4>Civil Engineering</h4>
+                    <ul>
+                        <li>Length: mm, m, km</li>
+                        <li>Force: kN, MN</li>
+                        <li>Pressure: kPa, MPa</li>
+                        <li>Volume: m³, l</li>
+                    </ul>
+                </div>
+                <div class="prefix-card">
+                    <h4>Mechanical Engineering</h4>
+                    <ul>
+                        <li>Length: mm, m</li>
+                        <li>Force: N, kN</li>
+                        <li>Pressure: Pa, kPa, MPa</li>
+                        <li>Power: W, kW, MW</li>
+                    </ul>
+                </div>
+                <div class="prefix-card">
+                    <h4>Electrical Engineering</h4>
+                    <ul>
+                        <li>Voltage: V, kV, mV</li>
+                        <li>Current: A, mA, μA</li>
+                        <li>Resistance: Ω, kΩ, MΩ</li>
+                        <li>Power: W, kW, MW</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 id="summary">Summary</h2>
+
+            <div class="info-box">
+                <p>Key Takeaways</p>
+                Understanding different systems of units, particularly the SI system, is fundamental to engineering practice. Proper unit usage ensures accurate calculations, clear communication, and international compatibility.
+            </div>
+
+            <div class="conversion-steps">
+                <p><strong>1. Coherence:</strong> SI units form a coherent system where derived units are products of base units without conversion factors.</p>
+                <p><strong>2. Prefix System:</strong> SI prefixes provide a systematic way to scale units for practical applications.</p>
+                <p><strong>3. Dimensional Consistency:</strong> All terms in an equation must have the same dimensions.</p>
+                <p><strong>4. Conversion Methodology:</strong> A systematic approach to unit conversion minimizes errors.</p>
+            </div>
+
+            <div class="navigation">
+                <a href="#introduction" class="nav-button">Back to Top</a>
             </div>
         </main>
     </div>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 HNC Mechanical Engineering Guide. All rights reserved.</p>
+            <p>&copy; 2024 HNC Engineering Science. All rights reserved.</p>
         </div>
     </footer>
 
